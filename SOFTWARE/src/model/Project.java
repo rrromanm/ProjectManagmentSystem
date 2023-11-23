@@ -8,13 +8,13 @@ public abstract class Project
   private int projectID;
   private int timeline;
 
-  public Project(int budget, Date deadline, String status, int projectID){
+  public Project(int budget, Date deadline, String status, int projectID, int timeline){
     this.budget = budget;
     this.status = status;
     this.projectID = projectID;
     this.deadline = deadline;
+    this.timeline = timeline;
   }
-
   public void setBudget(int budget)
   {
     this.budget = budget;
