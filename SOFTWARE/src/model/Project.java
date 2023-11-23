@@ -3,15 +3,16 @@ package model;
 public abstract class Project
 {
   private int budget;
-  private int deadline;
+  private Date deadline;
   private String status;
   private int projectID;
+  private int timeline;
 
-  public Project(int budget, int deadline, String status, int projectID){
+  public Project(int budget, Date deadline, String status, int projectID){
     this.budget = budget;
-    this.deadline = deadline;
     this.status = status;
     this.projectID = projectID;
+    this.deadline = deadline;
   }
 
   public void setBudget(int budget)
@@ -19,7 +20,12 @@ public abstract class Project
     this.budget = budget;
   }
 
-  public void setDeadline(int deadline)
+  public void setTimeline(int timeline)
+  {
+    this.timeline = timeline;
+  }
+
+  public void setDeadline(Date deadline)
   {
     this.deadline = deadline;
   }
@@ -39,7 +45,12 @@ public abstract class Project
     return budget;
   }
 
-  public int getDeadline()
+  public int getTimeline()
+  {
+    return timeline;
+  }
+
+  public Date getDeadline()
   {
     return deadline;
   }
