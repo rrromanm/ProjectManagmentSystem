@@ -153,6 +153,7 @@ h2 {
   text-align: center; 
 }
 
+/*FOOTER*/
 
 footer {
   background-color: rgb(160, 160, 160);
@@ -173,8 +174,6 @@ footer img {
   margin-left: 100px;
 }
 
-
-
 /* SOCIAL ICONS FOOTER */
 
 .social-icons {
@@ -193,15 +192,6 @@ footer img {
 .social-icons a:hover {
   color: rgba(10, 6, 26, 1);
   transform: translateY(-5px);
-}
-
-/* About us  */
-
-#projectBackground3 {
-  background-image: url("../img/backgroundAboutUs.jpg");
-  max-width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* PROJECTS PAGE (MADE BY JAKUB) */
