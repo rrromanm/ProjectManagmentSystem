@@ -8,7 +8,7 @@ public class RoadConstruction extends Project
   private int tunnels;
   private String environmentalChallenges;
   private String geographicalChallenges;
-  public RoadConstruction(int budget, Date deadline, String status, int projectID, int timeline, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges){
+  public RoadConstruction(int budget, MyDate deadline, String status, int projectID, int timeline, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges){
     super(budget, deadline, status, projectID, timeline);
     this.width = width;
     this.lenght = lenght;
@@ -17,7 +17,7 @@ public class RoadConstruction extends Project
     this.environmentalChallenges = environmentalChallenges;
     this.geographicalChallenges = geographicalChallenges;
   }
-  public RoadConstruction(int budget, int lenght, int width, Date deadline, String status, int projectID, int timeline){
+  public RoadConstruction(int budget, int lenght, int width, MyDate deadline, String status, int projectID, int timeline){
     super(budget, deadline, status, projectID, timeline);
     super.setTimeline(18);
     bridges = 0;

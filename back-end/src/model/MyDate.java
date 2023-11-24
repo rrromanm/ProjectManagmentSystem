@@ -2,20 +2,20 @@ package model;
 
 import java.time.LocalDate;
 
-public class Date
+public class MyDate
 {
   int day;
   int month;
   int year;
 
-  public Date(){
+  public MyDate(){
     LocalDate currentDate = LocalDate.now();
     int currentDay = currentDate.getDayOfMonth();
     int currentMonth = currentDate.getMonthValue();
     int currentYear = currentDate.getYear();
   }
 
-  public Date(int day, int month, int year){
+  public MyDate(int day, int month, int year){
     this.day = day;
     this.month = month;
     this.year = year;
@@ -27,9 +27,9 @@ public class Date
     year = y;
   }
 
-  public Date copy()
+  public MyDate copy()
   {
-    return new Date(day,month,year);
+    return new MyDate(day,month,year);
   }
 
   public void getMyDate(){
@@ -48,7 +48,7 @@ public class Date
     {
       return false;
     }
-    Date other = (Date) obj;
+    MyDate other = (MyDate) obj;
 
     return day == other.day &&
         month == other.month &&

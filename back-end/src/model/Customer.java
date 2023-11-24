@@ -6,13 +6,13 @@ public class Customer
 {
   private String firstName;
   private String surname;
-  private Date birthday;
+  private MyDate birthday;
   private int id;
   private int phoneNumber;
   private String email;
   private String address;
 
-  public Customer(String firstName, String surname, Date birthday, int id, int phoneNumber, String email, String address)
+  public Customer(String firstName, String surname, MyDate birthday, int id, int phoneNumber, String email, String address)
   {
     this.firstName = firstName;
     this.surname = surname;
@@ -43,12 +43,12 @@ public class Customer
     return surname;
   }
 
-  public void setBirthday(Date birthday)
+  public void setBirthday(MyDate birthday)
   {
     this.birthday = birthday;
   }
 
-  public Date getBirthday()
+  public MyDate getBirthday()
   {
     return birthday;
   }

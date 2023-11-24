@@ -4,7 +4,7 @@ public class IndustrialProjects extends Project
 {
   private int size;
   private String type;
-  public IndustrialProjects(int size, String type, Date deadline, int budget, String status, int projectId, int timeline)
+  public IndustrialProjects(int size, String type, MyDate deadline, int budget, String status, int projectId, int timeline)
   {
     super(budget,deadline,status,projectId,timeline);
     this.size=size;
