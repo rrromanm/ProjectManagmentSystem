@@ -6,18 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Front Page</title>
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+  <link href="css/home.css" rel="stylesheet" type="text/css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/f5d4115cc1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- MADE BY WHOLE GROUP -->
-  <div id="start">
+  <div id="start" class="w-100 bg-no-repeat">
 
     <!--Navbar of the website-->
 
-    <nav class="navbar navbar-expand-sm bg-transparent navbar-dark navbar-sticky">
+    <nav class="navbar navbar-expand-sm bg-transparent navbar-dark navbar-sticky fw-bold">
       <div class="container-fluid">
         <a class="navbar-brand col-md-4" href="index.html"><img class="logo-Image" src="img/logo(1).png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -48,7 +49,7 @@
       </div>
     </nav>
     <div class="welcoming">
-      <h1>Bob's Building Company</h1>
+      <h1 class="text-center">Bob's Building Company</h1>
     </div>
   </div>
 
@@ -57,7 +58,7 @@
   <div class="section-1">
     <div class="row about">
       <div class="section col-md-4">
-        <img src="img/photo1.png" alt="photo-1">
+        <img src="img/photo1.png" alt="photo-1" class="img-fluid rounded-5">
       </div>
       <div class="section col-md-8">
         <h1 class="about-us-text">About us</h1>
@@ -79,21 +80,21 @@
 
   <!--Section 2 of the main website, list of our services with buttions that directs the users to the demanded service-->
 
-  <div class="section-2">
+  <div class="section-2 text-center text-white pt-5 pb-5">
     <div>
       <h3>Our services</h3>
     </div>
 
     <div class="row container-fluid">
-      <div class="service col-md-3">
-        <img class="icon" src="img/icon-residential.jpg" alt="residental-projects">
+      <div class="service col-md-3 ">
+        <img class="icon img-fluid rounded-circle" src="img/icon-residential.jpg" alt="residental-projects">
         <h2>Residential</h2>
         <div class="button2">
           <a href="services.html#residential-anchor">View sevice</a>
         </div>
       </div>
       <div class="service col-md-3">
-        <img class="icon" src="img/icon-commercial.jpg" alt="commercial-projects">
+        <img class="icon img-fluid rounded-circle" src="img/icon-commercial.jpg" alt="commercial-projects">
         <h2>Commercial</h2>
         <div class="button2">
           <a href="services.html#commercial-anchor">View sevice</a>
@@ -101,14 +102,14 @@
 
       </div>
       <div class="service col-md-3">
-        <img class="icon" src="img/icon-industrial.jpg" alt="industrial-projects">
+        <img class="icon img-fluid rounded-circle" src="img/icon-industrial.jpg" alt="industrial-projects">
         <h2>Industrial</h2>
         <div class="button2">
           <a href="services.html#industrial-anchor">View service</a>
         </div>
       </div>
       <div class="service col-md-3">
-        <img class="icon" src="img/icon-road.jpg" alt="road-construction-projects">
+        <img class="icon img-fluid rounded-circle" src="img/icon-road.jpg" alt="road-construction-projects">
         <h2>Road-construction</h2>
         <div class="button2">
           <a href="services.html#road-anchor">View sevice</a>
@@ -119,7 +120,7 @@
 
   <!-- Carousel -->
 
-  <div id="section-3" class="justify-content-center">
+  <div id="section-3" class="justify-content-center p-5">
     <div id="demo" class="carousel slide carousel-dark carousel-inner" data-bs-ride="carousel">
       <!-- Indicators/dots -->
 
@@ -134,15 +135,15 @@
 
       <div class="carousel-inner">
         <div class="carousel-item active carouselFrontPage">
-          <img src="img/industrial2.png" alt="industrial-projects" class="d-block w-90 mx-auto">
-          <div class="carousel-caption">
+          <img src="img/industrial2.png" alt="industrial-projects" class="d-block w-90 mx-auto img-fluid rounded-5">
+          <div class="carousel-caption text-white fw-bold">
             <h3>Industrial development</h3>
             <p>Our industrial projects are one of the most known ones.</p>
           </div>
         </div>
         <div class="carousel-item carouselFrontPage">
-          <img src="img/commercial.png" alt="commercial-projects" class="d-block w-90 mx-auto">
-          <div class="carousel-caption">
+          <img src="img/commercial.png" alt="commercial-projects" class="d-block w-90 mx-auto img-fluid rounded-3">
+          <div class="carousel-caption text-white fw-bold">
             <h3>Commercial development</h3>
             <p>
               We do our best to meet even strictiest wishes from our clients.
@@ -150,8 +151,8 @@
           </div>
         </div>
         <div class="carousel-item carouselFrontPage">
-          <img src="img/residential2.png" alt="residental-projects" class="d-block w-90 mx-auto">
-          <div class="carousel-caption">
+          <img src="img/residential2.png" alt="residental-projects" class="d-block w-90 mx-auto img-fluid rounded-3">
+          <div class="carousel-caption text-white fw-bold">
             <h3>Residentials development</h3>
             <p>
               Our team puts all the efforts to plan and build the comfiest
@@ -160,8 +161,8 @@
           </div>
         </div>
         <div class="carousel-item carouselFrontPage">
-          <img src="img/road2.png" alt="road-construction-projects" class="d-block w-90 mx-auto">
-          <div class="carousel-caption">
+          <img src="img/road2.png" alt="road-construction-projects" class="d-block w-90 mx-auto img-fluid rounded-3">
+          <div class="carousel-caption text-white fw-bold">
             <h3>Road construction</h3>
             <p>
               Roads we build are estimated to survive even the most extreme
@@ -184,29 +185,29 @@
 
   <!-- Footer -->
 
-  <footer class="bg-dark text-light text-center">
+  <footer class="bg-dark text-light text-center pt-5 pb-5">
     <div class="container">
       <div class="row">
-        <div class="col-lg-2 col-12">
+        <div class="col-md-2 col-12">
           <a id="footer-logo" href="#">
-            <img class="footer-image" src="img/white-logo.png" alt="Logo">
+            <img class="img-fluid mx-auto" src="img/white-logo.png" alt="Logo">
           </a>
         </div>
-        <div class="col-lg-8 col-12">
-          <div class="contact-info">
+        <div class="col-md-10 col-12">
+          <div class="float-start text-start ms-5">
             <p>Contact Information:</p>
             <p>Email: <a href="mailto:via@via.dk">via@via.dk</a></p>
             <p>Phone: +45 87 55 00 20</p>
             <p>Address: Banegårdsgade 2, 8700 Horsens, Denmark</p>
           </div>
-        </div>
-        <div class="social-icons cla col-lg-2 col-12">
-          <a href="https://www.facebook.com/VIAUniversityCollegeInternational/" target="_blank"><i
-              class="fa-brands fa-facebook"></i></a>
-          <a href="https://twitter.com/VIAuniversity" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://instagram.com/viauniversitycollege" target="_blank"><i
-              class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.youtube.com/user/VIAuc" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <div class="social-icons pt-5">
+            <a href="https://www.facebook.com/VIAUniversityCollegeInternational/" target="_blank"><i
+                class="fa-brands fa-facebook fs-2 me-3"></i></a>
+            <a href="https://twitter.com/VIAuniversity" target="_blank"><i class="fa-brands fa-twitter fs-2 me-3"></i></a>
+            <a href="https://instagram.com/viauniversitycollege" target="_blank"><i
+                class="fa-brands fa-instagram fs-2 me-3"></i></a>
+            <a href="https://www.youtube.com/user/VIAuc" target="_blank"><i class="fa-brands fa-youtube fs-2 me-3"></i></a>
+          </div>
         </div>
       </div>
     </div>

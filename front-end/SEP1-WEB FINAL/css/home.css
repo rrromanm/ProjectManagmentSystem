@@ -1,0 +1,96 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#start {
+    background-image: url("../img/background1.jpeg");
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo-Image {
+    max-width: 40%;
+    height: auto;
+}
+
+.nav-item {
+    font-size: 20px;
+}
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    /* to ensure that navbar is always at the top */
+    z-index: 100;
+    /* to ensure that navbar is always above other things when you scroll */
+}
+.welcoming {
+    width: auto;
+    height: 50vh;
+    color: rgba(10, 6, 26, 1);
+    margin-top: 150px;
+}
+  .section-1 {
+    margin: 75px 100px 75px 100px;
+  }
+  .section-2 {
+    background-color: rgba(10, 6, 26, 1);
+  }
+  .icon {
+    max-width: 50%;
+  }
+  .carouselFrontPage img {
+    object-fit: cover;
+    width: 80%;
+    min-height: 400px;
+    max-height: 400px;
+  }
+  #section-3 {
+    background-color: rgba(10, 6, 26, 1);
+  }
+  
+  .button1 {
+    color: white;
+    background-color: rgba(10, 6, 26, 1);
+    border: none;
+    width:12vh;
+    text-align: center;
+  }
+  
+  .button1:hover {
+    background-color: rgb(238, 194, 0);
+    color: rgba(10, 6, 26, 1);
+    transition: 0.7s;
+  }
+  .button1 a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
+  
+  .button2 a:hover {
+    background-color: rgb(238, 194, 0);
+    color: rgba(10, 6, 26, 1);
+    transition: 0.7s;
+  }
+  .button2 a{
+    text-decoration: none;
+    color: white;
+    display: inline-block; 
+    background-color: rgba(10, 6, 26, 1);
+    border: none;
+    width: 12vh;
+    text-align: center; 
+  }
+  
+.social-icons a {
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+  }
+  
+  .social-icons a:hover {
+    color: rgba(10, 6, 26, 1);
+    transform: translateY(-5px);
+  }
