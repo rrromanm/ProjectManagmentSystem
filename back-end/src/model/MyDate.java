@@ -73,7 +73,7 @@ public class MyDate
   }
 
   /**
-   * Counts the total number of days from the beginning of a reference year (ignoring leap years).
+   * Counts the total number of days from the beginning of a reference year including leap years.
    *
    * @param day   The day component of the date.
    * @param month The month component of the date.
@@ -84,8 +84,10 @@ public class MyDate
     int days = day;
 
     for (int i = 1; i < month; i++) {
-      days += getDaysInMonth(i, year);
+      days += getDaysInMonth(year);
     }
+
+    days += countLeapYears(year);
 
     days += (year - 1) * 365;
 
@@ -95,28 +97,53 @@ public class MyDate
   /**
    * Gets the number of days in a specific month of a given year, considering leap years.
    *
-   * @param month The month for which to get the number of days.
-   * @param year  The year for which to get the number of days.
    * @return The number of days in the specified month of the given year.
    */
-  private int getDaysInMonth(int month, int year) {
-    if (month == 4 || month == 6 || month == 9 || month == 11) {
-      return 30;
-    } else if (month == 2) {
-      return isLeapYear(year) ? 29 : 28;
-    } else {
+  public int getDaysInMonth(int year)
+  {
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+    {
       return 31;
     }
+    else if (month == 4 || month == 6 || month == 9 || month == 11)
+    {
+      return 30;
+    }
+    else if (isLeapYear(year) && month == 2)
+    {
+      return 29;
+    }
+    else if (month == 2)
+    {
+      return 28;
+    }
+    return 0;
   }
 
   /**
    * Checks if a year is a leap year.
    *
-   * @param year The year to check.
    * @return true if the year is a leap year, false otherwise.
    */
-  private boolean isLeapYear(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+  public boolean isLeapYear(int year)
+  {
+    return year % 4 == 0 && year % 100 != 0 || (year % 400 == 0);
+  }
+
+  /**
+   * Counts the number of leap years from the reference year to the specified year.
+   *
+   * @param year The year to which the leap years are counted.
+   * @return The number of leap years.
+   */
+  private int countLeapYears(int year) {
+    int leapYears = 0;
+    for (int i = 0; i < year; i++) {
+      if (isLeapYear(i)) {
+        leapYears++;
+      }
+    }
+    return leapYears;
   }
 
   /**
