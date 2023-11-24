@@ -1,0 +1,65 @@
+html {
+    scroll-behavior: smooth;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+}
+
+.logo-Image {
+    max-width: 40%;
+    height: auto;
+}
+.nav-item {
+    font-size: 20px;
+    font-weight: bold;
+}
+.navbar-sticky {
+    position: sticky;
+    top: 0;
+    /* to ensure that navbar is always at the top */
+    z-index: 100;
+    /* to ensure that navbar is always above other things when you scroll */
+  }
+
+#projectBackground4 {
+    background-image: url("../img/via.jpg");
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .email {
+    background-color: rgba(10, 6, 26, 1);
+  }
+  
+  .map-responsive{
+    overflow: hidden;
+    padding-bottom: 50%;
+    position:relative;
+    height:0;
+  }
+  .map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+  
+  .social-icons a {
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+  }
+  
+  .social-icons a:hover {
+    color: rgba(10, 6, 26, 1);
+    transform: translateY(-5px);
+  }
+
+#projectsWelcoming2 {
+    height: 35vh;
+    color: rgba(10, 6, 26, 1);
+}

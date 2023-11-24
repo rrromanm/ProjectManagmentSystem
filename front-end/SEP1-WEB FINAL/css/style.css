@@ -195,6 +195,36 @@ footer img {
   transform: translateY(-5px);
 }
 
+
+
+/* SERVICES PAGE (MADE BY ROMANS) */
+#servicesBackground {
+  background-image: url(../img/servicesBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-container {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  padding: 10px;
+}
+
+.BackgroundBlueServices {
+  background-color: rgba(10, 6, 26, 1);
+}
+
+#carousel-Projects {
+  padding: 8rem;
+}
+
 /* About us  */
 
 #projectBackground3 {
