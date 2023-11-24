@@ -20,7 +20,6 @@ public class Customer
   /**
    * Creates a customer object with specified attributes
    *
-   * @author Samuel Kačenga
    * @param firstName to set customers first name
    * @param surname to set customers last name
    * @param birthday to set customers birthday

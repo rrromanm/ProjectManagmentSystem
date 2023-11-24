@@ -60,10 +60,63 @@ public class MyDate
   }
 
   /**
-   * Displays the date information in the format: "Day/Month/Year".
+   * Calculates the difference in days between two MyDate objects, considering leap years.
+   *
+   * @param other The other MyDate object to calculate the difference.
+   * @return The difference in days between the two MyDate objects.
    */
-  public void getMyDate(){
-    System.out.println(day + "/" + month + "/" + year);
+  public int differenceInDays(MyDate other) {
+    int days1 = countDays(this.day, this.month, this.year);
+    int days2 = countDays(other.day, other.month, other.year);
+
+    return Math.abs(days1 - days2);
+  }
+
+  /**
+   * Counts the total number of days from the beginning of a reference year (ignoring leap years).
+   *
+   * @param day   The day component of the date.
+   * @param month The month component of the date.
+   * @param year  The year component of the date.
+   * @return The total number of days from the beginning of a reference year.
+   */
+  private int countDays(int day, int month, int year) {
+    int days = day;
+
+    for (int i = 1; i < month; i++) {
+      days += getDaysInMonth(i, year);
+    }
+
+    days += (year - 1) * 365;
+
+    return days;
+  }
+
+  /**
+   * Gets the number of days in a specific month of a given year, considering leap years.
+   *
+   * @param month The month for which to get the number of days.
+   * @param year  The year for which to get the number of days.
+   * @return The number of days in the specified month of the given year.
+   */
+  private int getDaysInMonth(int month, int year) {
+    if (month == 4 || month == 6 || month == 9 || month == 11) {
+      return 30;
+    } else if (month == 2) {
+      return isLeapYear(year) ? 29 : 28;
+    } else {
+      return 31;
+    }
+  }
+
+  /**
+   * Checks if a year is a leap year.
+   *
+   * @param year The year to check.
+   * @return true if the year is a leap year, false otherwise.
+   */
+  private boolean isLeapYear(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
   }
 
   /**
