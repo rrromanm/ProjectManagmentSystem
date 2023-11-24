@@ -8,7 +8,7 @@ public class ResidentialProjects extends Project
   private int roomsWithPlumbing;
   private String state;
   public ResidentialProjects(int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state,int budget,
-      Date deadline, String status, int projectID, int timeline)
+      MyDate deadline, String status, int projectID, int timeline)
   {
     super(budget,deadline,status,projectID,timeline);
     this.size = size;

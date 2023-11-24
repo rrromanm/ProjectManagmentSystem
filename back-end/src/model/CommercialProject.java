@@ -5,14 +5,14 @@ public class CommercialProject extends Project{
     private short floors;
     private String usage;
 
-    public CommercialProject(int timeline, int budget, String status, int projectID, Date deadline, int size, short floors, String usage){
+    public CommercialProject(int timeline, int budget, String status, int projectID, MyDate deadline, int size, short floors, String usage){
         super(budget, deadline, status, projectID, timeline);
         this.size = size;
         this.floors = floors;
         this.usage = usage;
     }
 
-    public CommercialProject(int budget, Date deadline, String status, int projectID, int timeline, short floors, String usage){
+    public CommercialProject(int budget, MyDate deadline, String status, int projectID, int timeline, short floors, String usage){
         super(budget, deadline, status, projectID, timeline);
         super.setTimeline(18);
         floors = 1;
