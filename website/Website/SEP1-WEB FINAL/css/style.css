@@ -1,0 +1,502 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* FRONT PAGE OF OUR WEBSITE (MADE BY THE WHOLE GROUP) */
+
+#start {
+  background-image: url("../img/background1.jpeg");
+  max-width: 100%;
+  background-repeat: no-repeat;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.logo-Image {
+  max-width: 40%;
+  height: auto;
+}
+
+.nav-item {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  /* to ensure that navbar is always at the top */
+  z-index: 100;
+  /* to ensure that navbar is always above other things when you scroll */
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.welcoming {
+  width: auto;
+  height: 50vh;
+  color: rgba(10, 6, 26, 1);
+  margin-top: 150px;
+}
+
+.section-1 img {
+  width: 100%;
+  padding: 0;
+}
+
+.about img {
+  height: auto;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.about {
+  margin-top: 50px;
+}
+
+.section-1 {
+  margin: 75px 100px 75px 100px;
+}
+
+.about-us-text {
+  text-align: left;
+}
+
+.section-2 {
+  text-align: center;
+  background-color: rgba(10, 6, 26, 1);
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.icon {
+  max-width: 50%;
+  height: auto;
+  border-radius: 100%;
+}
+
+.section-description {
+  text-align: center;
+}
+
+.carouselFrontPage img {
+  object-fit: cover;
+  width: 80%;
+  height: auto;
+  min-height: 400px;
+  max-height: 400px;
+
+  border-radius: 30px;
+}
+
+#section-3 {
+  padding: 50px;
+  background-color: rgba(10, 6, 26, 1);
+}
+
+.carousel-caption h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  color: white;
+  font-weight: bold;
+}
+
+/* First type of the buttons (used at the beginning of the index page and in the about us page) */
+.button1 {
+  color: white;
+  background-color: rgba(10, 6, 26, 1);
+  border: none;
+  width:12vh;
+  text-align: center;
+}
+
+.button1:hover {
+  background-color: rgb(238, 194, 0);
+  color: rgba(10, 6, 26, 1);
+  transition: 0.7s;
+}
+.button1 a{
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+/* Second type of the buttons (used at the services section in the index page) */
+
+.button2 {
+  text-align: center;
+}
+
+.button2 a:hover {
+  background-color: rgb(238, 194, 0);
+  color: rgba(10, 6, 26, 1);
+  transition: 0.7s;
+}
+.button2 a{
+  text-decoration: none;
+  color: white;
+  display: inline-block; 
+  background-color: rgba(10, 6, 26, 1);
+  border: none;
+  width: 12vh;
+  text-align: center; 
+}
+
+
+footer {
+  background-color: rgb(160, 160, 160);
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+footer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contact-info {
+  float: left;
+  text-align: left;
+  margin-left: 100px;
+}
+
+
+
+/* SOCIAL ICONS FOOTER */
+
+.social-icons {
+  margin-top: 60px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #ababab;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+  color: rgba(10, 6, 26, 1);
+  transform: translateY(-5px);
+}
+
+
+
+/* SERVICES PAGE (MADE BY ROMANS) */
+#servicesBackground {
+  background-image: url(../img/servicesBackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-container {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  padding: 10px;
+}
+
+.BackgroundBlueServices {
+  background-color: rgba(10, 6, 26, 1);
+}
+
+#carousel-Projects {
+  padding: 8rem;
+}
+
+/* About us  */
+
+#projectBackground3 {
+  background-image: url("../img/backgroundAboutUs.jpg");
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* PROJECTS PAGE (MADE BY JAKUB) */
+/*======================================*/
+
+/* Navbar and background picture section */
+
+#projectBackground {
+  background-image: url("../img/projectsBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#projectsWelcoming {
+  width: auto;
+  height: 35vh;
+  color: rgba(10, 6, 26, 1);
+  font-weight: bold;
+}
+
+/* Projects photos and description of the projects */
+
+.projectTitle {
+  font-weight: bold;
+  margin-top: 50px;
+  font-size: xx-large;
+  text-align: center;
+}
+
+
+.projectDescription {
+  text-align: center;
+  margin-top: 20px;
+  font-size: larger;
+}
+
+.projectDescription img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 30px;
+
+}
+
+.projectDescription ul {
+  /* removing bullet points */
+  list-style-type: none;
+}
+
+/* Classes to make website better and adjust it*/
+
+.verticalCenter {
+  /* Vertical Center using flexbox */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.bold {
+  /* To make text bold and larger */
+
+  font-weight: bold;
+  font-size: larger;
+}
+
+.enter {
+  margin-top: 20px;
+}
+
+.blue {
+  /* To make the background match colors with our logo and make the text visible by setting the color to white*/
+
+  background-color: rgba(10, 6, 26, 1);
+  color: white;
+}
+
+.sectionContainerWhite {
+  padding-bottom: 20px;
+}
+
+.sectionContainerBlue {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/* Three different Chart Pies created with conic-gradient*/
+
+.chartPie1 {
+  /* First Chart Pie */
+
+  height: 200px;
+  width: 240px;
+  border-radius: 100%;
+  background: conic-gradient(rgb(118, 196, 118) 0% 77%, white 77% 100%);
+  border: solid black 2px;
+}
+
+.chartPie2 {
+  /* Second Chart Pie */
+
+  height: 200px;
+  width: 230px;
+  border-radius: 100%;
+  background: conic-gradient(rgb(226, 208, 44) 0% 56%, white 56% 100%);
+  border: solid black 2px;
+}
+
+.chartPie3 {
+  /*  Chart Pie */
+
+  height: 200px;
+  width: 230px;
+  border-radius: 100%;
+  background: conic-gradient(rgb(233, 115, 115) 0% 22%, white 22% 100%);
+  border: solid black 2px;
+}
+/*===========================================*/
+
+/* Portfolio page by Maciej*/
+#projectBackground2 {
+  background-image: url("../img/pexels-binyamin-mellish-186077.jpg");
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title {
+  color: black;
+}
+/*================media quary for spicy responsivness================*/
+@media (max-width: 768px) {
+  #projectsWelcoming2 {
+    color: white !important;
+  }
+
+  .rating {
+    float: right;
+  }
+
+  .overlay ul {
+    font-size: 6px !important;
+  }
+}
+
+#projectsWelcoming2 {
+  width: auto;
+  height: 35vh;
+  color: rgba(10, 6, 26, 1);
+  font-weight: bold;
+}
+
+.image-container2 {
+  position: relative;
+  height: auto;
+  width: auto;
+}
+
+.portfolio-container {
+  text-align: center;
+
+}
+
+/*================hover effect for 1st picture================*/
+.bg-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-image img {
+  transition: transform 0.5s;
+}
+
+.bg-image:hover img {
+  transform: scale(1.1);
+}
+
+/*================overlay on hover================*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay h1 {
+  font-size: 24px;
+}
+
+.overlay ul {
+  font-size: 16px;
+}
+
+.bg-image:hover .overlay {
+  opacity: 1;
+}
+
+/*================star rating of the reviews================*/
+.rating {
+  color: gold;
+}
+
+.rating2 {
+  color: gold;
+}
+
+.review-container {
+  color: white;
+  background-color: rgba(10, 6, 26, 1);
+  text-align: center;
+}
+
+.bullets {
+  list-style: none;
+}
+
+/*=================================================================================*/
+
+
+/* CONTACT US PAGE */
+
+#projectBackground4 {
+  background-image: url("../img/via.jpg");
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.email {
+  background-color: rgba(10, 6, 26, 1);
+  color: white;
+  font-weight: bold;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:50%;
+  position:relative;
+  height:0;
+}
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+.map {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.team {
+  padding-top: 25px;
+}
