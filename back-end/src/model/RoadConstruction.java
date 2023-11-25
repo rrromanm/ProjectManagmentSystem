@@ -10,7 +10,7 @@ public class RoadConstruction extends Project
   private String geographicalChallenges;
   public RoadConstruction(int budget,
       MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges){
-    super(budget,startTime,endTime,status,projectID,timeline, customer, resources);
+    super(budget,startTime,status,projectID,timeline, customer, resources);
     this.width = width;
     this.length = lenght;
     this.bridges = bridges;
@@ -19,7 +19,7 @@ public class RoadConstruction extends Project
     this.geographicalChallenges = geographicalChallenges;
   }
   public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int length, int width){
-    super(budget,startTime,endTime,status,projectID,timeline, customer, resources);
+    super(budget,startTime,status,projectID,timeline, customer, resources);
     super.setTimeline(18);
     bridges = 0;
     tunnels = 0;

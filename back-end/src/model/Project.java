@@ -27,7 +27,7 @@ public abstract class Project
    * @param customer The customer of the project.
    * @param resources The resources of the project.
    */
-  public Project(int budget, MyDate startTime, MyDate endTime,String status, int projectID, int timeline, Customer customer, Resources resources){
+  public Project(int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources){
     this.budget = budget;
     this.status = status;
     this.projectID = projectID;
@@ -35,7 +35,7 @@ public abstract class Project
     this.timeline = timeline;
     this.customer = customer;
     this.resources = resources;
-    this.endTime = endTime.convertMonthsToDate(timeline);
+    endTime = MyDate.convertMonthsToDate(timeline);
   }
   public void setBudget(int budget)
   {
