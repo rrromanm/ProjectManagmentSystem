@@ -40,108 +40,110 @@ public abstract class Project
     endTime = endTime.convertMonthsToDate(timeline);
     
   }
-  public void setBudget(int budget)
-  {
-    this.budget = budget;
+  /**
+   * @param budget set the budget that will be assigned to the project
+   */
+  public void setBudget(int budget) {
+      this.budget = budget;
   }
   /**
-   * @param customer the customer to set
+   * @param customer set the customer that reported creation of the project 
    */
   public void setCustomer(Customer customer) {
       this.customer = customer;
   }
   /**
-   * @param endTime the endTime to set
+   * @param endTime set the date when the project will be finished
    */
   public void setEndTime(MyDate endTime) {
       this.endTime = endTime;
   }
   /**
-   * @param resources the resources to set
+   * @param resources set the resources that will be assigned to the project
    */
   public void setResources(Resources resources) {
       this.resources = resources;
   }
   /**
-   * @param startTime the startTime to set
+   * @param startTime set the start date of the project
    */
   public void setStartTime(MyDate startTime) {
       this.startTime = startTime;
   }
   /**
-   * @return the customer
+   * @return the customer that reported creation of the project
    */
   public Customer getCustomer() {
       return customer;
   }
   /**
-   * @return the endTime
+   * @return the end date of the project
    */
   public MyDate getEndTime() {
       return endTime;
   }
   /**
-   * @return the resources
+   * @return the resources used in a project
    */
   public Resources getResources() {
       return resources;
   }
   /**
-   * @return the startTime
+   * @return the start date of the project
    */
   public MyDate getStartTime() {
       return startTime;
   }
   /**
-   * @return the budget
+   * @return the budget assigned to the project
    */
   public int getBudget() {
       return budget;
   }
   /**
-   * @return the projectID
+   * @return the unique projectID
    */
   public int getProjectID() {
       return projectID;
   }
   /**
-   * @return the status
+   * @return the project status
    */
   public String getStatus() {
       return status;
   }
   /**
-   * @return the timeline
+   * @return the timeline that was assigned to the project
    */
   public int getTimeline() {
       return timeline;
   }
   /**
-   * @param projectID the projectID to set
+   * @param projectID set the unique projectID
    */
   public void setProjectID(int projectID) {
       this.projectID = projectID;
   }
   /**
-   * @param status the status to set
+   * @param status set the project status
    */
   public void setStatus(String status) {
       this.status = status;
   }
   /**
-   * @param timeline the timeline to set
+   * @param timeline set the timeline that will be assigned to the project
    */
   public void setTimeline(int timeline) {
       this.timeline = timeline;
   }
   /**
-   * @return the type
+   * @return the project type
    */
   public String getType() {
       return type;
   }
   /**
-   * @param type the type to set
+   * @param type set the project type
    */
   public void setType(String type) {
       this.type = type;
