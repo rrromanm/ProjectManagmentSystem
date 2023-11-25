@@ -8,13 +8,14 @@ public class ResidentialProjects extends Project
   private int roomsWithPlumbing;
 
   public ResidentialProjects(int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing,int budget,
-      MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources)
+      MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources)
   {
     super(budget,startTime,status,projectID,timeline, customer, resources);
     this.size = size;
     this.numberOfKitchens = numberOfKitchens;
     this.numberOfBathrooms = numberOfBathrooms;
     this.roomsWithPlumbing = roomsWithPlumbing;
+    super.setEndTime(startTime.convertMonthsToDate(timeline));
   }
 
   public void setSize(int size)

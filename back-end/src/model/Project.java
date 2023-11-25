@@ -3,6 +3,7 @@ package model;
 
 /**
  * This class contains all variables that will be shared by project types.
+ *
  * @author Maciej Matuszewski
  */
 public abstract class Project
@@ -35,7 +36,6 @@ public abstract class Project
     this.timeline = timeline;
     this.customer = customer;
     this.resources = resources;
-    endTime = endTime.convertMonthsToDate(timeline);
   }
   /**
    * @param budget set the budget that will be assigned to the project
