@@ -35,7 +35,7 @@ public abstract class Project
     this.timeline = timeline;
     this.customer = customer;
     this.resources = resources;
-    endTime = MyDate.convertMonthsToDate(timeline);
+    endTime = endTime.convertMonthsToDate(timeline);
   }
   /**
    * @param budget set the budget that will be assigned to the project

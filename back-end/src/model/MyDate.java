@@ -9,9 +9,9 @@ import java.time.LocalDate;
  */
 public class MyDate
 {
-  static int day;
-  static int month;
-  static int year;
+   int day;
+  int month;
+  int year;
 
   /**
    * Default constructor that initializes the date to the current system date.
@@ -152,7 +152,7 @@ public class MyDate
    * @param months The number of months to add to the current date.
    * @return A new MyDate object representing the date after adding the specified months.
    */
-  public static MyDate convertMonthsToDate(int months){
+  public MyDate convertMonthsToDate(int months){
     int yearsToAdd = months / 12;
     int remainingMonths = months % 12;
 
