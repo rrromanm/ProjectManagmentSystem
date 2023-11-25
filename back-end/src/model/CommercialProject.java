@@ -25,14 +25,16 @@ public class CommercialProject extends Project {
      * @param timeline the estimated duration of the project in months
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
+     * @param type the project type
      */
     public CommercialProject(int size, short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
+        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, String type) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.floors = floors;
         this.usage = usage;
         super.setEndTime(startTime.convertMonthsToDate(timeline));
+        super.setType("Commercial");
     }
 
     /**
@@ -47,14 +49,18 @@ public class CommercialProject extends Project {
      * @param timeline the default estimated duration of the project in months (18 months)
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
+     * @param size the size of the project in square meters
+     * @param type the project type
      */
     public CommercialProject(short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
+        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, String type) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
+        this.size = size;
         super.setTimeline(18);
         this.floors = 1;
         this.usage = "restaurant";
         super.setEndTime(startTime.convertMonthsToDate(timeline));
+        super.setType("Commercial");
     }
 
     /**
