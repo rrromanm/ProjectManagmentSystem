@@ -1,5 +1,10 @@
 package model;
 
+
+/**
+ * This class contains all variables shared by project types.
+ * @author Maciej Matuszewski
+ */
 public abstract class Project
 {
   private int budget;
@@ -12,6 +17,16 @@ public abstract class Project
   private int timeline;
   private String type;
 
+  /**
+   * This is the constructor method for the Project class with variables that will be inherited by project type classes.
+   * @param budget The budget for the project.
+   * @param startTime The start time of the project.
+   * @param status The status of the project.
+   * @param projectID The ID of the project.
+   * @param timeline The timeline of the project.
+   * @param customer The customer of the project.
+   * @param resources The resources of the project.
+   */
   public Project(int budget, MyDate startTime, MyDate endTime,String status, int projectID, int timeline, Customer customer, Resources resources){
     this.budget = budget;
     this.status = status;
@@ -21,7 +36,6 @@ public abstract class Project
     this.customer = customer;
     this.resources = resources;
     this.endTime = endTime.convertMonthsToDate(timeline);
-    
   }
   public void setBudget(int budget)
   {
@@ -130,6 +144,12 @@ public abstract class Project
       this.type = type;
   }
 
+
+  /**
+   * This method checks if the current object is equal to the given object.
+   * @param obj The object to compare with.
+   * @return true if the objects are equal, false otherwise.
+   */
   public boolean equals(Object obj){
     if(obj == null || getClass() != obj.getClass()){
       return false;
@@ -140,6 +160,10 @@ public abstract class Project
     type.equals(other.type);
   }
 
+  /**
+   * This method returns a string representation of the Project object.
+   * @return A string representation of the Project object.
+   */
   public String toString(){
     return "project type: "+type+"\nbudget: "+budget+"\nstatus: "+status+"\n ID: "+projectID+"\n timeline: "+timeline+ "\n project start date: "+startTime+
     "\n project deadline: "+endTime+"\n resources: "+resources+"\n customer: "+customer;
