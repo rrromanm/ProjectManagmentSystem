@@ -5,7 +5,7 @@ package model;
  * associated with a project.
  * It provides methods to manipulate and retrieve information about these resources.
  *
- * @author Romans Mihalonoks / Samuel Kačenga
+ * @author Romans Mihalonoks / Samuel Kačenga / Maciej Matuszewski
  */
 public class Resources
 {
@@ -14,11 +14,6 @@ public class Resources
    * The total man-hours used for the project.
    */
   private int manHoursUsed;
-
-  /**
-   * The quantity of materials used for the project.
-   */
-  private int materials;
 
   /**
    * The total expenses related to materials for the project.
