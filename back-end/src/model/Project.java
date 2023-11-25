@@ -17,7 +17,6 @@ public abstract class Project
   private int timeline;
   private String type;
 
-
   /**
    * This is the constructor method for the Project class with variables that will be inherited by project type classes.
    * @param budget The budget for the project.
@@ -28,17 +27,15 @@ public abstract class Project
    * @param customer The customer of the project.
    * @param resources The resources of the project.
    */
-  public Project(int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources){
+  public Project(int budget, MyDate startTime, MyDate endTime,String status, int projectID, int timeline, Customer customer, Resources resources){
     this.budget = budget;
     this.status = status;
     this.projectID = projectID;
-    this.timeline = timeline;
     this.startTime = startTime;
     this.timeline = timeline;
     this.customer = customer;
     this.resources = resources;
-    endTime = endTime.convertMonthsToDate(timeline);
-    
+    this.endTime = endTime.convertMonthsToDate(timeline);
   }
   /**
    * @param budget set the budget that will be assigned to the project
