@@ -156,15 +156,15 @@ public class MyDate
     int yearsToAdd = months / 12;
     int remainingMonths = months % 12;
 
-    year += yearsToAdd;
-    month += remainingMonths;
+    int newYear = year + yearsToAdd;
+    int newMonth = month + remainingMonths;
 
-    if (month > 12) {
-      year += 1;
-      month -= 12;
+    if (newMonth > 12) {
+      newYear += 1;
+      newMonth -= 12;
     }
 
-    return new MyDate(day,month,year);
+    return new MyDate(day, newMonth, newYear);
   }
 
   /**
