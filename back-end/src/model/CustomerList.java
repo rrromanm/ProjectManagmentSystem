@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Represents a list of customers.
  * This class manages a list of Customer objects, providing methods for adding, removing, and retrieving customers.
- * @author Samuel Kačenga
+ * @author Samuel Kacenga
  */
 public class CustomerList
 {

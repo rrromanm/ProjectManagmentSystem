@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * It provides methods to add and remove projects, as well as retrieve projects based on status or type.
  * The class also has a method to generate a string representation of all projects in the list.
  *
- * @author Samuel Kačenga / Romans Mihalonoks
+ * @author Samuel Kacenga / Romans Mihalonoks
  */
 public class ProjectList
 {

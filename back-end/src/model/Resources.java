@@ -5,7 +5,7 @@ package model;
  * associated with a project.
  * It provides methods to manipulate and retrieve information about these resources.
  *
- * @author Romans Mihalonoks / Samuel Kačenga / Maciej Matuszewski
+ * @author Romans Mihalonoks / Samuel Kacenga / Maciej Matuszewski
  */
 public class Resources
 {

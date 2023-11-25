@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * Represents a date with day, month, and year components.
  * This class provides methods for working with date information.
- * @author Samuel Kačenga
+ * @author Samuel Kacenga
  */
 public class MyDate
 {

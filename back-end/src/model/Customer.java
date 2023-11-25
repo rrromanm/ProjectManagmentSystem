@@ -3,7 +3,7 @@ package model;
 /**
  * Represents information about a customer.
  * This class includes details such as first name, surname, birthday, etc.
- * @author Samuel Kačenga
+ * @author Samuel Kacenga
  */
 
 public class Customer
