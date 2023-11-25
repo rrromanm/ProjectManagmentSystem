@@ -1,5 +1,4 @@
 package model;
-import java.util.Date;
 
 /**
  * Represents information about a customer.
