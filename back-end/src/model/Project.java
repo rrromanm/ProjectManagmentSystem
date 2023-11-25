@@ -2,7 +2,7 @@ package model;
 
 
 /**
- * This class contains all variables shared by project types.
+ * This class contains all variables that will be shared by project types.
  * @author Maciej Matuszewski
  */
 public abstract class Project
