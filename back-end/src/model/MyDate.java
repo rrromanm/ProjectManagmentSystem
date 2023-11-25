@@ -147,6 +147,27 @@ public class MyDate
   }
 
   /**
+   * Adds a specified number of months to the current date and returns a new MyDate object.
+   *
+   * @param months The number of months to add to the current date.
+   * @return A new MyDate object representing the date after adding the specified months.
+   */
+  public MyDate convertMonthsToDate(int months){
+    int yearsToAdd = months / 12;
+    int remainingMonths = months % 12;
+
+    year += yearsToAdd;
+    month += remainingMonths;
+
+    if (month > 12) {
+      year += 1;
+      month -= 12;
+    }
+
+    return new MyDate(day,month,year);
+  }
+
+  /**
    * Returns a string representation of the date.
    *
    * @return A string containing the day, month, and year of the date.
