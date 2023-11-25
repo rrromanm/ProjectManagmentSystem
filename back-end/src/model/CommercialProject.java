@@ -11,6 +11,7 @@ public class CommercialProject extends Project{
         this.size = size;
         this.floors = floors;
         this.usage = usage;
+        super.setEndTime(startTime.convertMonthsToDate(timeline));
     }
 
     public CommercialProject(short floors, String usage, int budget,
@@ -19,6 +20,7 @@ public class CommercialProject extends Project{
         super.setTimeline(18);
         floors = 1;
         usage = "restaurant";
+        super.setEndTime(startTime.convertMonthsToDate(timeline));
     }
     
 

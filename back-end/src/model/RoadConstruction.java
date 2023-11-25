@@ -17,6 +17,7 @@ public class RoadConstruction extends Project
     this.tunnels = tunnels;
     this.environmentalChallenges = environmentalChallenges;
     this.geographicalChallenges = geographicalChallenges;
+    super.setEndTime(startTime.convertMonthsToDate(timeline));
   }
   public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int length, int width){
     super(budget,startTime,status,projectID,timeline, customer, resources);
@@ -25,6 +26,7 @@ public class RoadConstruction extends Project
     tunnels = 0;
     environmentalChallenges = "none";
     geographicalChallenges = "none";
+    super.setEndTime(startTime.convertMonthsToDate(timeline));
   }
 
   public int getWidth()

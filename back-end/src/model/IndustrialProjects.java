@@ -10,6 +10,7 @@ public class IndustrialProjects extends Project
     super(budget,startTime,status,projectID,timeline, customer, resources);
     this.size=size;
     this.type=type;
+    super.setEndTime(startTime.convertMonthsToDate(timeline));
   }
 
   public void setSize(int size)
