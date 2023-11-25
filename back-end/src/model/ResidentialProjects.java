@@ -10,7 +10,7 @@ public class ResidentialProjects extends Project
   public ResidentialProjects(int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing,int budget,
       MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources)
   {
-    super(budget,startTime,endTime,status,projectID,timeline, customer, resources);
+    super(budget,startTime,status,projectID,timeline, customer, resources);
     this.size = size;
     this.numberOfKitchens = numberOfKitchens;
     this.numberOfBathrooms = numberOfBathrooms;
