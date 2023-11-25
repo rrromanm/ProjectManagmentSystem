@@ -5,7 +5,9 @@ package model;
  * A commercial project has a size, a number of floors, and a usage type.
  * @author Maciej Matuszewski
  */
-public class CommercialProject extends Project{
+public class CommercialProject extends Project {
+
+    // Fields for size, floors, and usage type
     private int size;
     private short floors;
     private String usage;
@@ -25,8 +27,8 @@ public class CommercialProject extends Project{
      * @param resources the resources allocated to the project
      */
     public CommercialProject(int size, short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources){
-        super(budget,startTime,status,projectID,timeline, customer, resources);
+        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
+        super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.floors = floors;
         this.usage = usage;
@@ -47,30 +49,32 @@ public class CommercialProject extends Project{
      * @param resources the resources allocated to the project
      */
     public CommercialProject(short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources){
-        super(budget,startTime,status,projectID,timeline, customer, resources);
+        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
+        super(budget, startTime, status, projectID, timeline, customer, resources);
         super.setTimeline(18);
-        floors = 1;
-        usage = "restaurant";
+        this.floors = 1;
+        this.usage = "restaurant";
         super.setEndTime(startTime.convertMonthsToDate(timeline));
     }
-    
 
     /**
-     * @return the size of the project in square meters
+     * Gets the size of the project in square meters.
+     * @return the size of the project
      */
     public int getSize() {
         return size;
     }
 
     /**
-     * @param size the size to set for the project in square meters
+     * Sets the size of the project in square meters.
+     * @param size the size to set for the project
      */
     public void setSize(int size) {
         this.size = size;
     }
 
     /**
+     * Gets the number of floors in the project.
      * @return the number of floors in the project
      */
     public short getFloors() {
@@ -78,6 +82,7 @@ public class CommercialProject extends Project{
     }
 
     /**
+     * Sets the number of floors for the project.
      * @param floors the number of floors to set for the project
      */
     public void setFloors(short floors) {
@@ -85,14 +90,16 @@ public class CommercialProject extends Project{
     }
 
     /**
-     * @return the usage type of the project, such as office, retail, hotel, etc.
+     * Gets the usage type of the project, such as office, retail, hotel, etc.
+     * @return the usage type of the project
      */
     public String getUsage() {
         return usage;
     }
 
     /**
-     * @param usage the usage type to set for the project, such as office, retail, hotel, etc.
+     * Sets the usage type for the project, such as office, retail, hotel, etc.
+     * @param usage the usage type to set for the project
      */
     public void setUsage(String usage) {
         this.usage = usage;
