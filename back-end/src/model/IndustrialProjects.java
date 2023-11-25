@@ -4,9 +4,10 @@ public class IndustrialProjects extends Project
 {
   private int size;
   private String type;
-  public IndustrialProjects(int size, String type, MyDate deadline, int budget, String status, int projectId, int timeline)
+  public IndustrialProjects(int size, String type, int budget, MyDate startTime,
+      MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources)
   {
-    super(budget,deadline,status,projectId,timeline);
+    super(budget,startTime,endTime,status,projectID,timeline, customer, resources);
     this.size=size;
     this.type=type;
   }

@@ -3,22 +3,23 @@ package model;
 public class RoadConstruction extends Project
 {
   private int width;
-  private int lenght;
+  private int length;
   private int bridges;
   private int tunnels;
   private String environmentalChallenges;
   private String geographicalChallenges;
-  public RoadConstruction(int budget, MyDate deadline, String status, int projectID, int timeline, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges){
-    super(budget, deadline, status, projectID, timeline);
+  public RoadConstruction(int budget,
+      MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges){
+    super(budget,startTime,endTime,status,projectID,timeline, customer, resources);
     this.width = width;
-    this.lenght = lenght;
+    this.length = lenght;
     this.bridges = bridges;
     this.tunnels = tunnels;
     this.environmentalChallenges = environmentalChallenges;
     this.geographicalChallenges = geographicalChallenges;
   }
-  public RoadConstruction(int budget, int lenght, int width, MyDate deadline, String status, int projectID, int timeline){
-    super(budget, deadline, status, projectID, timeline);
+  public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int length, int width){
+    super(budget,startTime,endTime,status,projectID,timeline, customer, resources);
     super.setTimeline(18);
     bridges = 0;
     tunnels = 0;
@@ -36,14 +37,14 @@ public class RoadConstruction extends Project
     this.width = width;
   }
 
-  public int getLenght()
+  public int getLength()
   {
-    return lenght;
+    return length;
   }
 
-  public void setLenght(int lenght)
+  public void setLength(int length)
   {
-    this.lenght = lenght;
+    this.length = length;
   }
 
   public int getBridges()
@@ -90,14 +91,14 @@ public class RoadConstruction extends Project
       return false;
     }
     RoadConstruction other = (RoadConstruction) obj;
-    return super.equals(other) && width == other.width && lenght == other.lenght
+    return super.equals(other) && width == other.width && length == other.length
         && bridges == other.bridges && tunnels == other.tunnels
         && environmentalChallenges.equals(other.environmentalChallenges)
         && geographicalChallenges.equals(other.geographicalChallenges);
   }
 
   public String toString(){
-    return super.toString() + " " + width + " " + lenght + " " + bridges + " " + tunnels
+    return super.toString() + " " + width + " " + length + " " + bridges + " " + tunnels
         + " " + environmentalChallenges + " " + geographicalChallenges;
   }
 }
