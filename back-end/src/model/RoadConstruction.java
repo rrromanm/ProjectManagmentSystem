@@ -9,7 +9,7 @@ public class RoadConstruction extends Project
   private String environmentalChallenges;
   private String geographicalChallenges;
   public RoadConstruction(int budget,
-      MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges){
+      MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int width, int lenght, int bridges, int tunnels, String environmentalChallenges, String geographicalChallenges, String type){
     super(budget,startTime,status,projectID,timeline, customer, resources);
     this.width = width;
     this.length = lenght;
@@ -18,8 +18,9 @@ public class RoadConstruction extends Project
     this.environmentalChallenges = environmentalChallenges;
     this.geographicalChallenges = geographicalChallenges;
     super.setEndTime(startTime.convertMonthsToDate(timeline));
+    super.setType("RoadConstruction");
   }
-  public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int length, int width){
+  public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int length, int width, String type){
     super(budget,startTime,status,projectID,timeline, customer, resources);
     super.setTimeline(18);
     bridges = 0;
@@ -27,6 +28,7 @@ public class RoadConstruction extends Project
     environmentalChallenges = "none";
     geographicalChallenges = "none";
     super.setEndTime(startTime.convertMonthsToDate(timeline));
+    super.setType("RoadConstruction");
   }
 
   public int getWidth()
