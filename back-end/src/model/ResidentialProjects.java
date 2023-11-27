@@ -8,12 +8,13 @@ package model;
  */
 public class ResidentialProjects extends Project {
 
-    // Fields for size, number of kitchens, number of bathrooms, rooms with plumbing, and state
+    // Fields for size, number of kitchens, number of bathrooms, rooms with plumbing, state, and new build status
     private int size;
     private int numberOfKitchens;
     private int numberOfBathrooms;
     private int roomsWithPlumbing;
     private String state;
+    private boolean newBuild;
 
     /**
      * A constructor that creates a residential project with the given parameters.
@@ -29,11 +30,11 @@ public class ResidentialProjects extends Project {
      * @param timeline the estimated duration of the residential project in months
      * @param customer the customer who ordered the residential project
      * @param resources the resources allocated to the residential project
-     * @param type the type of the project 
      */
     public ResidentialProjects(int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, int budget, String state,
       MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
+        this.newBuild = true;
         this.size = size;
         this.numberOfKitchens = numberOfKitchens;
         this.numberOfBathrooms = numberOfBathrooms;
@@ -45,17 +46,18 @@ public class ResidentialProjects extends Project {
 
     /**
      * An alternative constructor that creates a residential project with default values for some parameters.
-     * @param size the default of the residential project in square meters
+     * @param size the default size of the residential project in square meters
      * @param state the state of the residential project, such as "under construction"
-     * @param budget the budget of the residential project
+     * @param budget the budget of the residential project in Danish kroner
      * @param customer the customer who ordered the residential project
      * @param startDate the start date of the residential project
      * @param projectID the unique identifier of the residential project
      * @param resources the resources allocated to the residential project
      * @param type the type of the project
      */
-    public ResidentialProjects(int size, String state, int budget, Customer customer, MyDate startDate, int projectID, int timeline,Resources resources) {
+    public ResidentialProjects(int size, String state, int budget, Customer customer, MyDate startDate, int projectID, int timeline, Resources resources) {
         super(budget, startDate, "under construction", projectID, timeline, customer, resources);
+        this.newBuild = true;
         this.size = size;
         this.state = state;
         super.setTimeline(9);
@@ -64,6 +66,32 @@ public class ResidentialProjects extends Project {
         this.roomsWithPlumbing = 1;
         super.setEndTime(startDate.convertMonthsToDate(timeline));
         super.setType("Residential");
+    }
+    
+    /**
+     * Changes the new build status to renovated.
+     */
+    public void changeNewBuildToRenovated(){
+      newBuild = false;
+    }
+    
+    /**
+     * Changes the renovated status to new build.
+     */
+    public void changeRenovatedToNewBuild(){
+      newBuild = true;
+    }
+    
+    /**
+     * Returns the purpose of the building, either "New build" or "Renovation".
+     * @return the purpose of the building
+     */
+    public String builidngPurpose(){
+      if (newBuild) {
+        return "New build";
+      } else {
+        return "Renovation";
+      }
     }
 
     /**
@@ -162,9 +190,9 @@ public class ResidentialProjects extends Project {
 
     /**
      * A method that returns a string representation of this residential project.
-     * @return a string that contains the information of this residential project, such as budget, start date, end date, status, project ID, timeline, customer, resources, size, number of kitchens, number of bathrooms, rooms with plumbing, and state
+     * @return a string that contains the information of this residential project, such as budget, start date, end date, status, project ID, timeline, customer, resources, size, number of kitchens, number of bathrooms, rooms with plumbing, state, and purpose
      */
     public String toString() {
-        return super.toString() + " Size: " + size + " Kitchens: " + numberOfKitchens + " Bathrooms: " + numberOfBathrooms + " Rooms with Plumbing: " + roomsWithPlumbing + " State: " + state;
+        return super.toString() + " Size: " + size + " Kitchens: " + numberOfKitchens + " Bathrooms: " + numberOfBathrooms + " Rooms with Plumbing: " + roomsWithPlumbing + " State: " + state + " Purpose: " + builidngPurpose();
     }
 }
