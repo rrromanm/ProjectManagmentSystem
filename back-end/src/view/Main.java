@@ -10,7 +10,7 @@ public class Main extends Application
 {
   public void start(Stage primaryStage) throws Exception
   {
-    Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("ProjectView.fxml"));
     primaryStage.setTitle("Bobs Building System");
     primaryStage.setScene(new Scene(root, 800, 500));
     primaryStage.show();

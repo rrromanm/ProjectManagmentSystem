@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -8,8 +10,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -18,23 +19,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectManagementSystem">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProjectViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <CheckMenuItem fx:id="editAreaMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Edit text area" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleActions" text="About" />
             </items>
           </Menu>
         </menus>
@@ -43,42 +44,35 @@
    <center>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Untitled Tab 1">
+          <Tab text="Search">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <VBox layoutY="1.0" prefHeight="446.0" prefWidth="409.0">
-                           <children>
-                              <TableView prefHeight="450.0" prefWidth="409.0">
-                                <columns>
-                                  <TableColumn prefWidth="117.0" text="C1" />
-                                  <TableColumn minWidth="0.0" prefWidth="126.0" text="C2" />
-                                </columns>
-                              </TableView>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="409.0" layoutY="1.0" prefHeight="447.0" prefWidth="393.0">
+                        <VBox layoutX="4.0" prefHeight="447.0" prefWidth="395.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" wrappingWidth="391.193359375">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
                               </Text>
                               <Label prefHeight="15.0" prefWidth="69.0" text="Type" />
-                              <FlowPane hgap="5.0" prefHeight="0.0" prefWidth="392.0" vgap="5.0">
+                              <FlowPane hgap="10.0" prefHeight="17.0" prefWidth="360.0" vgap="5.0">
                                  <children>
-                                    <RadioButton mnemonicParsing="false" text="Industrial">
+                                    <RadioButton fx:id="typeButton1" mnemonicParsing="false" text="Industrial">
                                        <toggleGroup>
                                           <ToggleGroup fx:id="type" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton mnemonicParsing="false" text="Residential" toggleGroup="$type" />
-                                    <RadioButton mnemonicParsing="false" text="Road" toggleGroup="$type" />
-                                    <RadioButton mnemonicParsing="false" text="Commercial" toggleGroup="$type" />
+                                    <RadioButton fx:id="typeButton2" mnemonicParsing="false" text="Residential" toggleGroup="$type" />
+                                    <RadioButton fx:id="typeButton3" mnemonicParsing="false" text="Road" toggleGroup="$type" />
+                                    <RadioButton fx:id="typeButton4" mnemonicParsing="false" text="Commercial" toggleGroup="$type" />
                                  </children>
                               </FlowPane>
                               <Label text="Status" />
-                              <FlowPane prefHeight="9.0" prefWidth="392.0">
+                              <FlowPane hgap="17.0" prefHeight="21.0" prefWidth="352.0">
                                  <children>
                                     <RadioButton mnemonicParsing="false" text="Finished">
                                        <toggleGroup>
@@ -86,44 +80,57 @@
                                        </toggleGroup>
                                     </RadioButton>
                                     <RadioButton mnemonicParsing="false" text="In progress" toggleGroup="$status" />
-                                    <RadioButton mnemonicParsing="false" text="Planned" toggleGroup="$status" />
-                                    <RadioButton mnemonicParsing="false" prefHeight="21.0" prefWidth="38.0" text="All" toggleGroup="$status" />
+                                    <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="64.0" text="Planned" toggleGroup="$status">
+                                       <padding>
+                                          <Insets left="-10.0" />
+                                       </padding></RadioButton>
+                                    <RadioButton mnemonicParsing="false" prefHeight="21.0" prefWidth="62.0" text="All" toggleGroup="$status" />
                                  </children>
                               </FlowPane>
                               <Label text="Budget" />
-                              <FlowPane prefHeight="5.0" prefWidth="392.0">
+                              <FlowPane hgap="10.0" prefHeight="5.0" prefWidth="392.0">
                                  <children>
-                                    <RadioButton mnemonicParsing="false" text="RadioButton">
+                                    <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="72.0" text="Over">
                                        <toggleGroup>
                                           <ToggleGroup fx:id="budget" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$budget" />
+                                    <RadioButton mnemonicParsing="false" text="Under" toggleGroup="$budget" />
                                  </children>
                               </FlowPane>
                               <Label text="Timeline" />
-                              <FlowPane prefHeight="6.0" prefWidth="392.0">
+                              <FlowPane hgap="10.0" prefHeight="40.0" prefWidth="368.0">
                                  <children>
-                                    <RadioButton mnemonicParsing="false" text="RadioButton">
+                                    <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="73.0" text="RadioButton">
                                        <toggleGroup>
                                           <ToggleGroup fx:id="timeline" />
                                        </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$timeline" />
+                                    <RadioButton mnemonicParsing="false" prefWidth="87.0" text="RadioButton" toggleGroup="$timeline" />
                                  </children>
                               </FlowPane>
-                              <Button alignment="TOP_RIGHT" mnemonicParsing="false" text="Button" />
+                              <Button fx:id="searchButton" alignment="TOP_RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Search" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="380.0" layoutY="-1.0" prefHeight="446.0" prefWidth="419.0">
+                           <children>
+                              <TextArea fx:id="allProjectArea" prefHeight="446.0" prefWidth="415.0" />
                            </children>
                         </VBox>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Manage">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
+            <Tab text="Website">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </center>
