@@ -13,7 +13,7 @@
                 <Image url="@../img/logo(1).png" />
             </image>
         </ImageView>
-        <Button fx:id="startButton" layoutX="359.0" layoutY="267.0" mnemonicParsing="false" text="START">
+        <Button fx:id="startButton" layoutX="359.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleActions" text="START">
             <font>
                 <Font size="20.0" />
             </font>

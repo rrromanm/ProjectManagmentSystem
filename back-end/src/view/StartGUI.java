@@ -12,4 +12,4 @@ public class StartGUI extends Application
     ViewHandler viewHandler = new ViewHandler(window, modelManager);
     viewHandler.start();
   }
-} 
+}

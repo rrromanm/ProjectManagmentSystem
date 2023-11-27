@@ -14,6 +14,7 @@ public class ViewHandler
   private ProjectModelManager projectManager;
   private StartViewController startViewController;
   private ProjectViewController projectViewController;
+  private MenuViewController menuViewController;
 
   public ViewHandler(Stage stage, ProjectModelManager projectManager)
   {
@@ -24,6 +25,7 @@ public class ViewHandler
   public void start()
   {
     loadStartView();
+    loadMenuView();
     loadProjectView();
     openView("StartView");
   }
@@ -39,6 +41,10 @@ public class ViewHandler
       case "StartView":
         stage.setScene(startViewController.getScene());
         startViewController.reset();
+        break;
+      case "MenuView":
+        stage.setScene(menuViewController.getScene());
+        menuViewController.reset();
         break;
     }
 
@@ -61,6 +67,7 @@ public class ViewHandler
       loader.setLocation(getClass().getResource("StartView.fxml"));
       Region root = loader.load();
       startViewController = loader.getController();
+      startViewController.init(this, new Scene(root), projectManager);
     }
     catch (IOException e)
     {
@@ -77,6 +84,22 @@ public class ViewHandler
       Region root = loader.load();
       projectViewController = loader.getController();
       projectViewController.init(this, new Scene(root), projectManager);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+  }
+
+  private void loadMenuView()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("MenuView.fxml"));
+      Region root = loader.load();
+      menuViewController = loader.getController();
+      menuViewController.init(this, new Scene(root), projectManager);
     }
     catch (IOException e)
     {

@@ -4,15 +4,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import model.ProjectList;
 import model.ProjectModelManager;
 
-public class StartViewController
+public class MenuViewController
 {
   private Scene scene;
   private ProjectModelManager projectManager;
   private ViewHandler viewHandler;
 
-  @FXML private Button startButton;
+  @FXML private Button projects;
+  @FXML private Button manage;
+  @FXML private Button website;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
@@ -28,14 +31,14 @@ public class StartViewController
 
   public Scene getScene()
   {
-    return this.scene;
+    return scene;
   }
 
   public void handleActions(ActionEvent e)
   {
-    if (e.getSource() == startButton)
+    if (e.getSource() == projects)
     {
-      viewHandler.openView("MenuView");
+      viewHandler.openView("ProjectView");
     }
   }
 }
