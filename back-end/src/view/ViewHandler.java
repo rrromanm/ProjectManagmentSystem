@@ -12,6 +12,7 @@ public class ViewHandler
 {
   private Stage stage;
   private ProjectModelManager projectManager;
+  private StartViewController startViewController;
   private ProjectViewController projectViewController;
 
   public ViewHandler(Stage stage, ProjectModelManager projectManager)
@@ -23,6 +24,7 @@ public class ViewHandler
   public void start()
   {
     loadProjectView();
+    loadStartView();
   }
 
   public void openView(String id)
@@ -44,6 +46,22 @@ public class ViewHandler
 
     stage.setTitle(title);
     stage.show();
+  }
+
+  private void loadStartView()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("StartView.fxml"));
+      Region root = loader.load();
+      projectViewController = loader.getController();
+      projectViewController.init(this, new Scene(root), projectManager);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   private void loadProjectView()
