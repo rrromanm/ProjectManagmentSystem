@@ -54,10 +54,11 @@ public class ResidentialProjects extends Project {
      * @param resources the resources allocated to the residential project
      * @param type the type of the project
      */
-    public ResidentialProjects(int size, String state, int budget, Customer customer, MyDate startDate, int projectID, Resources resources) {
-        super(budget, startDate, "under construction", projectID, 9, customer, resources);
+    public ResidentialProjects(int size, String state, int budget, Customer customer, MyDate startDate, int projectID, int timeline,Resources resources) {
+        super(budget, startDate, "under construction", projectID, timeline, customer, resources);
         this.size = size;
         this.state = state;
+        super.setTimeline(9);
         this.numberOfKitchens = 1;
         this.numberOfBathrooms = 1;
         this.roomsWithPlumbing = 1;
