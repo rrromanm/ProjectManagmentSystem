@@ -23,8 +23,9 @@ public class ViewHandler
 
   public void start()
   {
-    loadProjectView();
     loadStartView();
+    loadProjectView();
+    openView("StartView");
   }
 
   public void openView(String id)
@@ -34,6 +35,10 @@ public class ViewHandler
       case "ProjectView":
         stage.setScene(projectViewController.getScene());
         projectViewController.reset();
+        break;
+      case "StartView":
+        stage.setScene(startViewController.getScene());
+        startViewController.reset();
         break;
     }
 
@@ -55,8 +60,7 @@ public class ViewHandler
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(getClass().getResource("StartView.fxml"));
       Region root = loader.load();
-      projectViewController = loader.getController();
-      projectViewController.init(this, new Scene(root), projectManager);
+      startViewController = loader.getController();
     }
     catch (IOException e)
     {
