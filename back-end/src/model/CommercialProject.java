@@ -28,7 +28,7 @@ public class CommercialProject extends Project {
      * @param type the project type
      */
     public CommercialProject(int size, short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, String type) {
+        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.floors = floors;
@@ -53,7 +53,7 @@ public class CommercialProject extends Project {
      * @param type the project type
      */
     public CommercialProject(short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, String type) {
+        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         super.setTimeline(18);
