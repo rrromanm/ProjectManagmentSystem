@@ -52,8 +52,11 @@ public class ResidentialProjects extends Project {
      * @param customer the customer who ordered the residential project
      * @param startDate the start date of the residential project
      * @param projectID the unique identifier of the residential project
+     * @param timeline the default estimated duration of the residential project in months (9 months)
      * @param resources the resources allocated to the residential project
-     * @param type the type of the project
+     * @param numberOfKitchens the default number of kitchens in the residential project (1)
+     * @param numberOfBathrooms the default number of bathrooms in the residential project (1)
+     * @param roomsWithPlumbing the default number of rooms with plumbing in the residential project (1)
      */
     public ResidentialProjects(int size, String state, int budget, Customer customer, MyDate startDate, int projectID, int timeline, Resources resources) {
         super(budget, startDate, "under construction", projectID, timeline, customer, resources);

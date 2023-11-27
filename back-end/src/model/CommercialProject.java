@@ -25,7 +25,6 @@ public class CommercialProject extends Project {
      * @param timeline the estimated duration of the project in months
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
-     * @param type the project type
      */
     public CommercialProject(int size, short floors, String usage, int budget,
         MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
@@ -50,7 +49,6 @@ public class CommercialProject extends Project {
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
      * @param size the size of the project in square meters
-     * @param type the project type
      */
     public CommercialProject(short floors, String usage, int budget,
         MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size) {
