@@ -25,7 +25,7 @@ public class IndustrialProjects extends Project {
      * @param customer the customer who ordered the industrial project
      * @param resources the resources allocated to the industrial project
      */
-    public IndustrialProjects(int size, String type, String facilityType, int budget, MyDate startTime,
+    public IndustrialProjects(int size, String facilityType, int budget, MyDate startTime,
       MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
@@ -47,7 +47,7 @@ public class IndustrialProjects extends Project {
      * @param size the size of the industrial project in square meters
      * @param facilityType the facility type of the industrial project
      */
-    public IndustrialProjects(String type, int budget, MyDate startTime, Customer customer, Resources resources, String status, int projectID, int timeline, int size, String facilityType) {
+    public IndustrialProjects(int budget, MyDate startTime, Customer customer, Resources resources, String status, int projectID, int timeline, int size, String facilityType) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         super.setEndTime(startTime.convertMonthsToDate(timeline));
         super.setType("Industrial");

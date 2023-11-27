@@ -32,7 +32,7 @@ public class ResidentialProjects extends Project {
      * @param type the type of the project 
      */
     public ResidentialProjects(int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, int budget, String state,
-      MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, String type) {
+      MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.numberOfKitchens = numberOfKitchens;
