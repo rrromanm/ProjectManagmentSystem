@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * This class manages a list of Customer objects, providing methods for adding, removing, and retrieving customers.
  * @author Samuel Kacenga
  */
-public class CustomerList
+public class CustomerList implements Serializable
 {
   private ArrayList<Customer> customers;
 

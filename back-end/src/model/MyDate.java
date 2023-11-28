@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -7,7 +8,7 @@ import java.time.LocalDate;
  * This class provides methods for working with date information.
  * @author Samuel Kacenga
  */
-public class MyDate
+public class MyDate implements Serializable
 {
    int day;
   int month;

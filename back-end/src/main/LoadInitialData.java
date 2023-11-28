@@ -1,7 +1,6 @@
 package main;
 
-import model.Project;
-import model.ProjectList;
+import model.*;
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;

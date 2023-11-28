@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 
 /**
  * This class contains all variables that will be shared by project types.
  *
  * @author Maciej Matuszewski
  */
-public abstract class Project
+public abstract class Project implements Serializable
 {
   private int budget;
   private MyDate startTime;

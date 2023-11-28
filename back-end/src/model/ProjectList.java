@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Samuel Kacenga / Romans Mihalonoks
  */
-public class ProjectList
+public class ProjectList implements Serializable
 {
 
   /**

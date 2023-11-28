@@ -1,12 +1,14 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * Represents information about a customer.
  * This class includes details such as first name, surname, birthday, etc.
  * @author Samuel Kacenga
  */
 
-public class Customer
+public class Customer implements Serializable
 {
   private String firstName;
   private String surname;

@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * The Resources class represents the resources (man-hours, materials, and expenses)
  * associated with a project.
@@ -7,7 +9,7 @@ package model;
  *
  * @author Romans Mihalonoks / Samuel Kacenga / Maciej Matuszewski
  */
-public class Resources
+public class Resources implements Serializable
 {
 
   /**
