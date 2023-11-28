@@ -18,10 +18,19 @@ public class ProjectViewController
   @FXML private Button searchButton;
   @FXML private CheckMenuItem editAreaMenuItem;
   @FXML private MenuItem aboutMenuItem;
+  @FXML private Button backButton;
   @FXML private RadioButton typeButton1;
   @FXML private RadioButton typeButton2;
   @FXML private RadioButton typeButton3;
   @FXML private RadioButton typeButton4;
+  @FXML private RadioButton statusButton1;
+  @FXML private RadioButton statusButton2;
+  @FXML private RadioButton statusButton3;
+  @FXML private RadioButton statusButton4;
+  @FXML private RadioButton budgetButton1;
+  @FXML private RadioButton budgetButton2;
+  @FXML private RadioButton timelineButton1;
+  @FXML private RadioButton timelineButton2;
 
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
@@ -80,6 +89,10 @@ public class ProjectViewController
       alert.setTitle("About");
       alert.setContentText("Made by SEP-1 team, enjoy!");
       alert.showAndWait();
+    }
+    else if (e.getSource() == backButton)
+    {
+      viewHandler.openView("MenuView");
     }
     else if (e.getSource() == typeButton1)
     {
