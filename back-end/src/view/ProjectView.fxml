@@ -76,7 +76,7 @@
                               <ToggleGroup fx:id="status" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="statusButton2" mnemonicParsing="false" onAction="#handleActions" text="In progress" toggleGroup="$status" />
+                        <RadioButton fx:id="statusButton2" mnemonicParsing="false" onAction="#handleActions" text="Under Construction" toggleGroup="$status" />
                         <RadioButton fx:id="statusButton3" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="68.0" text="Planned" toggleGroup="$status">
                            <padding>
                               <Insets left="-10.0" />

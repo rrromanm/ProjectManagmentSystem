@@ -192,9 +192,9 @@ public class Customer implements Serializable
    */
   public String toString()
   {
-    return "First Name: " + firstName + "Surname: " + surname +
-          "ID: " + id +
-        "Address: " + address + "Phone number: " + phoneNumber +
+    return "First Name: " + firstName  + " " + "Surname: " + surname + " " +
+          "ID: " + id + " " +
+        "Address: " + address + "Phone number: " + phoneNumber + " " +
         "Email: " + email;
   }
 }

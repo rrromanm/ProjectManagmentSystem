@@ -8,7 +8,7 @@ public class StartGUI extends Application
 {
   public void start(Stage window)
   {
-    ProjectModelManager modelManager = new ProjectModelManager("students.bin");
+    ProjectModelManager modelManager = new ProjectModelManager("projects.bin");
     ViewHandler viewHandler = new ViewHandler(window, modelManager);
     viewHandler.start();
   }

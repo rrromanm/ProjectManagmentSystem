@@ -22,60 +22,65 @@ public class LoadInitialData
         String temp = projectArray[i];
         String[] tempArr = temp.split(",");
 
-        int budget = Integer.parseInt(tempArr[0]);
+        int budget = Integer.parseInt(tempArr[0].trim());
 
-        int day = Integer.parseInt(tempArr[1]);
-        int month = Integer.parseInt(tempArr[2]);
-        int year = Integer.parseInt(tempArr[3]);
+        int day = Integer.parseInt(tempArr[1].trim());
+        int month = Integer.parseInt(tempArr[2].trim());
+        int year = Integer.parseInt(tempArr[3].trim());
         MyDate startTime = new MyDate(day,month,year);
 
         String status = tempArr[4];
-        int projectID = Integer.parseInt(tempArr[5]);
-        int timeline = Integer.parseInt(tempArr[6]);
+        int projectID = Integer.parseInt(tempArr[5].trim());
+        int timeline = Integer.parseInt(tempArr[6].trim());
 
-        String firstName = tempArr[7];
-        String surname = tempArr[8];
-        int id = Integer.parseInt(tempArr[9]);
-        int phoneNumber = Integer.parseInt(tempArr[10]);
-        String email = tempArr[11];
-        String address = tempArr[12];
+        String firstName = tempArr[7].trim();
+        String surname = tempArr[8].trim();
+        int id = Integer.parseInt(tempArr[9].trim());
+        int phoneNumber = Integer.parseInt(tempArr[10].trim());
+        String email = tempArr[11].trim();
+        String address = tempArr[12].trim();
         Customer customer = new Customer(firstName,surname,id,phoneNumber,email,address);
 
-        int expectedManHours = Integer.parseInt(tempArr[13]);
-        int materialExpenses = Integer.parseInt(tempArr[14]);
+        int expectedManHours = Integer.parseInt(tempArr[13].trim());
+        int materialExpenses = Integer.parseInt(tempArr[14].trim());
         Resources resources = new Resources(expectedManHours,materialExpenses);
 
-        if(tempArr[15].equals("Commercial"))
+        String type = tempArr[15].trim();
+
+        if(type.equalsIgnoreCase("Commercial"))
         {
-          int size = Integer.parseInt(tempArr[16]);
-          short floors = Short.parseShort(tempArr[17]);
-          String usage = tempArr[18];
+          int size = Integer.parseInt(tempArr[16].trim());
+          short floors = Short.parseShort(tempArr[17].trim());
+          String usage = tempArr[18].trim();
           projects.addProject( new CommercialProject(budget,startTime,status,projectID,timeline,customer,resources,size,floors,usage));
         }
-        else if(tempArr[15].equals("Industrial"))
+        else if(type.equalsIgnoreCase("Industrial"))
         {
-          int size = Integer.parseInt(tempArr[16]);
-          String facilityType = tempArr[17];
+          int size = Integer.parseInt(tempArr[16].trim());
+          String facilityType = tempArr[17].trim();
           projects.addProject( new IndustrialProjects(budget,startTime,status,projectID,timeline,customer,resources,size,facilityType));
         }
-        else if(tempArr[15].equals("Residential"))
+        else if(type.equalsIgnoreCase("Residential"))
         {
-          int size = Integer.parseInt(tempArr[16]);
-          int numberOfKitchens = Integer.parseInt(tempArr[17]);
-          int numberOfBathrooms = Integer.parseInt(tempArr[18]);
-          int roomsWithPlumbing = Integer.parseInt(tempArr[19]);
-          String state = tempArr[20];
+          int size = Integer.parseInt(tempArr[16].trim());
+          int numberOfKitchens = Integer.parseInt(tempArr[17].trim());
+          int numberOfBathrooms = Integer.parseInt(tempArr[18].trim());
+          int roomsWithPlumbing = Integer.parseInt(tempArr[19].trim());
+          String state = tempArr[20].trim();
           projects.addProject( new ResidentialProjects(budget,startTime,status,projectID,timeline,customer,resources,size,numberOfKitchens,numberOfBathrooms,roomsWithPlumbing,state));
         }
-        else if(tempArr[15].equals("RoadConstruction"))
+        else if(type.equalsIgnoreCase("RoadConstruction"))
         {
-          int width = Integer.parseInt(tempArr[16]);
-          int length = Integer.parseInt(tempArr[17]);
-          int bridges = Integer.parseInt(tempArr[18]);
-          int tunnels = Integer.parseInt(tempArr[19]);
-          String environmentalChallenges = tempArr[20];
-          String geographicalChallenges = tempArr[21];
+          int width = Integer.parseInt(tempArr[16].trim());
+          int length = Integer.parseInt(tempArr[17].trim());
+          int bridges = Integer.parseInt(tempArr[18].trim());
+          int tunnels = Integer.parseInt(tempArr[19].trim());
+          String environmentalChallenges = tempArr[20].trim();
+          String geographicalChallenges = tempArr[21].trim();
           projects.addProject( new RoadConstruction(budget,startTime,status,projectID,timeline,customer,resources,width,length,bridges,tunnels,environmentalChallenges,geographicalChallenges));
+        }
+        else {
+          System.out.println("Unknown project type: " + type);
         }
       }
     }
