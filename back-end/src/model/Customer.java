@@ -12,7 +12,6 @@ public class Customer implements Serializable
 {
   private String firstName;
   private String surname;
-  private MyDate birthday;
   private int id;
   private int phoneNumber;
   private String email;
@@ -23,18 +22,16 @@ public class Customer implements Serializable
    *
    * @param firstName to set customers first name
    * @param surname to set customers last name
-   * @param birthday to set customers birthday
    * @param id to set customers id
    * @param phoneNumber to set customers phone number
    * @param email to set customers email
    * @param address to set customers email
    */
 
-  public Customer(String firstName, String surname, MyDate birthday, int id, int phoneNumber, String email, String address)
+  public Customer(String firstName, String surname,int id, int phoneNumber, String email, String address)
   {
     this.firstName = firstName;
     this.surname = surname;
-    this.birthday = birthday;
     this.id = id;
     this.phoneNumber = phoneNumber;
     this.email = email;
@@ -83,26 +80,6 @@ public class Customer implements Serializable
   public String getSurname()
   {
     return surname;
-  }
-
-  /**
-   * Sets the birthday of the customer.
-   *
-   * @param birthday The new birthday of the customer.
-   */
-  public void setBirthday(MyDate birthday)
-  {
-    this.birthday = birthday;
-  }
-
-  /**
-   * Returns the birthday of the customer.
-   *
-   * @return The birthday of the customer.
-   */
-  public MyDate getBirthday()
-  {
-    return birthday;
   }
 
   /**
@@ -202,7 +179,6 @@ public class Customer implements Serializable
 
     return firstName.equals(other.firstName) &&
         surname.equals(other.surname) &&
-        birthday.equals(other.birthday) &&
         id == other.id &&
         phoneNumber == other.phoneNumber &&
         email.equals(other.email) &&
@@ -217,7 +193,7 @@ public class Customer implements Serializable
   public String toString()
   {
     return "First Name: " + firstName + "Surname: " + surname +
-        "Birthday: " + birthday + "ID: " + id +
+          "ID: " + id +
         "Address: " + address + "Phone number: " + phoneNumber +
         "Email: " + email;
   }

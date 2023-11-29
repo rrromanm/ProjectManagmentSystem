@@ -26,8 +26,7 @@ public class CommercialProject extends Project {
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
      */
-    public CommercialProject(int budget,
-        MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources, int size, short floors, String usage) {
+    public CommercialProject(int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources, int size, short floors, String usage) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.floors = floors;
