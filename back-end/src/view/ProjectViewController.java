@@ -1,21 +1,24 @@
 package view;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.MyDate;
+import model.Project;
 import model.ProjectList;
 import model.ProjectModelManager;
+import javafx.collections.ObservableList;
 
-public class ProjectViewController
-{
+public class ProjectViewController {
   private Scene scene;
   private ProjectModelManager projectManager;
   private ViewHandler viewHandler;
 
-  @FXML private MenuItem exitMenuItem;
-  @FXML private TextArea allProjectArea;
   @FXML private Button searchButton;
+  @FXML private MenuItem exitMenuItem;
   @FXML private CheckMenuItem editAreaMenuItem;
   @FXML private MenuItem aboutMenuItem;
   @FXML private Button backButton;
@@ -31,27 +34,36 @@ public class ProjectViewController
   @FXML private RadioButton budgetButton2;
   @FXML private RadioButton timelineButton1;
   @FXML private RadioButton timelineButton2;
+  @FXML private TableView<ProjectTableItem> projectTableView;
+  @FXML private TableColumn<ProjectTableItem, Integer> projectIdColumn;
+  @FXML private TableColumn<ProjectTableItem, String> projectTypeColumn;
+  @FXML private TableColumn<ProjectTableItem, String> projectStatusColumn;
+  @FXML private TableColumn<ProjectTableItem, Integer> projectBudgetColumn;
+  @FXML private TableColumn<ProjectTableItem, Integer> projectTimelineColumn;
+  @FXML private TableColumn<ProjectTableItem, MyDate> projectDeadlineColumn;
+  @FXML private TableColumn<ProjectTableItem, String> projectCustomer;
+  @FXML private TableColumn<ProjectTableItem, Integer> projectSize;
 
+  private ObservableList<ProjectTableItem> projectTableData = FXCollections.observableArrayList();
 
-  public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
-  {
+  public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager) {
     this.viewHandler = viewHandler;
     this.scene = scene;
     this.projectManager = projectManager;
-  }
 
-  public void reset()
-  {
+    initializeTableView();
     updateProjectArea();
   }
 
-  public Scene getScene()
-  {
+  public void reset() {
+    updateProjectArea();
+  }
+
+  public Scene getScene() {
     return scene;
   }
 
-  public void handleActions(ActionEvent e)
-  {
+  public void handleActions(ActionEvent e) {
     if (e.getSource() == searchButton)
     {
       updateProjectArea();
@@ -75,11 +87,11 @@ public class ProjectViewController
     {
       if (editAreaMenuItem.isSelected())
       {
-        allProjectArea.setEditable(true);
+        projectTableView.setEditable(true);
       }
       else
       {
-        allProjectArea.setEditable(false);
+        projectTableView.setEditable(false);
       }
     }
     else if (e.getSource() == aboutMenuItem)
@@ -112,9 +124,37 @@ public class ProjectViewController
     }
   }
 
-  private void updateProjectArea()
-  {
+  private void initializeTableView() {
+    projectIdColumn.setCellValueFactory(new PropertyValueFactory<>("projectId"));
+    projectTypeColumn.setCellValueFactory(new PropertyValueFactory<>("projectType"));
+    projectStatusColumn.setCellValueFactory(new PropertyValueFactory<>("projectStatus"));
+    projectBudgetColumn.setCellValueFactory(new PropertyValueFactory<>("projectBudget"));
+    projectTimelineColumn.setCellValueFactory(new PropertyValueFactory<>("projectTimeline"));
+    projectDeadlineColumn.setCellValueFactory(new PropertyValueFactory<>("projectDeadline"));
+    projectCustomer.setCellValueFactory(new PropertyValueFactory<>("projectCustomer"));
+
+    projectTableView.setItems(projectTableData);
+  }
+
+  private void updateProjectArea() {
     ProjectList projectList = projectManager.getAllProjects();
-    allProjectArea.setText(projectList.toString());
+    populateTable(projectList);
+  }
+
+  private void populateTable(ProjectList projectList) {
+    projectTableData.clear();
+
+    for (Project project : projectList.getProjects()) {
+      ProjectTableItem tableItem = new ProjectTableItem(
+          project.getProjectID(),
+          project.getType(),
+          project.getStatus(),
+          project.getBudget(),
+          project.getTimeline(),
+          project.getEndTime(),
+          project.getCustomer().getSurname()
+      );
+      projectTableData.add(tableItem);
+    }
   }
 }

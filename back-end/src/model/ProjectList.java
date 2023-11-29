@@ -44,6 +44,15 @@ public class ProjectList implements Serializable
   }
 
   /**
+   * Retrieves the list of projects.
+   *
+   * @return An {@code ArrayList} containing the projects.
+   */
+  public ArrayList<Project> getProjects() {
+    return projects;
+  }
+
+  /**
    * Retrieves all projects with a specified status.
    *
    * @param status The status to filter projects by.

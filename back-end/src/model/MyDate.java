@@ -174,10 +174,9 @@ public class MyDate implements Serializable
    * @return A string containing the day, month, and year of the date.
    */
   public String toString(){
-    return "Day: " + day + "\n"+
-        "Month: " + month + "\n"+
-        "Year: " + year;
+    return day + "/" + month + "/" + year;
   }
+
 
   /**
    * Checks if two MyDate objects are equal.
