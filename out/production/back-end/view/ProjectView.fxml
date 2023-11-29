@@ -10,6 +10,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -43,20 +44,21 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="474.0" prefWidth="336.0">
+            <VBox>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" wrappingWidth="391.193359375">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Text>
-                  <Label prefHeight="15.0" prefWidth="69.0" text="Type" />
-                  <FlowPane hgap="10.0" prefHeight="17.0" prefWidth="360.0" vgap="5.0">
+                  <AnchorPane prefHeight="46.0" prefWidth="382.0">
                      <children>
-                        <RadioButton fx:id="typeButton1" mnemonicParsing="false" onAction="#handleActions" text="Industrial">
+                        <Text layoutX="146.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" wrappingWidth="83.19346618652344">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Label prefHeight="15.0" prefWidth="69.0" text="Type" />
+                  <FlowPane hgap="10.0" prefHeight="17.0" prefWidth="360.0">
+                     <children>
+                        <RadioButton fx:id="typeButton1" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="75.0" text="Industrial">
                            <toggleGroup>
                               <ToggleGroup fx:id="type" />
                            </toggleGroup>
@@ -69,13 +71,13 @@
                   <Label text="Status" />
                   <FlowPane hgap="17.0" prefHeight="21.0" prefWidth="352.0">
                      <children>
-                        <RadioButton fx:id="statusButton1" mnemonicParsing="false" onAction="#handleActions" text="Finished">
+                        <RadioButton fx:id="statusButton1" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="69.0" text="Finished">
                            <toggleGroup>
                               <ToggleGroup fx:id="status" />
                            </toggleGroup>
                         </RadioButton>
                         <RadioButton fx:id="statusButton2" mnemonicParsing="false" onAction="#handleActions" text="In progress" toggleGroup="$status" />
-                        <RadioButton fx:id="statusButton3" mnemonicParsing="false" onAction="#handleActions" prefHeight="17.0" prefWidth="64.0" text="Planned" toggleGroup="$status">
+                        <RadioButton fx:id="statusButton3" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="68.0" text="Planned" toggleGroup="$status">
                            <padding>
                               <Insets left="-10.0" />
                            </padding>
@@ -86,7 +88,7 @@
                   <Label text="Budget" />
                   <FlowPane hgap="10.0" prefHeight="5.0" prefWidth="392.0">
                      <children>
-                        <RadioButton fx:id="budgetButton1" mnemonicParsing="false" onAction="#handleActions" prefHeight="17.0" prefWidth="72.0" text="Over">
+                        <RadioButton fx:id="budgetButton1" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="77.0" text="Over">
                            <toggleGroup>
                               <ToggleGroup fx:id="budget" />
                            </toggleGroup>
@@ -97,7 +99,7 @@
                   <Label text="Timeline" />
                   <FlowPane hgap="10.0" prefHeight="40.0" prefWidth="368.0">
                      <children>
-                        <RadioButton fx:id="timelineButton1" mnemonicParsing="false" onAction="#handleActions" prefHeight="17.0" prefWidth="73.0" text="12">
+                        <RadioButton fx:id="timelineButton1" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="77.0" text="12">
                            <toggleGroup>
                               <ToggleGroup fx:id="timeline" />
                            </toggleGroup>
@@ -105,14 +107,24 @@
                         <RadioButton fx:id="timelineButton2" mnemonicParsing="false" onAction="#handleActions" prefHeight="18.0" prefWidth="104.0" text="&gt;12" toggleGroup="$timeline" />
                      </children>
                   </FlowPane>
-                  <Button fx:id="searchButton" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#handleActions" prefHeight="25.0" prefWidth="55.0" text="Search" />
-                  <Region prefHeight="199.0" prefWidth="384.0" />
-                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions" text="Back" />
+                  <AnchorPane prefHeight="50.0" prefWidth="379.0">
+                     <children>
+                        <Button fx:id="searchButton" layoutX="162.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleActions" text="Search" />
+                     </children>
+                  </AnchorPane>
+                  <Region prefHeight="199.0" />
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions" text="Back">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></Button>
                </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
             </VBox>
             <VBox prefHeight="446.0" prefWidth="419.0">
                <children>
-                  <TextArea fx:id="allProjectArea" prefHeight="474.0" prefWidth="424.0" />
+                  <TextArea fx:id="allProjectArea" prefHeight="474.0" prefWidth="397.0" />
                </children>
             </VBox>
          </children>
