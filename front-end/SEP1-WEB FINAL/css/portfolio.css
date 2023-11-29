@@ -1,0 +1,113 @@
+/* Portfolio page by Maciej*/
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+#projectBackground2 {
+    background-image: url("../img/pexels-binyamin-mellish-186077.jpg");
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #title {
+    color: black;
+  }
+  /*================media quary for spicy responsivness================*/
+  @media (max-width: 768px) {
+    #projectsWelcoming2 {
+      color: white !important;
+    }
+  
+    .rating {
+      float: right;
+    }
+  
+    .overlay ul {
+      font-size: 6px !important;
+    }
+  }
+  
+  #projectsWelcoming2 {
+    width: auto;
+    height: 35vh;
+    color: rgba(10, 6, 26, 1);
+    font-weight: bold;
+  }
+  
+  .image-container2 {
+    position: relative;
+    height: auto;
+    width: auto;
+  }
+  
+  .portfolio-container {
+    text-align: center;
+  
+  }
+  
+  /*================hover effect for 1st picture================*/
+  .bg-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bg-image img {
+    transition: transform 0.5s;
+  }
+  
+  .bg-image:hover img {
+    transform: scale(1.1);
+  }
+  
+  /*================overlay on hover================*/
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay h1 {
+    font-size: 24px;
+  }
+  
+  .overlay ul {
+    font-size: 16px;
+  }
+  
+  .bg-image:hover .overlay {
+    opacity: 1;
+  }
+  
+  /*================star rating of the reviews================*/
+  .rating {
+    color: gold;
+  }
+  
+  .rating2 {
+    color: gold;
+  }
+  
+  .review-container {
+    color: white;
+    background-color: rgba(10, 6, 26, 1);
+    text-align: center;
+  }
+  
+  .bullets {
+    list-style: none;
+  }
+  
+  /*=================================================================================*/
