@@ -37,6 +37,7 @@ public abstract class Project implements Serializable
     this.timeline = timeline;
     this.customer = customer;
     this.resources = resources;
+    this.type = null;
   }
   /**
    * @param budget set the budget that will be assigned to the project

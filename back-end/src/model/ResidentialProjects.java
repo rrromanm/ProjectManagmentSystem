@@ -14,7 +14,6 @@ public class ResidentialProjects extends Project {
     private int numberOfBathrooms;
     private int roomsWithPlumbing;
     private String state;
-    private boolean newBuild;
 
     /**
      * A constructor that creates a residential project with the given parameters.
@@ -31,10 +30,8 @@ public class ResidentialProjects extends Project {
      * @param customer the customer who ordered the residential project
      * @param resources the resources allocated to the residential project
      */
-    public ResidentialProjects(int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, int budget, String state,
-      MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
+    public ResidentialProjects(int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
-        this.newBuild = true;
         this.size = size;
         this.numberOfKitchens = numberOfKitchens;
         this.numberOfBathrooms = numberOfBathrooms;
@@ -58,43 +55,15 @@ public class ResidentialProjects extends Project {
      * @param numberOfBathrooms the default number of bathrooms in the residential project (1)
      * @param roomsWithPlumbing the default number of rooms with plumbing in the residential project (1)
      */
-    public ResidentialProjects(int size, String state, int budget, Customer customer, MyDate startDate, int projectID, int timeline, Resources resources) {
-        super(budget, startDate, "under construction", projectID, timeline, customer, resources);
-        this.newBuild = true;
+    public ResidentialProjects(int budget, MyDate startDate, int projectID,int timeline, Customer customer, Resources resources, int size, String state) {
+        super(budget, startDate, "under construction", projectID, 9, customer, resources);
         this.size = size;
         this.state = state;
-        super.setTimeline(9);
         this.numberOfKitchens = 1;
         this.numberOfBathrooms = 1;
         this.roomsWithPlumbing = 1;
-        super.setEndTime(startDate.convertMonthsToDate(timeline));
+        super.setEndTime(startDate.convertMonthsToDate(9));
         super.setType("Residential");
-    }
-    
-    /**
-     * Changes the new build status to renovated.
-     */
-    public void changeNewBuildToRenovated(){
-      newBuild = false;
-    }
-    
-    /**
-     * Changes the renovated status to new build.
-     */
-    public void changeRenovatedToNewBuild(){
-      newBuild = true;
-    }
-    
-    /**
-     * Returns the purpose of the building, either "New build" or "Renovation".
-     * @return the purpose of the building
-     */
-    public String builidngPurpose(){
-      if (newBuild) {
-        return "New build";
-      } else {
-        return "Renovation";
-      }
     }
 
     /**
