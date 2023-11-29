@@ -26,8 +26,8 @@ public class CommercialProject extends Project {
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
      */
-    public CommercialProject(int size, short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources) {
+    public CommercialProject(int budget,
+        MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources, int size, short floors, String usage) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.floors = floors;
@@ -50,14 +50,12 @@ public class CommercialProject extends Project {
      * @param resources the resources allocated to the project
      * @param size the size of the project in square meters
      */
-    public CommercialProject(short floors, String usage, int budget,
-        MyDate startTime, MyDate endTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size) {
-        super(budget, startTime, status, projectID, timeline, customer, resources);
+    public CommercialProject(int budget, MyDate startTime, int projectID,Customer customer, Resources resources, int size, String usage){
+        super(budget, startTime, "under construction", projectID, 18, customer, resources);
         this.size = size;
-        super.setTimeline(18);
         this.floors = 1;
-        this.usage = "restaurant";
-        super.setEndTime(startTime.convertMonthsToDate(timeline));
+        this.usage = usage;
+        super.setEndTime(startTime.convertMonthsToDate(18));
         super.setType("Commercial");
     }
 

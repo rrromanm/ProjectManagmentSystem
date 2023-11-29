@@ -33,7 +33,7 @@ public class RoadConstruction extends Project {
      * @param environmentalChallenges the environmental challenges associated with the road construction project
      * @param geographicalChallenges the geographical challenges associated with the road construction project
      */
-    public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline,
+    public RoadConstruction(int budget, MyDate startTime,String status, int projectID, int timeline,
                             Customer customer, Resources resources, int width, int length, int bridges, int tunnels,
                             String environmentalChallenges, String geographicalChallenges) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
@@ -64,15 +64,16 @@ public class RoadConstruction extends Project {
      * @param environmentalChallenges the default environmental challenges associated with the road construction project (none)
      * @param geographicalChallenges the default geographical challenges associated with the road construction project (none)
      */
-    public RoadConstruction(int budget, MyDate startTime, MyDate endTime, String status, int projectID, int timeline,
+    public RoadConstruction(int budget, MyDate startTime,int projectID,
                             Customer customer, Resources resources, int length, int width) {
-        super(budget, startTime, status, projectID, timeline, customer, resources);
-        super.setTimeline(18);
+        super(budget, startTime, "under construction", projectID, 18, customer, resources);
+        this.length = length;
+        this.width = width;
         this.bridges = 0;
         this.tunnels = 0;
         this.environmentalChallenges = "none";
         this.geographicalChallenges = "none";
-        super.setEndTime(startTime.convertMonthsToDate(timeline));
+        super.setEndTime(startTime.convertMonthsToDate(18));
         super.setType("RoadConstruction");
     }
 
