@@ -165,6 +165,6 @@ public class ResidentialProjects extends Project {
      * @return a string that contains the information of this residential project, such as budget, start date, end date, status, project ID, timeline, customer, resources, size, number of kitchens, number of bathrooms, rooms with plumbing, state, and purpose
      */
     public String toString() {
-        return super.toString() + " Size: " + size + " Kitchens: " + numberOfKitchens + " Bathrooms: " + numberOfBathrooms + " Rooms with Plumbing: " + roomsWithPlumbing + " State: " + state + " Purpose: " + builidngPurpose();
+        return super.toString() + " Size: " + size + " Kitchens: " + numberOfKitchens + " Bathrooms: " + numberOfBathrooms + " Rooms with Plumbing: " + roomsWithPlumbing + " State: " + state;
     }
 }
