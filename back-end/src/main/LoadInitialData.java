@@ -28,12 +28,12 @@ public class LoadInitialData
         int projectID = Integer.parseInt(tempArr[2]);
         int timeline = Integer.parseInt(tempArr[3]);
 
-        Customer customer = new Customer();
-        Resources resources = new Resources();
-
-        Project project = new Project(budget, startTime, status, projectID, timeline, customer, resources);
-
-        projects.addProject(project);
+//        Customer customer = new Customer();
+//        Resources resources = new Resources();
+//
+//        Project project = new Project(budget, startTime, status, projectID, timeline, customer, resources);
+//
+//        projects.addProject(project);
       }
     }
     catch (FileNotFoundException e)
