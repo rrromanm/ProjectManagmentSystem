@@ -3,14 +3,16 @@ package main;
 import model.*;
 import parser.ParserException;
 
+import parser.XmlJsonParser;
 import utils.MyFileHandler;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class LoadInitialData
 {
-  public static void main(String[] args)
+  public static void main(String[] args) throws ParserException
   {
     ProjectList projects = new ProjectList();
     String[] projectArray = null;
@@ -105,5 +107,11 @@ public class LoadInitialData
     }
 
     System.out.println("Done");
+
+    XmlJsonParser parser = new XmlJsonParser();
+    File file1 = parser.toJson(projects, "projectlist.json");
+
+    File file2 = parser.toXml(projects, "projectlist.xml");
+
   }
 }
