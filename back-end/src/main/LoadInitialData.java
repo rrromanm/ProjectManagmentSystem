@@ -112,6 +112,5 @@ public class LoadInitialData
     File file1 = parser.toJson(projects, "projectlist.json");
 
     File file2 = parser.toXml(projects, "projectlist.xml");
-
   }
 }

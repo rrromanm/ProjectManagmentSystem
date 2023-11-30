@@ -42,7 +42,9 @@ public class ProjectViewController {
   @FXML private TableColumn<ProjectTableItem, Integer> projectTimelineColumn;
   @FXML private TableColumn<ProjectTableItem, MyDate> projectDeadlineColumn;
   @FXML private TableColumn<ProjectTableItem, String> projectCustomer;
-  @FXML private TableColumn<ProjectTableItem, Integer> projectSize;
+  @FXML private TableColumn<ProjectTableItem, Integer> projectManHours;
+  @FXML private TableColumn<ProjectTableItem, Double> projectCosts;
+
 
   private ObservableList<ProjectTableItem> projectTableData = FXCollections.observableArrayList();
 
@@ -122,6 +124,10 @@ public class ProjectViewController {
     {
       projectManager.getProjectsFromType("Industrial");
     }
+    else if (e.getSource() == statusButton1)
+    {
+      
+    }
   }
 
   private void initializeTableView() {
@@ -132,7 +138,8 @@ public class ProjectViewController {
     projectTimelineColumn.setCellValueFactory(new PropertyValueFactory<>("projectTimeline"));
     projectDeadlineColumn.setCellValueFactory(new PropertyValueFactory<>("projectDeadline"));
     projectCustomer.setCellValueFactory(new PropertyValueFactory<>("projectCustomer"));
-
+    projectManHours.setCellValueFactory(new PropertyValueFactory<>("projectManHours"));
+    projectCosts.setCellValueFactory(new PropertyValueFactory<>("projectCosts"));
 
     projectTableView.setItems(projectTableData);
   }
@@ -154,7 +161,8 @@ public class ProjectViewController {
           project.getTimeline(),
           project.getEndTime(),
           project.getCustomer().getSurname(),
-          project.getBudget()
+          project.getResources().getManHoursUsed(),
+          project.getResources().getExpenses()
       );
       projectTableData.add(tableItem);
     }

@@ -132,11 +132,8 @@
                   <TableColumn fx:id="projectTimelineColumn" prefWidth="73.0" text="Timeline" />
                   <TableColumn fx:id="projectDeadlineColumn" prefWidth="63.0" text="Deadline" />
                   <TableColumn fx:id="projectCustomer" text="Customer" />
-                  <TableColumn fx:id="projectSize" prefWidth="61.0" text="Size" />
-                  <TableColumn prefWidth="71.0" text="Floors" />
-                  <TableColumn prefWidth="95.0" text="facilityType" />
-                  <TableColumn prefWidth="75.0" text="Man Hours" />
-                  <TableColumn prefWidth="84.0" text="Costs" />
+                  <TableColumn fx:id="projectManHours" prefWidth="75.0" text="Man Hours" />
+                  <TableColumn fx:id="projectCosts" prefWidth="84.0" text="Costs" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
