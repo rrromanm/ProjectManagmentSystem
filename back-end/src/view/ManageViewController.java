@@ -3,19 +3,18 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import model.ProjectList;
+import javafx.scene.control.Button;
 import model.ProjectModelManager;
 
-public class MenuViewController
+public class ManageViewController
 {
   private Scene scene;
   private ProjectModelManager projectManager;
   private ViewHandler viewHandler;
 
-  @FXML private Button projects;
-  @FXML private Button manage;
-  @FXML private Button website;
+  @FXML private Button addProject;
+  @FXML private Button editProject;
+  @FXML private Button removeProject;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
@@ -36,13 +35,17 @@ public class MenuViewController
 
   public void handleActions(ActionEvent e)
   {
-    if (e.getSource() == projects)
+    if (e.getSource() == addProject)
     {
-      viewHandler.openView("ProjectView");
+      viewHandler.openView("AddProjectView");
     }
-    else if (e.getSource() == manage)
+    else if(e.getSource() == editProject)
     {
-     viewHandler.openView("ManageView");
+      viewHandler.openView("EditProjectView");
+    }
+    else if(e.getSource() == removeProject )
+    {
+      viewHandler.openView("RemoveProjectView");
     }
   }
 }
