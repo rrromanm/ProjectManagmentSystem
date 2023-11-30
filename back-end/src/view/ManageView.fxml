@@ -8,7 +8,7 @@
    <children>
       <AnchorPane layoutX="4.0" prefHeight="500.0" prefWidth="800.0">
          <children>
-            <Button layoutX="114.0" layoutY="197.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Addd Project" />
+            <Button layoutX="114.0" layoutY="197.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Add Project" />
             <Button layoutX="332.0" layoutY="197.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Edit Project" />
             <Button layoutX="547.0" layoutY="197.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Remove Project" />
          </children>

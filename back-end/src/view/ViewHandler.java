@@ -15,6 +15,7 @@ public class ViewHandler
   private StartViewController startViewController;
   private ProjectViewController projectViewController;
   private MenuViewController menuViewController;
+  private ManageViewController manageViewController;
 
   public ViewHandler(Stage stage, ProjectModelManager projectManager)
   {
@@ -45,6 +46,10 @@ public class ViewHandler
       case "MenuView":
         stage.setScene(menuViewController.getScene());
         menuViewController.reset();
+        break;
+      case "ManageView":
+        stage.setScene(manageViewController.getScene());
+        manageViewController.reset();
         break;
     }
 
@@ -100,6 +105,21 @@ public class ViewHandler
       Region root = loader.load();
       menuViewController = loader.getController();
       menuViewController.init(this, new Scene(root), projectManager);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+  }
+  private void loadManageView()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("ManageView.fxml"));
+      Region root = loader.load();
+      manageViewController= loader.getController();
+      manageViewController.init(this, new Scene(root), projectManager);
     }
     catch (IOException e)
     {
