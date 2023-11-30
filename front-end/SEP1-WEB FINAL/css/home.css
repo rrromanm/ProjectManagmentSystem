@@ -1,30 +1,9 @@
-html {
-    scroll-behavior: smooth;
-}
+
 
 #start {
     background-image: url("../img/background1.jpeg");
 }
 
-p {
-    font-family: 'Raleway', sans-serif;
-}
-
-.logo-Image {
-    max-width: 40%;
-    height: auto;
-}
-
-.nav-item {
-    font-size: 20px;
-}
-.navbar-sticky {
-    position: sticky;
-    top: 0;
-    /* to ensure that navbar is always at the top */
-    z-index: 100;
-    /* to ensure that navbar is always above other things when you scroll */
-}
 .welcoming {
     width: auto;
     height: 50vh;
@@ -84,13 +63,3 @@ p {
     text-align: center; 
   }
   
-.social-icons a {
-    color: #ababab;
-    display: inline-block;
-    transition: transform 0.5s;
-  }
-  
-  .social-icons a:hover {
-    color: rgba(10, 6, 26, 1);
-    transform: translateY(-5px);
-  }
