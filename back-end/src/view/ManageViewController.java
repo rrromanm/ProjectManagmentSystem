@@ -15,6 +15,7 @@ public class ManageViewController
   @FXML private Button addProject;
   @FXML private Button editProject;
   @FXML private Button removeProject;
+  @FXML private Button back;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
@@ -46,6 +47,10 @@ public class ManageViewController
     else if(e.getSource() == removeProject )
     {
       viewHandler.openView("RemoveProjectView");
+    }
+    else if(e.getSource() == back)
+    {
+      viewHandler.openView("MenuView");
     }
   }
 }
