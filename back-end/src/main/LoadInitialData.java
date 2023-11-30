@@ -1,6 +1,8 @@
 package main;
 
 import model.*;
+import parser.ParserException;
+
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;

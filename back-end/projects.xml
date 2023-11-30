@@ -1,0 +1,11 @@
+<projects>
+    <project name="Teknisk Kollegium">
+        <id value="1"/>
+        <customer value="Romans"/>
+        <start-time value="30/11/2023"/>
+        <end-time value="30/11/2024"/>
+        <budget value="1.000.000$"/>
+        <status value="On going"/>
+        <type value="Residential"/>
+    </project>
+</projects>

@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "size": 100,
+      "facilityType": "plant",
+      "budget": 100,
+      "startTime": {
+        "day": 30,
+        "month": 11,
+        "year": 2023
+      },
+      "endTime": {
+        "day": 30,
+        "month": 5,
+        "year": 2026
+      },
+      "customer": {
+        "firstName": "Samuel",
+        "surname": "Abramek",
+        "id": 1,
+        "phoneNumber": 123,
+        "email": "sas",
+        "address": "ssa"
+      },
+      "resources": {
+        "manHoursUsed": 0,
+        "materialExpenses": 10.0,
+        "expectedManHours": 10
+      },
+      "status": "under construction",
+      "projectID": 1,
+      "timeline": 30,
+      "type": "Industrial"
+    }
+  ]
+}

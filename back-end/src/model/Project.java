@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * This class contains all variables that will be shared by project types.
  *
- * @author Maciej Matuszewski
+ * @author Maciej Matuszewski / Romans Mihalonoks
  */
 public abstract class Project implements Serializable
 {

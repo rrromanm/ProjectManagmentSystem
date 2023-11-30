@@ -1,10 +1,11 @@
 package model;
-
-import java.util.Date;
+import parser.ParserException;
+import parser.XmlJsonParser;
+import java.io.File;
 
 public class test
 {
-  public static void main(String[] args)
+  public static void main(String[] args) throws ParserException
   {
     MyDate date = new MyDate();
     Customer customer = new Customer("Samuel","Abramek", 1,123,"sas", "ssa");
@@ -16,6 +17,9 @@ public class test
     projectList.addProject(project1);
 
     System.out.println(projectList.toString());
+
+    XmlJsonParser parser = new XmlJsonParser();
+    File file1 = parser.toJson(projectList, "projectlist.json");
   }
 
 }
