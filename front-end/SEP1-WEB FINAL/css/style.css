@@ -499,3 +499,27 @@ footer img {
 .team {
   padding-top: 25px;
 }
+
+
+/* Projects button section */
+.seeMoreSection{
+  padding-bottom: 40px;
+  padding-top: 40px;
+  
+}
+.projects-button-view{
+  background-color: rgba(10, 6, 26, 1);
+  color: white;
+  font-size: larger;
+  padding: 12px;
+  transition-duration: 0.6s;
+  width: 100%;
+  border: none;
+}
+.projects-button-view:hover{
+  background-color: rgb(238, 194, 0);
+  color: rgba(10, 6, 26, 1);
+}
+.seeMore{
+  font-size: x-large;
+}

@@ -133,6 +133,7 @@ public class ProjectViewController {
     projectDeadlineColumn.setCellValueFactory(new PropertyValueFactory<>("projectDeadline"));
     projectCustomer.setCellValueFactory(new PropertyValueFactory<>("projectCustomer"));
 
+
     projectTableView.setItems(projectTableData);
   }
 
@@ -152,7 +153,8 @@ public class ProjectViewController {
           project.getBudget(),
           project.getTimeline(),
           project.getEndTime(),
-          project.getCustomer().getSurname()
+          project.getCustomer().getSurname(),
+          project.getBudget()
       );
       projectTableData.add(tableItem);
     }
