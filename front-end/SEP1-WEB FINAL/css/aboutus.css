@@ -1,27 +1,5 @@
 /*NAVBAR*/
 
-.logo-Image {
-    max-width: 40%;
-    height: auto;
-}
-  
-.nav-item {
-    font-size: 20px;
-    font-weight: bold;
-}
-  
-.navbar-sticky {
-    position: sticky;
-    top: 0;
-    /* to ensure that navbar is always at the top */
-    z-index: 100;
-    /* to ensure that navbar is always above other things when you scroll */
-}
-  
-h1 {
-    text-align: center;
-}
-
 #projectBackground3 {
     background-image: url("../img/backgroundAboutUs.jpg");
     max-width: 100%;
@@ -53,10 +31,6 @@ h1 {
 
 .about {
     margin-top: 50px;
-}
-  
-.about-us-text {
-    text-align: left;
 }
 
 /*History / Client reviews*/
@@ -96,43 +70,3 @@ h1 {
     color: gold;
   }
 
-/* SOCIAL ICONS FOOTER */
-
-.social-icons {
-    margin-top: 60px;
-  }
-  
-  .social-icons a {
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ababab;
-    display: inline-block;
-    transition: transform 0.5s;
-  }
-  
-  .social-icons a:hover {
-    color: rgba(10, 6, 26, 1);
-    transform: translateY(-5px);
-  }
-
-/*FOOTER*/
-
-footer {
-    background-color: rgb(160, 160, 160);
-    color: white;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  
-  footer img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .contact-info {
-    float: left;
-    text-align: left;
-    margin-left: 100px;
-  }

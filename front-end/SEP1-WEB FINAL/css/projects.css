@@ -1,0 +1,127 @@
+
+  #projectBackground {
+    background-image: url("../img/projectsBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #projectsWelcoming {
+    width: auto;
+    height: 35vh;
+    color: rgba(10, 6, 26, 1);
+    font-weight: bold;
+  }
+
+  .projectTitle {
+    font-weight: bold;
+    margin-top: 50px;
+    font-size: xx-large;
+    text-align: center;
+  }
+  
+  
+  .projectDescription {
+    text-align: center;
+    margin-top: 20px;
+    font-size: larger;
+  }
+  
+  .projectDescription img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 30px;
+  
+  }
+  .projectDescription ul {
+    /* removing bullet points */
+    list-style-type: none;
+  }
+
+  .verticalCenter {
+    /* Vertical Center using flexbox */
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+
+  .bold {
+    /* To make text bold and larger */
+  
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  .enter {
+    margin-top: 20px;
+  }
+
+  .blue {
+    /* To make the background match colors with our logo and make the text visible by setting the color to white*/
+  
+    background-color: rgba(10, 6, 26, 1);
+    color: white;
+  }
+
+  .sectionContainerWhite {
+    padding-bottom: 20px;
+  }
+  
+  .sectionContainerBlue {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .chartPie1 {
+    /* First Chart Pie */
+  
+    height: 200px;
+    width: 240px;
+    border-radius: 100%;
+    background: conic-gradient(rgb(118, 196, 118) 0% 77%, white 77% 100%);
+    border: solid black 2px;
+  }
+  
+  .chartPie2 {
+    /* Second Chart Pie */
+  
+    height: 200px;
+    width: 230px;
+    border-radius: 100%;
+    background: conic-gradient(rgb(226, 208, 44) 0% 56%, white 56% 100%);
+    border: solid black 2px;
+  }
+  
+  .chartPie3 {
+    /*  Chart Pie */
+  
+    height: 200px;
+    width: 230px;
+    border-radius: 100%;
+    background: conic-gradient(rgb(233, 115, 115) 0% 22%, white 22% 100%);
+    border: solid black 2px;
+  }
+
+  .seeMoreSection{
+    padding-bottom: 40px;
+    padding-top: 40px;
+    
+  }
+  .projects-button-view{
+    background-color: rgba(10, 6, 26, 1);
+    color: white;
+    font-size: larger;
+    padding: 12px;
+    transition-duration: 0.6s;
+    width: 100%;
+    border: none;
+  }
+  .projects-button-view:hover{
+    background-color: rgb(238, 194, 0);
+    color: rgba(10, 6, 26, 1);
+  }
+  .seeMore{
+    font-size: x-large;
+  }
+

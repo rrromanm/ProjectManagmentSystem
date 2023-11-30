@@ -1,9 +1,7 @@
 /* Portfolio page by Maciej*/
 
 
-html {
-    scroll-behavior: smooth;
-  }
+
 
 #projectBackground2 {
     background-image: url("../img/pexels-binyamin-mellish-186077.jpg");
@@ -109,5 +107,3 @@ html {
   .bullets {
     list-style: none;
   }
-  
-  /*=================================================================================*/
