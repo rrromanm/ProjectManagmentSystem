@@ -38,18 +38,18 @@ public class ProjectModelManager
     return allProjects;
   }
 
-  public ArrayList<Object> getProjectsFromType(String type)
+  public ProjectList getProjectsFromType(String type)
   {
-    ProjectList projectsByType = new ProjectList();
-
-    return projectsByType.getAllByType(type);
+    return getAllProjects().getAllByType(type);
   }
 
-  public ArrayList<Object> getProjectsByStatus(String status)
+  public ProjectList getProjectsByStatus(String status)
   {
-    ProjectList projectByStatus = new ProjectList();
+    return getAllProjects().getAllByStatus(status);
+  }
 
-    return projectByStatus.getAllByStatus(status);
+  public ProjectList getProjectsFromTypeAndStatus(String type, String status) {
+   return getAllProjects().getProjectsFromTypeAndStatus(type,status);
   }
 
   public void saveProjects(ProjectList projects)

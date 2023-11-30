@@ -58,17 +58,31 @@ public class ProjectList implements Serializable
    * @param status The status to filter projects by.
    * @return An ArrayList containing indices of projects with the specified status.
    */
-  public ArrayList<Object> getAllByStatus(String status)
+  public ProjectList getAllByStatus(String status)
   {
-    ArrayList<Object> statusList = new ArrayList<>();
+    ProjectList projectListByStatus = new ProjectList();
 
-    for (int i = 0; i < projects.size(); i++)
+    for (Project project : projects)
     {
-      if (projects.get(i).getStatus().equals(status)){
-        statusList.add(i);
+      if (project.getStatus().equals(status))
+      {
+        projectListByStatus.addProject(project);
       }
     }
-    return statusList;
+
+    return projectListByStatus;
+  }
+
+  public ProjectList getProjectsFromTypeAndStatus(String type, String status) {
+    ProjectList filteredProjects = new ProjectList();
+
+    for (Project project : projects) {
+      if (project.getType().equals(type) && project.getStatus().equals(status)) {
+        filteredProjects.addProject(project);
+      }
+    }
+
+    return filteredProjects;
   }
 
   /**
@@ -77,18 +91,19 @@ public class ProjectList implements Serializable
    * @param type The type to filter projects by.
    * @return An ArrayList containing indices of projects with the specified type.
    */
-  public ArrayList<Object> getAllByType(String type)
+  public ProjectList getAllByType(String type)
   {
-    ArrayList<Object> typeList = new ArrayList<>();
+    ProjectList projectListByType = new ProjectList();
 
-    for (int i = 0; i < projects.size(); i++)
+    for (Project project : projects)
     {
-      if (projects.get(i).getType().equals(type))
+      if (project.getType().equals(type))
       {
-        typeList.add(i);
+        projectListByType.addProject(project);
       }
     }
-    return typeList;
+
+    return projectListByType;
   }
 
   /**
