@@ -15,9 +15,10 @@ public class ProjectTableItem {
   private final SimpleIntegerProperty projectTimeline;
   private final SimpleObjectProperty<MyDate> projectDeadline;
   private final SimpleStringProperty projectCustomer;
+  private final SimpleIntegerProperty projectSize;
 
   public ProjectTableItem(int projectId, String projectType, String projectStatus, int projectBudget,
-      int projectTimeline, MyDate projectDeadline, String projectCustomer) {
+      int projectTimeline, MyDate projectDeadline, String projectCustomer, int projectSize) {
     this.projectId = new SimpleIntegerProperty(projectId);
     this.projectType = new SimpleStringProperty(projectType);
     this.projectStatus = new SimpleStringProperty(projectStatus);
@@ -25,6 +26,7 @@ public class ProjectTableItem {
     this.projectTimeline = new SimpleIntegerProperty(projectTimeline);
     this.projectDeadline = new SimpleObjectProperty<>(projectDeadline);
     this.projectCustomer = new SimpleStringProperty(projectCustomer);
+    this.projectSize = new SimpleIntegerProperty(projectSize);
   }
 
   public int getProjectId() {
@@ -53,5 +55,9 @@ public class ProjectTableItem {
 
   public String getProjectCustomer() {
     return projectCustomer.get();
+  }
+
+  public int getProjectSize() {
+    return projectSize.get();
   }
 }
