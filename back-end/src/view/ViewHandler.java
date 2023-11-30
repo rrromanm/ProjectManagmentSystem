@@ -28,6 +28,7 @@ public class ViewHandler
     loadStartView();
     loadMenuView();
     loadProjectView();
+    loadManageView();
     openView("StartView");
   }
 

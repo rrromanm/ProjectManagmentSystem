@@ -1,6 +1,7 @@
 // ProjectTableItem.java
 package view;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,10 +16,12 @@ public class ProjectTableItem {
   private final SimpleIntegerProperty projectTimeline;
   private final SimpleObjectProperty<MyDate> projectDeadline;
   private final SimpleStringProperty projectCustomer;
-  private final SimpleIntegerProperty projectSize;
+  private final SimpleIntegerProperty projectManHours;
+  private final SimpleDoubleProperty projectCosts;
 
   public ProjectTableItem(int projectId, String projectType, String projectStatus, int projectBudget,
-      int projectTimeline, MyDate projectDeadline, String projectCustomer, int projectSize) {
+      int projectTimeline, MyDate projectDeadline, String projectCustomer, int projectManHours
+      , double projectCosts) {
     this.projectId = new SimpleIntegerProperty(projectId);
     this.projectType = new SimpleStringProperty(projectType);
     this.projectStatus = new SimpleStringProperty(projectStatus);
@@ -26,7 +29,8 @@ public class ProjectTableItem {
     this.projectTimeline = new SimpleIntegerProperty(projectTimeline);
     this.projectDeadline = new SimpleObjectProperty<>(projectDeadline);
     this.projectCustomer = new SimpleStringProperty(projectCustomer);
-    this.projectSize = new SimpleIntegerProperty(projectSize);
+    this.projectManHours = new SimpleIntegerProperty(projectManHours);
+    this.projectCosts = new SimpleDoubleProperty(projectCosts);
   }
 
   public int getProjectId() {
@@ -57,7 +61,8 @@ public class ProjectTableItem {
     return projectCustomer.get();
   }
 
-  public int getProjectSize() {
-    return projectSize.get();
+  public int getProjectManHours() {
+    return projectManHours.get();
   }
+  public double getProjectCosts() {return projectCosts.get();}
 }
