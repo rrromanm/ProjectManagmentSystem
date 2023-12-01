@@ -13,7 +13,6 @@ public class AddResidentialViewController
   private ViewHandler viewHandler;
   private Scene scene;
   private ProjectModelManager projectManager;
-  @FXML private TextField projectTypeField;
   @FXML private TextField budgetField;
   @FXML private TextField dayField;
   @FXML private TextField monthField;
@@ -30,7 +29,9 @@ public class AddResidentialViewController
   @FXML private TextField expectedManHoursField;
   @FXML private TextField materialExpensesField;
   @FXML private TextField sizeField;
-  @FXML private TextField typeOfTheFacilityField;
+  @FXML private TextField NrOfKitchens;
+  @FXML private TextField NrOfBathrooms;
+  @FXML private TextField RoomsWithPlumbing;
   @FXML private Button clearButton;
   @FXML private Button addProjectButton;
 
