@@ -4,10 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import model.ProjectModelManager;
 
 public class AddProjectViewController
 {
+  public AnchorPane AddProjectView;
   private Scene scene;
   private ProjectModelManager projectManager;
   private ViewHandler viewHandler;
@@ -38,7 +40,7 @@ public class AddProjectViewController
   {
     if (e.getSource() == addProject)
     {
-      viewHandler.openView("AddProject");
+      viewHandler.openView("AddProjectView");
     }
     else if(e.getSource() == editProject)
     {
