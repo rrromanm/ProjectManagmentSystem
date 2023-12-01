@@ -17,6 +17,7 @@ public class ViewHandler
   private MenuViewController menuViewController;
   private ManageViewController manageViewController;
   private AddProjectViewController addProjectViewController;
+  private AddIndustrialViewController addIndustrialViewController;
 
   public ViewHandler(Stage stage, ProjectModelManager projectManager)
   {
@@ -31,6 +32,7 @@ public class ViewHandler
     loadProjectView();
     loadManageView();
     loadAddProjectView();
+    loadAddIndustrialView();
     openView("StartView");
   }
 
@@ -58,6 +60,9 @@ public class ViewHandler
         stage.setScene(addProjectViewController.getScene());
         addProjectViewController.reset();
         break;
+      case "AddIndustrialView":
+        stage.setScene(addIndustrialViewController.getScene());
+        addIndustrialViewController.reset();
     }
 
     String title = "";
@@ -143,6 +148,21 @@ public class ViewHandler
       Region root = loader.load();
       addProjectViewController = loader.getController();
       addProjectViewController.init(this, new Scene(root), projectManager);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+  }
+  private void loadAddIndustrialView()
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("AddIndustrialView.fxml"));
+      Region root = loader.load();
+      addIndustrialViewController = loader.getController();
+      addIndustrialViewController.init(this,new Scene(root),projectManager);
     }
     catch (IOException e)
     {
