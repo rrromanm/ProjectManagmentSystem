@@ -38,7 +38,7 @@ public class ManageViewController
   {
     if (e.getSource() == addProject)
     {
-      viewHandler.openView("addProject");
+      viewHandler.openView("AddProject");
     }
     else if(e.getSource() == editProject)
     {

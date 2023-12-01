@@ -2,88 +2,55 @@ package view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.text.Text;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import model.ProjectModelManager;
 
-public class AddProjectViewController {
+public class AddProjectViewController
+{
+  private Scene scene;
+  private ProjectModelManager projectManager;
+  private ViewHandler viewHandler;
 
-  @FXML
-  private Text projectTypeText;
+  @FXML private Button addProject;
+  @FXML private Button editProject;
+  @FXML private Button removeProject;
+  @FXML private Button back;
 
-  @FXML
-  private Button residentialButton;
-
-  @FXML
-  private Button industrialButton;
-
-  @FXML
-  private Button commercialButton;
-
-  @FXML
-  private Button roadConstructionButton;
-
-  @FXML
-  private MenuBar menuBar;
-
-  @FXML
-  private Menu fileMenu;
-
-  @FXML
-  private MenuItem closeMenuItem;
-
-  @FXML
-  private Menu editMenu;
-
-  @FXML
-  private MenuItem deleteMenuItem;
-
-  @FXML
-  private Menu helpMenu;
-
-  @FXML
-  private MenuItem aboutMenuItem;
-
-  @FXML
-  private void initialize() {
-    // You can perform initialization tasks here.
+  public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
+  {
+    this.viewHandler = viewHandler;
+    this.scene = scene;
+    this.projectManager = projectManager;
   }
 
-  @FXML
-  private void handleResidentialButtonAction(ActionEvent event) {
-    projectTypeText.setText("Residential project selected");
-    // Add your logic for Residential project here
+  public void reset()
+  {
+
   }
 
-  @FXML
-  private void handleIndustrialButtonAction(ActionEvent event) {
-    projectTypeText.setText("Industrial project selected");
-    // Add your logic for Industrial project here
+  public Scene getScene()
+  {
+    return scene;
   }
 
-  @FXML
-  private void handleCommercialButtonAction(ActionEvent event) {
-    projectTypeText.setText("Commercial project selected");
-    // Add your logic for Commercial project here
+  public void handleActions(ActionEvent e)
+  {
+    if (e.getSource() == addProject)
+    {
+      viewHandler.openView("AddProject");
+    }
+    else if(e.getSource() == editProject)
+    {
+      viewHandler.openView("EditProjectView");
+    }
+    else if(e.getSource() == removeProject )
+    {
+      viewHandler.openView("RemoveProjectView");
+    }
+    else if(e.getSource() == back)
+    {
+      viewHandler.openView("MenuView");
+    }
   }
-
-  @FXML
-  private void handleRoadConstructionButtonAction(ActionEvent event) {
-    projectTypeText.setText("Road Construction project selected");
-    // Add your logic for Road Construction project here
-  }
-
-//  @FXML
-//  private void handleCloseMenuItemAction(ActionEvent event) {
-//    // Add your logic for closing the application or the current project
-//  }
-//
-//  @FXML
-//  private void handleDeleteMenuItemAction(ActionEvent event) {
-//    // Add your logic for deleting a project or data
-//  }
-//
-//  @FXML
-//  private void handleAboutMenuItemAction(ActionEvent event) {
-//    // Add your logic for displaying information about the application
-//  }
 }
