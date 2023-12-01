@@ -19,6 +19,7 @@ public class ViewHandler
   private AddProjectViewController addProjectViewController;
   private AddIndustrialViewController addIndustrialViewController;
   private AddResidentialViewController addResidentialViewController;
+  private AddCommercialViewController addCommercialViewController;
 
   public ViewHandler(Stage stage, ProjectModelManager projectManager)
   {
@@ -35,6 +36,7 @@ public class ViewHandler
     loadAddProjectView();
     loadAddIndustrialView();
     loadAddResidentialView();
+    loadAddCommercialView();
     openView("StartView");
   }
 
@@ -68,6 +70,9 @@ public class ViewHandler
       case "AddResidentialView":
         stage.setScene(addResidentialViewController.getScene());
         addResidentialViewController.reset();
+      case "AddCommercialView":
+        stage.setScene(addCommercialViewController.getScene());
+        addCommercialViewController.reset();
     }
 
     String title = "";
@@ -184,6 +189,21 @@ public class ViewHandler
       Region root = loader.load();
       addResidentialViewController = loader.getController();
       addResidentialViewController.init(this,new Scene(root),projectManager);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+  }
+
+  private void loadAddCommercialView(){
+    try
+    {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("AddCommercialView.fxml"));
+      Region root = loader.load();
+      addCommercialViewController = loader.getController();
+      addCommercialViewController.init(this,new Scene(root),projectManager);
     }
     catch (IOException e)
     {
