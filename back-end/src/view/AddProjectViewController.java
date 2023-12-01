@@ -14,9 +14,10 @@ public class AddProjectViewController
   private ProjectModelManager projectManager;
   private ViewHandler viewHandler;
 
-  @FXML private Button addProject;
-  @FXML private Button editProject;
-  @FXML private Button removeProject;
+  @FXML private Button industrialButton;
+  @FXML private Button residentialButton;
+  @FXML private Button roadConstructionButton;
+  @FXML private Button commercialButton;
   @FXML private Button back;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
@@ -38,21 +39,25 @@ public class AddProjectViewController
 
   public void handleActions(ActionEvent e)
   {
-    if (e.getSource() == addProject)
+    if (e.getSource() == industrialButton)
     {
-      viewHandler.openView("AddProjectView");
+      viewHandler.openView("AddIndustrialView");
     }
-    else if(e.getSource() == editProject)
+    else if(e.getSource() == commercialButton)
     {
-      viewHandler.openView("EditProjectView");
+      viewHandler.openView("AddCommercialView");
     }
-    else if(e.getSource() == removeProject )
+    else if(e.getSource() == roadConstructionButton )
     {
-      viewHandler.openView("RemoveProjectView");
+      viewHandler.openView("AddRoadConstructionView");
+    }
+    else if(e.getSource() == residentialButton)
+    {
+      viewHandler.openView("AddResidentialView");
     }
     else if(e.getSource() == back)
     {
-      viewHandler.openView("MenuView");
+      viewHandler.openView("ManageView");
     }
   }
 }

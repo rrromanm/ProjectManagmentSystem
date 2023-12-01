@@ -15,10 +15,10 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="209.0" layoutY="124.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Residential" />
-      <Button layoutX="435.0" layoutY="124.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Industrial" />
-      <Button layoutX="209.0" layoutY="270.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Commercial" />
-      <Button layoutX="435.0" layoutY="270.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="155.0" text="Road Construction" />
+      <Button fx:id="residentialButton" layoutX="209.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Residential" />
+      <Button fx:id="industrialButton" layoutX="435.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Industrial" />
+      <Button fx:id="commercialButton" layoutX="209.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Commercial" />
+      <Button fx:id="roadConstructionButton" layoutX="435.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Road Construction" />
       <MenuBar layoutY="2.0" prefHeight="27.0" prefWidth="800.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -38,5 +38,6 @@
           </Menu>
         </menus>
       </MenuBar>
+      <Button fx:id="back" layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="66.0" text="Back" />
    </children>
 </AnchorPane>
