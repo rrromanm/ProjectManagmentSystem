@@ -114,11 +114,11 @@
                   <Label prefHeight="30.0" prefWidth="125.0" text="Size :" />
                   <TextField fx:id="sizeField" prefHeight="26.0" prefWidth="171.0" promptText="m2" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="Nr. of Kitchens:" />
-                  <TextField prefHeight="26.0" prefWidth="171.0" text="1" />
+                  <TextField fx:id="NrOfKitchens" prefHeight="26.0" prefWidth="171.0" text="1" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="Nr. of Bathrooms:" />
-                  <TextField prefHeight="26.0" prefWidth="171.0" text="1" />
+                  <TextField fx:id="NrOfBathrooms" prefHeight="26.0" prefWidth="171.0" text="1" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="Rooms with plumbing:" />
-                  <TextField prefHeight="26.0" prefWidth="171.0" text="2" />
+                  <TextField fx:id="RoomsWithPlumbing" prefHeight="26.0" prefWidth="171.0" text="2" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="State:" />
                   <ComboBox fx:id="statusComboBox" prefHeight="26.0" prefWidth="171.0" />
                </children>
