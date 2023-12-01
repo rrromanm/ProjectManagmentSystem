@@ -19,6 +19,7 @@ public class LoadInitialData
 
     try
     {
+
       projectArray = MyFileHandler.readArrayFromTextFile("projects.txt");
 
       for(int i = 0; i<projectArray.length; i++)

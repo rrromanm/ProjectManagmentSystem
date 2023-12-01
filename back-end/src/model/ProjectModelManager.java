@@ -1,9 +1,12 @@
 package model;
 
+import main.LoadInitialData;
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class ProjectModelManager
@@ -64,6 +67,22 @@ public class ProjectModelManager
     }
     catch (IOException e)
     {
+      System.out.println("IO Error writing to file");
+    }
+  }
+
+  public void appendProjects(ProjectList projects) {
+    ProjectList existingProjects = getAllProjects();
+
+    existingProjects.getProjects().addAll(projects.getProjects());
+
+    try {
+      MyFileHandler.writeToBinaryFile(fileName, existingProjects);
+
+      System.out.println("Successfully added project");
+    } catch (FileNotFoundException e) {
+      System.out.println("File not found");
+    } catch (IOException e) {
       System.out.println("IO Error writing to file");
     }
   }

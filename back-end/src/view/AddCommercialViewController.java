@@ -6,8 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import main.LoadInitialData;
 import model.*;
+import utils.MyFileHandler;
 
 public class AddCommercialViewController {
 
@@ -48,34 +48,27 @@ public class AddCommercialViewController {
 
   public void reset()
   {
-
+    budgetTextField.clear();
+    dayTextField.clear();
+    monthTextField.clear();
+    yearTextField.clear();
+    statusComboBox.getSelectionModel().clearSelection();
+    projectIDTextField.clear();
+    firstNameTextField.clear();
+    surnameTextField.clear();
+    customerIDTextField.clear();
+    phoneNumberTextField.clear();
+    emailTextField.clear();
+    addressTextField.clear();
+    expectedManHoursTextField.clear();
+    materialExpensesTextField.clear();
+    sizeTextField.clear();
+    usageTextField.clear();
   }
 
   public Scene getScene()
   {
     return scene;
-  }
-  public void setAddProject() {
-    int budget = Integer.parseInt(budgetTextField.getText());
-    int day = Integer.parseInt(dayTextField.getText());
-    int month = Integer.parseInt(monthTextField.getText());
-    int year = Integer.parseInt(yearTextField.getText());
-    String status = "";
-    int projectID = Integer.parseInt(projectIDTextField.getText());
-    int timeline = Integer.parseInt(timelineTextField.getText());
-    Customer customer = new Customer(firstNameTextField.getText(), surnameTextField.getText(),
-        Integer.parseInt(customerIDTextField.getText()), Integer.parseInt(phoneNumberTextField.getText()),
-        emailTextField.getText(), addressTextField.getText());
-    Resources resources = new Resources(Integer.parseInt(expectedManHoursTextField.getText()),
-        Integer.parseInt(materialExpensesTextField.getText()));
-    int size = Integer.parseInt(sizeTextField.getText());
-    short floors = Short.parseShort(floorsTextField.getText());
-    commercialProject = new CommercialProject(budget, new MyDate(day, month, year), status, projectID, timeline,
-        customer, resources, size, floors, usageTextField.getText());
-    ProjectList projectList = new ProjectList();
-    projectList.addProject(commercialProject);
-
-    reset();
   }
 
   public void handleActions(ActionEvent e)
@@ -83,6 +76,36 @@ public class AddCommercialViewController {
     if (e.getSource() == backButton)
     {
       viewHandler.openView("AddProjectView");
+    }
+    else if(e.getSource() == addProject)
+    {
+      ProjectModelManager manager = new ProjectModelManager("projects.bin");
+      int budget = Integer.parseInt(budgetTextField.getText());
+      int day = Integer.parseInt(dayTextField.getText());
+      int month = Integer.parseInt(monthTextField.getText());
+      int year = Integer.parseInt(yearTextField.getText());
+      String status = "";
+      int projectID = Integer.parseInt(projectIDTextField.getText());
+      int timeline = Integer.parseInt(timelineTextField.getText());
+      Customer customer = new Customer(firstNameTextField.getText(), surnameTextField.getText(),
+          Integer.parseInt(customerIDTextField.getText()), Integer.parseInt(phoneNumberTextField.getText()),
+          emailTextField.getText(), addressTextField.getText());
+      Resources resources = new Resources(Integer.parseInt(expectedManHoursTextField.getText()),
+          Integer.parseInt(materialExpensesTextField.getText()));
+      int size = Integer.parseInt(sizeTextField.getText());
+      short floors = Short.parseShort(floorsTextField.getText());
+      commercialProject = new CommercialProject(budget, new MyDate(day, month, year), status, projectID, timeline,
+          customer, resources, size, floors, usageTextField.getText());
+      ProjectList projectList = new ProjectList();
+      projectList.addProject(commercialProject);
+
+      reset();
+
+      manager.appendProjects(projectList);
+    }
+    else if(e.getSource() == clearButton)
+    {
+      reset();
     }
   }
 }
