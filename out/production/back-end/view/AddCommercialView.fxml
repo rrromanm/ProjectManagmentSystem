@@ -118,7 +118,7 @@
             <Label layoutX="10.0" layoutY="44.0" prefHeight="29.0" prefWidth="127.0" text="Usage:" />
             <TextField fx:id="usageTextField" layoutX="137.0" layoutY="47.0" onAction="#handleActions" />
          </children></FlowPane>
-      <Button layoutX="459.0" layoutY="152.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="Add Project" />
+      <Button fx:id="addProject" layoutX="459.0" layoutY="152.0" mnemonicParsing="false" onAction="#setAddProject" prefHeight="26.0" prefWidth="88.0" text="Add Project" />
       <Button fx:id="clearButton" layoutX="345.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="78.0" text="Clear" />
       <Button fx:id="backButton" layoutX="14.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="70.0" text="Back" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="345.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">

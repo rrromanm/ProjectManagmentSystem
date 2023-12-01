@@ -31,8 +31,8 @@ public class AddCommercialViewController {
   @FXML private TextField floorsTextField;
   @FXML private TextField usageTextField;
   @FXML private Button clearButton;
+  @FXML private Button addProject;
   @FXML private Button backButton;
-  private Button addProject;
   private ViewHandler viewHandler;
   private CommercialProject commercialProject;
 
