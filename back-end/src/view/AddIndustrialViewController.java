@@ -36,6 +36,7 @@ public class AddIndustrialViewController
   @FXML private TextField typeOfTheFacilityField;
   @FXML private Button clearButton;
   @FXML private Button addProjectButton;
+  @FXML private Button backButton;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
@@ -56,6 +57,10 @@ public class AddIndustrialViewController
 
   public void handleActions(ActionEvent e)
   {
+    if(e.getSource()==backButton)
+    {
+      viewHandler.openView("AddProjectView");
+    }
     
   }
 }
