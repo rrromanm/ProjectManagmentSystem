@@ -1,81 +1,40 @@
 package view;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import main.LoadInitialData;
 import model.*;
 
-import java.awt.*;
-import java.net.URL;
-import java.util.ResourceBundle;
+public class AddCommercialViewController {
 
-public class AddCommercialViewController implements Initializable {
-
-  @FXML
-  private TextField projectTypeTextField;
-
-  @FXML
-  private TextField budgetTextField;
-
-  @FXML
-  private TextField dayTextField;
-
-  @FXML
-  private TextField monthTextField;
-
-  @FXML
-  private TextField yearTextField;
-
-  @FXML
-  private ComboBox<String> statusComboBox;
-
-  @FXML
-  private TextField projectIDTextField;
-
-  @FXML
-  private TextField timelineTextField;
-
-  @FXML
-  private TextField firstNameTextField;
-
-  @FXML
-  private TextField surnameTextField;
-
-  @FXML
-  private TextField customerIDTextField;
-
-  @FXML
-  private TextField phoneNumberTextField;
-
-  @FXML
-  private TextField emailTextField;
-
-  @FXML
-  private TextField addressTextField;
-
-  @FXML
-  private TextField expectedManHoursTextField;
-
-  @FXML
-  private TextField materialExpensesTextField;
-
-  @FXML
-  private TextField sizeTextField;
-
-  @FXML
-  private TextField floorsTextField;
-
-  @FXML
-  private TextField usageTextField;
-
-  private CommercialProject commercialProject;
-
-  private Button clear;
+  @FXML private TextField projectTypeTextField;
+  @FXML private TextField budgetTextField;
+  @FXML private TextField dayTextField;
+  @FXML private TextField monthTextField;
+  @FXML private TextField yearTextField;
+  @FXML private ComboBox<String> statusComboBox;
+  @FXML private TextField projectIDTextField;
+  @FXML private TextField timelineTextField;
+  @FXML private TextField firstNameTextField;
+  @FXML private TextField surnameTextField;
+  @FXML private TextField customerIDTextField;
+  @FXML private TextField phoneNumberTextField;
+  @FXML private TextField emailTextField;
+  @FXML private TextField addressTextField;
+  @FXML private TextField expectedManHoursTextField;
+  @FXML private TextField materialExpensesTextField;
+  @FXML private TextField sizeTextField;
+  @FXML private TextField floorsTextField;
+  @FXML private TextField usageTextField;
+  @FXML private Button clearButton;
+  @FXML private Button backButton;
   private Button addProject;
   private ViewHandler viewHandler;
+  private CommercialProject commercialProject;
 
   private Scene scene;
   private ProjectModelManager projectManager;
@@ -96,7 +55,6 @@ public class AddCommercialViewController implements Initializable {
   {
     return scene;
   }
-  @FXML
   public void setAddProject() {
     int budget = Integer.parseInt(budgetTextField.getText());
     int day = Integer.parseInt(dayTextField.getText());
@@ -120,8 +78,11 @@ public class AddCommercialViewController implements Initializable {
     reset();
   }
 
-  @Override public void initialize(URL location, ResourceBundle resources)
+  public void handleActions(ActionEvent e)
   {
-
+    if (e.getSource() == backButton)
+    {
+      viewHandler.openView("AddProjectView");
+    }
   }
 }

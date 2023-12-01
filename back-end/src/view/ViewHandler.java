@@ -67,12 +67,15 @@ public class ViewHandler
       case "AddIndustrialView":
         stage.setScene(addIndustrialViewController.getScene());
         addIndustrialViewController.reset();
+        break;
       case "AddResidentialView":
         stage.setScene(addResidentialViewController.getScene());
         addResidentialViewController.reset();
+        break;
       case "AddCommercialView":
         stage.setScene(addCommercialViewController.getScene());
         addCommercialViewController.reset();
+        break;
     }
 
     String title = "";
