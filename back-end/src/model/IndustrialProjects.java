@@ -102,6 +102,6 @@ public class IndustrialProjects extends Project {
      * @return a string that contains the information of this industrial project, such as budget, start date, end date, status, project ID, timeline, customer, resources, size, project type, and facility type
      */
     public String toString() {
-        return super.toString() + " Size: " + size + " Facility Type: " + facilityType;
+        return super.toString() + "," + size + "," + facilityType;
     }
 }

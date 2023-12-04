@@ -9,8 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.ProjectModelManager;
 import model.*;
+import utils.MyFileHandler;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
 
 public class AddIndustrialViewController
 {
@@ -82,7 +84,7 @@ public class AddIndustrialViewController
     return scene;
   }
 
-  public void handleActions(ActionEvent e)
+  public void handleActions(ActionEvent e) throws FileNotFoundException
   {
     if(e.getSource()==backButton)
     {
@@ -285,6 +287,7 @@ public class AddIndustrialViewController
           new IndustrialProjects(budget, date, status, projectID, timeline,
               customer, resources, size, typeOfFacility));
 
+      MyFileHandler.appendToTextFile("projects.txt", projects.toString());
       manager.appendProjects(projects);
       reset();
     }

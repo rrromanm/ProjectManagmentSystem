@@ -47,7 +47,7 @@ public class LoadInitialData
         Customer customer = new Customer(firstName,surname,id,phoneNumber,email,address);
 
         int expectedManHours = Integer.parseInt(tempArr[13].trim());
-        int materialExpenses = Integer.parseInt(tempArr[14].trim());
+        double materialExpenses = Double.parseDouble(tempArr[14].trim());
         Resources resources = new Resources(expectedManHours,materialExpenses);
 
         String type = tempArr[15].trim();

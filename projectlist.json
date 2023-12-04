@@ -1,343 +1,67 @@
 {
   "projects": [
     {
-      "size": 500,
-      "numberOfKitchens": 1,
-      "numberOfBathrooms": 3,
-      "roomsWithPlumbing": 3,
-      "state": "\"New Build\"",
-      "budget": 1000,
+      "size": 214,
+      "facilityType": "facility",
+      "budget": 3000000,
       "startTime": {
         "day": 12,
         "month": 12,
-        "year": 2023
+        "year": 1234
       },
       "endTime": {
         "day": 12,
         "month": 10,
-        "year": 2024
+        "year": 1412
       },
       "customer": {
-        "firstName": "\"Samuel\"",
-        "surname": "Kacenga",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
+        "firstName": "Name",
+        "surname": "Surname",
+        "id": 2,
+        "phoneNumber": 894039,
+        "email": "email",
+        "address": "address"
       },
       "resources": {
         "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
+        "materialExpenses": 123.0,
+        "expectedManHours": 0
       },
       "status": "Under Construction",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "Residential"
-    },
-    {
-      "size": 200,
-      "floors": 1,
-      "usage": "\"Restaurant\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "Samuel",
-        "surname": "Kacenga",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Under Construction",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "Commercial"
-    },
-    {
-      "width": 10,
-      "length": 10,
-      "bridges": 2,
-      "tunnels": 2,
-      "environmentalChallenges": "\"none\"",
-      "geographicalChallenges": "\"none\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "Samuel",
-        "surname": "Kacenga",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Under Construction",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "RoadConstruction"
-    },
-    {
-      "size": 100,
-      "facilityType": "\"Power Plant\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "Samuel",
-        "surname": "Kacenga",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Under Construction",
-      "projectID": 1,
-      "timeline": 10,
+      "projectID": 4231,
+      "timeline": 2134,
       "type": "Industrial"
     },
     {
-      "size": 500,
-      "numberOfKitchens": 1,
-      "numberOfBathrooms": 3,
-      "roomsWithPlumbing": 3,
-      "state": "\"New Build\"",
-      "budget": 1000,
+      "size": 153,
+      "facilityType": "facility",
+      "budget": 20000000,
       "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
+        "day": 1,
+        "month": 1,
+        "year": 1231
       },
       "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
+        "day": 1,
+        "month": 9,
+        "year": 1232
       },
       "customer": {
-        "firstName": "Kuba",
-        "surname": "Abramek",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
+        "firstName": "Kacenga",
+        "surname": "Blyat",
+        "id": 3,
+        "phoneNumber": 412412214,
+        "email": "romaf",
+        "address": "sgga"
       },
       "resources": {
         "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
+        "materialExpenses": 124.0,
+        "expectedManHours": 0
       },
       "status": "Under Construction",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "Residential"
-    },
-    {
-      "size": 200,
-      "floors": 1,
-      "usage": "\"Restaurant\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "Kuba",
-        "surname": "Abramek",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Under Construction",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "Commercial"
-    },
-    {
-      "width": 10,
-      "length": 10,
-      "bridges": 2,
-      "tunnels": 2,
-      "environmentalChallenges": "\"none\"",
-      "geographicalChallenges": "\"none\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "\"Kuba\"",
-        "surname": "Abramek",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Finished",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "RoadConstruction"
-    },
-    {
-      "size": 100,
-      "facilityType": "\"Power Plant\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "\"Kuba\"",
-        "surname": "Abramek",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Finished",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "Industrial"
-    },
-    {
-      "width": 10,
-      "length": 10,
-      "bridges": 2,
-      "tunnels": 2,
-      "environmentalChallenges": "\"none\"",
-      "geographicalChallenges": "\"none\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "\"Romans\"",
-        "surname": "Miholonoks",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Finished",
-      "projectID": 1,
-      "timeline": 10,
-      "type": "RoadConstruction"
-    },
-    {
-      "size": 100,
-      "facilityType": "\"Power Plant\"",
-      "budget": 1000,
-      "startTime": {
-        "day": 12,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 12,
-        "month": 10,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "\"Romans\"",
-        "surname": "Miholonoks",
-        "id": 1,
-        "phoneNumber": 903642758,
-        "email": "bestjavaprogrammer@gmail.com",
-        "address": "\"Your moms\""
-      },
-      "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 15.0,
-        "expectedManHours": 20
-      },
-      "status": "Finished",
-      "projectID": 1,
-      "timeline": 10,
+      "projectID": 4,
+      "timeline": 20,
       "type": "Industrial"
     }
   ]

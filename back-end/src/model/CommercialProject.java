@@ -125,6 +125,6 @@ public class CommercialProject extends Project {
      * @return a string that contains the information of this commercial project, such as budget, start date, end date, status, project ID, timeline, customer, resources, usage, size, and floors
      */
     public String toString(){
-        return super.toString() + "\nUsage: "+usage+"\nSize: "+size+"\nFloors: "+floors;
+        return super.toString() + "," + usage + "," + size + "," + floors;
     }
 }

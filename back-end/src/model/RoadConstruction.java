@@ -222,8 +222,8 @@ public class RoadConstruction extends Project {
      * width, length, number of bridges, number of tunnels, environmental challenges, and geographical challenges
      */
     public String toString() {
-        return super.toString() + " Width: " + width + " Length: " + length + " Bridges: " + bridges +
-                " Tunnels: " + tunnels + " Environmental Challenges: " + environmentalChallenges +
-                " Geographical Challenges: " + geographicalChallenges;
+        return super.toString() + "," + width + "," + length + "," + bridges +
+                "," + tunnels + "," + environmentalChallenges +
+                "," + geographicalChallenges;
     }
 }
