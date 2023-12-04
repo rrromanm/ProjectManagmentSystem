@@ -41,13 +41,13 @@
                   <Insets left="10.0" />
                </FlowPane.margin>
             </Label>
-            <TextField editable="false" prefHeight="26.0" prefWidth="168.0" text="Residential" />
+            <TextField fx:id="projectTypeField" editable="false" onAction="#handleActions" prefHeight="26.0" prefWidth="168.0" text="Residential" />
             <Label prefHeight="18.0" prefWidth="85.0" text="Budget :">
                <FlowPane.margin>
                   <Insets left="10.0" />
                </FlowPane.margin>
             </Label>
-            <TextField fx:id="budgetField" prefHeight="26.0" prefWidth="168.0" promptText="\$100K - $500K" />
+            <TextField fx:id="budgetField" onAction="#handleActions" prefHeight="26.0" prefWidth="168.0" promptText="\$100K - $500K" />
             <Label prefHeight="18.0" prefWidth="87.0" text="Start Date :">
                <opaqueInsets>
                   <Insets />
@@ -56,9 +56,9 @@
                   <Insets left="10.0" />
                </FlowPane.margin>
             </Label>
-            <TextField fx:id="dayField" prefHeight="26.0" prefWidth="46.0" promptText="Day" />
-            <TextField fx:id="monthField" prefHeight="26.0" prefWidth="54.0" promptText="Month" />
-            <TextField fx:id="yearField" prefHeight="26.0" prefWidth="49.0" promptText="Year" />
+            <TextField fx:id="dayField" onAction="#handleActions" prefHeight="26.0" prefWidth="46.0" promptText="Day" />
+            <TextField fx:id="monthField" onAction="#handleActions" prefHeight="26.0" prefWidth="54.0" promptText="Month" />
+            <TextField fx:id="yearField" onAction="#handleActions" prefHeight="26.0" prefWidth="49.0" promptText="Year" />
             <Label prefHeight="18.0" prefWidth="88.0" text="Status :">
                <FlowPane.margin>
                   <Insets left="10.0" />
@@ -76,33 +76,26 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <TextField fx:id="timelineField" prefHeight="26.0" prefWidth="168.0" promptText="Insert months" text="9" />
+            <TextField fx:id="timelineField" onAction="#handleActions" prefHeight="26.0" prefWidth="168.0" promptText="Insert months" text="9" />
             <Label prefHeight="18.0" prefWidth="85.0" text="Customer :">
                <FlowPane.margin>
                   <Insets left="10.0" />
                </FlowPane.margin>
             </Label>
-            <TextField fx:id="firstNameField" prefHeight="26.0" prefWidth="78.0" promptText="First Name" />
-            <TextField fx:id="surnameField" prefHeight="26.0" prefWidth="80.0" promptText="Surname" />
-            <TextField fx:id="customerIDField" prefHeight="26.0" prefWidth="84.0" promptText="Customer ID">
+            <TextField fx:id="firstNameField" onAction="#handleActions" prefHeight="26.0" prefWidth="78.0" promptText="First Name" />
+            <TextField fx:id="surnameField" onAction="#handleActions" prefHeight="26.0" prefWidth="80.0" promptText="Surname" />
+            <TextField fx:id="customerIDField" onAction="#handleActions" prefHeight="26.0" prefWidth="264.0" promptText="Customer ID">
                <FlowPane.margin>
                   <Insets left="10.0" />
                </FlowPane.margin>
             </TextField>
-            <TextField fx:id="phoneNumberField" prefHeight="26.0" prefWidth="174.0" promptText="Phone Number" />
-            <TextField fx:id="emailField" prefHeight="26.0" prefWidth="84.0" promptText="Email">
-               <FlowPane.margin>
-                  <Insets left="10.0" />
-               </FlowPane.margin>
-            </TextField>
-            <TextField fx:id="addressField" prefHeight="26.0" prefWidth="174.0" promptText="Address" />
             <Label prefHeight="18.0" prefWidth="83.0" text="Resources : ">
                <FlowPane.margin>
                   <Insets left="10.0" />
                </FlowPane.margin>
             </Label>
-            <TextField fx:id="expectedManHoursField" prefHeight="26.0" prefWidth="174.0" promptText="Expected Man Hours" />
-            <TextField fx:id="materialExpensesField" prefHeight="26.0" prefWidth="172.0" promptText="Material Expenses">
+            <TextField fx:id="expectedManHoursField" onAction="#handleActions" prefHeight="26.0" prefWidth="174.0" promptText="Expected Man Hours" />
+            <TextField fx:id="materialExpensesField" onAction="#handleActions" prefHeight="26.0" prefWidth="172.0" promptText="Material Expenses">
                <FlowPane.margin>
                   <Insets left="105.0" />
                </FlowPane.margin>
@@ -114,20 +107,20 @@
             <FlowPane prefHeight="201.0" prefWidth="310.0" vgap="10.0">
                <children>
                   <Label prefHeight="30.0" prefWidth="125.0" text="Size :" />
-                  <TextField fx:id="sizeField" prefHeight="26.0" prefWidth="171.0" promptText="m2" />
+                  <TextField fx:id="sizeField" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" promptText="m2" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="Nr. of Kitchens:" />
-                  <TextField fx:id="NrOfKitchens" prefHeight="26.0" prefWidth="171.0" text="1" />
+                  <TextField fx:id="NrOfKitchens" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" text="1" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="Nr. of Bathrooms:" />
-                  <TextField fx:id="NrOfBathrooms" prefHeight="26.0" prefWidth="171.0" text="1" />
+                  <TextField fx:id="NrOfBathrooms" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" text="1" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="Rooms with plumbing:" />
-                  <TextField fx:id="RoomsWithPlumbing" prefHeight="26.0" prefWidth="171.0" text="2" />
+                  <TextField fx:id="RoomsWithPlumbing" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" text="2" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="State:" />
-                  <ComboBox fx:id="statusComboBox" prefHeight="26.0" prefWidth="171.0" />
+                  <ComboBox fx:id="statusComboBox" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" />
                </children>
             </FlowPane>
          </children></FlowPane>
-      <Button fx:id="addProjectButton" layoutX="458.0" layoutY="262.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="Add Project" />
-      <Button fx:id="clearButton" layoutX="343.0" layoutY="262.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="Clear" />
+      <Button fx:id="addProjectButton" layoutX="458.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="79.0" text="Add Project" />
+      <Button fx:id="clearButton" layoutX="343.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="79.0" text="Clear" />
       <Button fx:id="backButton" layoutX="14.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="70.0" text="Back" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="345.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
          <image>
