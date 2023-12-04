@@ -122,6 +122,6 @@ public class Resources implements Serializable
    * @return A string containing information about man-hours, expenses, and expected man-hours.
    */
   public String toString(){
-    return "Man hours: " + manHoursUsed + "Expenses: " + materialExpenses + "Expected man hours: " + expectedManHours;
+    return manHoursUsed + "," + materialExpenses + "," + expectedManHours;
   }
 }

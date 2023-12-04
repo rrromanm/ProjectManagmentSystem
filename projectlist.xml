@@ -1,66 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ProjectList>
   <projects>
-    <size>214</size>
-    <facilityType>facility</facilityType>
+    <floors>1</floors>
+    <size>1234</size>
+    <usage>vdsf</usage>
     <resources>
       <expectedManHours>0</expectedManHours>
       <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>123.0</materialExpenses>
+      <materialExpenses>234.0</materialExpenses>
     </resources>
-    <timeline>2134</timeline>
+    <timeline>18</timeline>
     <startTime>
       <month>12</month>
-      <year>1234</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>1412</year>
-      <day>12</day>
-    </endTime>
-    <type>Industrial</type>
-    <projectID>4231</projectID>
-    <budget>3000000</budget>
-    <customer>
-      <firstName>Name</firstName>
-      <phoneNumber>894039</phoneNumber>
-      <address>address</address>
-      <surname>Surname</surname>
-      <id>2</id>
-      <email>email</email>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <size>153</size>
-    <facilityType>facility</facilityType>
-    <resources>
-      <expectedManHours>0</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>124.0</materialExpenses>
-    </resources>
-    <timeline>20</timeline>
-    <startTime>
-      <month>1</month>
-      <year>1231</year>
+      <year>2005</year>
       <day>1</day>
     </startTime>
     <endTime>
-      <month>9</month>
-      <year>1232</year>
+      <month>6</month>
+      <year>2007</year>
       <day>1</day>
     </endTime>
-    <type>Industrial</type>
-    <projectID>4</projectID>
-    <budget>20000000</budget>
+    <type>Commercial</type>
+    <projectID>5</projectID>
+    <budget>600000</budget>
     <customer>
-      <firstName>Kacenga</firstName>
-      <phoneNumber>412412214</phoneNumber>
-      <address>sgga</address>
-      <surname>Blyat</surname>
-      <id>3</id>
-      <email>romaf</email>
+      <firstName>fs</firstName>
+      <surname>svd</surname>
+      <id>12</id>
     </customer>
     <status>Under Construction</status>
   </projects>

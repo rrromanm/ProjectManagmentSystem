@@ -1,2 +1,1 @@
-3000000,12,12,1234,Under Construction,4231,2134,Name,Surname,2,894039,email,address,0,123.0,Industrial,214,facility
-20000000,1,1,1231,Under Construction,4,20,Kacenga,Blyat,3,412412214,romaf,sgga,0,124.0,Industrial,153,facility
+600000,1,12,2005,Under Construction,5,18,fs,svd,12,0,234.0,Commercial,1234,1,vdsf
