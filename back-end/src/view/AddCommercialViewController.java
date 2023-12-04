@@ -25,11 +25,9 @@ public class AddCommercialViewController {
   @FXML private TextField firstNameTextField;
   @FXML private TextField surnameTextField;
   @FXML private TextField customerIDTextField;
-  @FXML private TextField phoneNumberTextField;
-  @FXML private TextField emailTextField;
-  @FXML private TextField addressTextField;
   @FXML private TextField expectedManHoursTextField;
   @FXML private TextField materialExpensesTextField;
+  @FXML private TextField manHoursUsedField;
   @FXML private TextField sizeTextField;
   @FXML private TextField floorsTextField;
   @FXML private TextField usageTextField;
@@ -51,6 +49,10 @@ public class AddCommercialViewController {
     statusComboBox.getItems().addAll(statusString);
     statusComboBox.getSelectionModel().selectFirst();
   }
+  public boolean isValidString(String string)
+  {
+    return string.matches("[a-zA-Z]+");
+  }
 
   public void reset()
   {
@@ -63,10 +65,8 @@ public class AddCommercialViewController {
     firstNameTextField.clear();
     surnameTextField.clear();
     customerIDTextField.clear();
-    phoneNumberTextField.clear();
-    emailTextField.clear();
-    addressTextField.clear();
     expectedManHoursTextField.clear();
+    manHoursUsedField.clear();
     materialExpensesTextField.clear();
     sizeTextField.clear();
     usageTextField.clear();
@@ -85,56 +85,193 @@ public class AddCommercialViewController {
     }
     else if(e.getSource() == addProject)
     {
-      ProjectList projectList = new ProjectList();
+      ProjectList projects = new ProjectList();
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
-//      int budget = 0;
-//      int day = 0;
-//      int month = 0;
-//      int year = 0;
-//      String status = null;
-//      int projectID = 0;
-//      int timeline = 0;
-//      String firstName = null;
-//      String surname = null;
-//      int customerID = 0;
-//      int expectedManHours = 0;
-//      int materialExpenses = 0;
-//      int size = 0;
-//      short floors = 0;
-//      String usage = null;
+      int budget = 0;
+      int day = 0;
+      int month = 0;
+      int year = 0;
+      String status = null;
+      int projectID = 0;
+      int timeline = 0;
+      String firstName = null;
+      String surname = null;
+      int customerID = 0;
+      int expectedManHours = 0;
+      int materialExpenses = 0;
+      int manHoursUsed = 0;
+      int size = 0;
+      short floors =0;
+      String usage = null;
 
-//      try
-//      {
-//          budget = Integer.parseInt(budgetTextField.getText());
-//      }
-//      catch (NumberFormatException exception)
-//      {
-//        JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
-//            JOptionPane.ERROR_MESSAGE);
-//        return;
-//      }
-      int budget = Integer.parseInt(budgetTextField.getText());
-      int day = Integer.parseInt(dayTextField.getText());
-      int month = Integer.parseInt(monthTextField.getText());
-      int year = Integer.parseInt(yearTextField.getText());
-      String status = statusComboBox.getValue();
-      int projectID = Integer.parseInt(projectIDTextField.getText());
-      int timeline = Integer.parseInt(timelineTextField.getText());
-      Customer customer = new Customer(firstNameTextField.getText(), surnameTextField.getText(),
-          Integer.parseInt(customerIDTextField.getText()));
-      Resources resources = new Resources(Integer.parseInt(expectedManHoursTextField.getText()),
-          Integer.parseInt(materialExpensesTextField.getText()));
-      int size = Integer.parseInt(sizeTextField.getText());
-      short floors = Short.parseShort(floorsTextField.getText());
-      commercialProject = new CommercialProject(budget, new MyDate(day, month, year), status, projectID, timeline,
-          customer, resources, size, floors, usageTextField.getText());
 
-      projectList.addProject(commercialProject);
+      String type = projectTypeTextField.getText();
+      try
+      {
+        budget = Integer.parseInt(budgetTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        day = Integer.parseInt(dayTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect day inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        month = Integer.parseInt(monthTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect month inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        year = Integer.parseInt(yearTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect year inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      status = (String) statusComboBox.getValue();
+      try
+      {
+        projectID = Integer.parseInt(projectIDTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect project ID inputted",
+            "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        timeline = Integer.parseInt(timelineTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect timeline inputted",
+            "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      if (isValidString(firstNameTextField.getText()))
+      {
+        firstName = firstNameTextField.getText();
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect customer first name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      if (isValidString(surnameTextField.getText()))
+      {
+        surname = surnameTextField.getText();
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect customer surname inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        customerID = Integer.parseInt(customerIDTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null, "Incorrect customer ID inputted",
+            "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        expectedManHours = Integer.parseInt(expectedManHoursTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect resources expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        materialExpenses = Integer.parseInt(materialExpensesTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect resources material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        manHoursUsed = Integer.parseInt(manHoursUsedField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect  resources man hours used inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        size = Integer.parseInt(sizeTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect size inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        floors = Short.parseShort(floorsTextField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect number of floors inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      if (isValidString(usageTextField.getText()))
+      {
+        usage = usageTextField.getText();
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect usage inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      MyDate date = new MyDate(day, month, year);
+      Customer customer = new Customer(firstName, surname, customerID);
+      Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
+      projects.addProject(
+          new CommercialProject(budget, date, status, projectID, timeline,
+              customer, resources, size, floors,usage));
 
-      MyFileHandler.appendToTextFile("projects.txt", projectList.toString());
-      manager.appendProjects(projectList);
+      MyFileHandler.appendToTextFile("projects.txt", projects.toString());
+      manager.appendProjects(projects);
+      viewHandler.openView("ProjectView");
+      JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
       reset();
+
+
     }
     else if(e.getSource() == clearButton)
     {
