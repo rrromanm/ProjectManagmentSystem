@@ -41,47 +41,44 @@ public class LoadInitialData
         String firstName = tempArr[7].trim();
         String surname = tempArr[8].trim();
         int id = Integer.parseInt(tempArr[9].trim());
-        int phoneNumber = Integer.parseInt(tempArr[10].trim());
-        String email = tempArr[11].trim();
-        String address = tempArr[12].trim();
-        Customer customer = new Customer(firstName,surname,id,phoneNumber,email,address);
+        Customer customer = new Customer(firstName,surname,id);
 
-        int expectedManHours = Integer.parseInt(tempArr[13].trim());
-        int materialExpenses = Integer.parseInt(tempArr[14].trim());
+        int expectedManHours = Integer.parseInt(tempArr[10].trim());
+        double materialExpenses = Double.parseDouble(tempArr[11].trim());
         Resources resources = new Resources(expectedManHours,materialExpenses);
 
-        String type = tempArr[15].trim();
+        String type = tempArr[12].trim();
 
         if(type.equalsIgnoreCase("Commercial"))
         {
-          int size = Integer.parseInt(tempArr[16].trim());
-          short floors = Short.parseShort(tempArr[17].trim());
-          String usage = tempArr[18].trim();
+          int size = Integer.parseInt(tempArr[13].trim());
+          short floors = Short.parseShort(tempArr[14].trim());
+          String usage = tempArr[15].trim();
           projects.addProject( new CommercialProject(budget,startTime,status,projectID,timeline,customer,resources,size,floors,usage));
         }
         else if(type.equalsIgnoreCase("Industrial"))
         {
-          int size = Integer.parseInt(tempArr[16].trim());
-          String facilityType = tempArr[17].trim();
+          int size = Integer.parseInt(tempArr[13].trim());
+          String facilityType = tempArr[14].trim();
           projects.addProject( new IndustrialProjects(budget,startTime,status,projectID,timeline,customer,resources,size,facilityType));
         }
         else if(type.equalsIgnoreCase("Residential"))
         {
-          int size = Integer.parseInt(tempArr[16].trim());
-          int numberOfKitchens = Integer.parseInt(tempArr[17].trim());
-          int numberOfBathrooms = Integer.parseInt(tempArr[18].trim());
-          int roomsWithPlumbing = Integer.parseInt(tempArr[19].trim());
-          String state = tempArr[20].trim();
+          int size = Integer.parseInt(tempArr[13].trim());
+          int numberOfKitchens = Integer.parseInt(tempArr[14].trim());
+          int numberOfBathrooms = Integer.parseInt(tempArr[15].trim());
+          int roomsWithPlumbing = Integer.parseInt(tempArr[16].trim());
+          String state = tempArr[17].trim();
           projects.addProject( new ResidentialProjects(budget,startTime,status,projectID,timeline,customer,resources,size,numberOfKitchens,numberOfBathrooms,roomsWithPlumbing,state));
         }
         else if(type.equalsIgnoreCase("RoadConstruction"))
         {
-          int width = Integer.parseInt(tempArr[16].trim());
-          int length = Integer.parseInt(tempArr[17].trim());
-          int bridges = Integer.parseInt(tempArr[18].trim());
-          int tunnels = Integer.parseInt(tempArr[19].trim());
-          String environmentalChallenges = tempArr[20].trim();
-          String geographicalChallenges = tempArr[21].trim();
+          int width = Integer.parseInt(tempArr[13].trim());
+          int length = Integer.parseInt(tempArr[14].trim());
+          int bridges = Integer.parseInt(tempArr[15].trim());
+          int tunnels = Integer.parseInt(tempArr[16].trim());
+          String environmentalChallenges = tempArr[17].trim();
+          String geographicalChallenges = tempArr[18].trim();
           projects.addProject( new RoadConstruction(budget,startTime,status,projectID,timeline,customer,resources,width,length,bridges,tunnels,environmentalChallenges,geographicalChallenges));
         }
         else {

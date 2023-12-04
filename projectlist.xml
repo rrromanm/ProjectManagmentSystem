@@ -1,343 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ProjectList>
   <projects>
+    <size>214</size>
+    <facilityType>facility</facilityType>
     <resources>
-      <expectedManHours>20</expectedManHours>
+      <expectedManHours>0</expectedManHours>
       <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
+      <materialExpenses>123.0</materialExpenses>
     </resources>
-    <numberOfKitchens>1</numberOfKitchens>
-    <type>Residential</type>
-    <size>500</size>
-    <roomsWithPlumbing>3</roomsWithPlumbing>
-    <timeline>10</timeline>
+    <timeline>2134</timeline>
     <startTime>
       <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <state>"New Build"</state>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <projectID>1</projectID>
-    <numberOfBathrooms>3</numberOfBathrooms>
-    <budget>1000</budget>
-    <customer>
-      <firstName>"Samuel"</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Kacenga</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <floors>1</floors>
-    <size>200</size>
-    <usage>"Restaurant"</usage>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
+      <year>1234</year>
       <day>12</day>
     </startTime>
     <endTime>
       <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <type>Commercial</type>
-    <projectID>1</projectID>
-    <budget>1000</budget>
-    <customer>
-      <firstName>Samuel</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Kacenga</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <length>10</length>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <bridges>2</bridges>
-    <type>RoadConstruction</type>
-    <geographicalChallenges>"none"</geographicalChallenges>
-    <tunnels>2</tunnels>
-    <width>10</width>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <projectID>1</projectID>
-    <environmentalChallenges>"none"</environmentalChallenges>
-    <budget>1000</budget>
-    <customer>
-      <firstName>Samuel</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Kacenga</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <size>100</size>
-    <facilityType>"Power Plant"</facilityType>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
+      <year>1412</year>
       <day>12</day>
     </endTime>
     <type>Industrial</type>
-    <projectID>1</projectID>
-    <budget>1000</budget>
+    <projectID>4231</projectID>
+    <budget>3000000</budget>
     <customer>
-      <firstName>Samuel</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Kacenga</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
+      <firstName>Name</firstName>
+      <phoneNumber>894039</phoneNumber>
+      <address>address</address>
+      <surname>Surname</surname>
+      <id>2</id>
+      <email>email</email>
     </customer>
     <status>Under Construction</status>
   </projects>
   <projects>
+    <size>153</size>
+    <facilityType>facility</facilityType>
     <resources>
-      <expectedManHours>20</expectedManHours>
+      <expectedManHours>0</expectedManHours>
       <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
+      <materialExpenses>124.0</materialExpenses>
     </resources>
-    <numberOfKitchens>1</numberOfKitchens>
-    <type>Residential</type>
-    <size>500</size>
-    <roomsWithPlumbing>3</roomsWithPlumbing>
-    <timeline>10</timeline>
+    <timeline>20</timeline>
     <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <state>"New Build"</state>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <projectID>1</projectID>
-    <numberOfBathrooms>3</numberOfBathrooms>
-    <budget>1000</budget>
-    <customer>
-      <firstName>Kuba</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Abramek</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <floors>1</floors>
-    <size>200</size>
-    <usage>"Restaurant"</usage>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
+      <month>1</month>
+      <year>1231</year>
+      <day>1</day>
     </startTime>
     <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <type>Commercial</type>
-    <projectID>1</projectID>
-    <budget>1000</budget>
-    <customer>
-      <firstName>Kuba</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Abramek</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <length>10</length>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <bridges>2</bridges>
-    <type>RoadConstruction</type>
-    <geographicalChallenges>"none"</geographicalChallenges>
-    <tunnels>2</tunnels>
-    <width>10</width>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <projectID>1</projectID>
-    <environmentalChallenges>"none"</environmentalChallenges>
-    <budget>1000</budget>
-    <customer>
-      <firstName>"Kuba"</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Abramek</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Finished</status>
-  </projects>
-  <projects>
-    <size>100</size>
-    <facilityType>"Power Plant"</facilityType>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
+      <month>9</month>
+      <year>1232</year>
+      <day>1</day>
     </endTime>
     <type>Industrial</type>
-    <projectID>1</projectID>
-    <budget>1000</budget>
+    <projectID>4</projectID>
+    <budget>20000000</budget>
     <customer>
-      <firstName>"Kuba"</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Abramek</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
+      <firstName>Kacenga</firstName>
+      <phoneNumber>412412214</phoneNumber>
+      <address>sgga</address>
+      <surname>Blyat</surname>
+      <id>3</id>
+      <email>romaf</email>
     </customer>
-    <status>Finished</status>
-  </projects>
-  <projects>
-    <length>10</length>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <bridges>2</bridges>
-    <type>RoadConstruction</type>
-    <geographicalChallenges>"none"</geographicalChallenges>
-    <tunnels>2</tunnels>
-    <width>10</width>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <projectID>1</projectID>
-    <environmentalChallenges>"none"</environmentalChallenges>
-    <budget>1000</budget>
-    <customer>
-      <firstName>"Romans"</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Miholonoks</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Finished</status>
-  </projects>
-  <projects>
-    <size>100</size>
-    <facilityType>"Power Plant"</facilityType>
-    <resources>
-      <expectedManHours>20</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>15.0</materialExpenses>
-    </resources>
-    <timeline>10</timeline>
-    <startTime>
-      <month>12</month>
-      <year>2023</year>
-      <day>12</day>
-    </startTime>
-    <endTime>
-      <month>10</month>
-      <year>2024</year>
-      <day>12</day>
-    </endTime>
-    <type>Industrial</type>
-    <projectID>1</projectID>
-    <budget>1000</budget>
-    <customer>
-      <firstName>"Romans"</firstName>
-      <phoneNumber>903642758</phoneNumber>
-      <address>"Your moms"</address>
-      <surname>Miholonoks</surname>
-      <id>1</id>
-      <email>bestjavaprogrammer@gmail.com</email>
-    </customer>
-    <status>Finished</status>
+    <status>Under Construction</status>
   </projects>
 </ProjectList>

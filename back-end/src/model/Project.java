@@ -169,8 +169,9 @@ public abstract class Project implements Serializable
    * @return A string representation of the Project object.
    */
   public String toString(){
-    return "project type: "+type+"\nbudget: "+budget+"\nstatus: "+status+"\n ID: "+projectID+"\n timeline: "+timeline+ "\n project start date: "+startTime+
-    "\n project deadline: "+endTime+"\n resources: "+resources+"\n customer: "+customer;
+    return budget + "," + startTime.day + "," + startTime.month + "," + startTime.year + "," + status + "," + projectID +
+        "," + timeline + "," + customer.getFirstName() + "," + customer.getSurname() + "," + customer.getId() + "," +
+        resources.getManHoursUsed() + "," + resources.getExpenses() + "," + type;
   }
 
 }

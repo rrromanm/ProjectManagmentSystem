@@ -9,8 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.ProjectModelManager;
 import model.*;
+import utils.MyFileHandler;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
 
 public class AddIndustrialViewController
 {
@@ -68,9 +70,6 @@ public class AddIndustrialViewController
     firstNameField.setText("");
     surnameField.setText("");
     customerIDField.setText("");
-    phoneNumberField.setText("");
-    emailField.setText("");
-    addressField.setText("");
     expectedManHoursField.setText("");
     materialExpensesField.setText("");
     sizeField.setText("");
@@ -82,7 +81,7 @@ public class AddIndustrialViewController
     return scene;
   }
 
-  public void handleActions(ActionEvent e)
+  public void handleActions(ActionEvent e) throws FileNotFoundException
   {
     if(e.getSource()==backButton)
     {
@@ -107,9 +106,6 @@ public class AddIndustrialViewController
       String firstName = null;
       String surname = null;
       int customerID = 0;
-      int phoneNumber = 0;
-      String email = null;
-      String address = null;
       int expectedManHours = 0;
       int materialExpenses = 0;
       int size = 0;
@@ -209,36 +205,6 @@ public class AddIndustrialViewController
       }
       try
       {
-        phoneNumber = Integer.parseInt(phoneNumberField.getText());
-      }
-      catch (NumberFormatException exception)
-      {
-        JOptionPane.showMessageDialog(null, "Incorrect phone number inputted",
-            "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-      if (isValidString(emailField.getText()))
-      {
-        email = emailField.getText();
-      }
-      else
-      {
-        JOptionPane.showMessageDialog(null, "Incorrect customer email inputted",
-            "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-      if (isValidString(addressField.getText()))
-      {
-        address = addressField.getText();
-      }
-      else
-      {
-        JOptionPane.showMessageDialog(null,
-            "Incorrect customer address inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-      try
-      {
         expectedManHours = Integer.parseInt(expectedManHoursField.getText());
       }
       catch (NumberFormatException exception)
@@ -278,13 +244,13 @@ public class AddIndustrialViewController
         return;
       }
       MyDate date = new MyDate(day, month, year);
-      Customer customer = new Customer(firstName, surname, customerID,
-          phoneNumber, email, address);
+      Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses);
       projects.addProject(
           new IndustrialProjects(budget, date, status, projectID, timeline,
               customer, resources, size, typeOfFacility));
 
+      MyFileHandler.appendToTextFile("projects.txt", projects.toString());
       manager.appendProjects(projects);
       reset();
     }

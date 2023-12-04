@@ -33,7 +33,7 @@ public class Resources implements Serializable
    * @param expectedManHours The expected man-hours for the project.
    * @param materialExpenses The initial material expenses for the project.
    */
-  public Resources(int expectedManHours, int materialExpenses){
+  public Resources(int expectedManHours, double materialExpenses){
     manHoursUsed = 0;
     this.expectedManHours = expectedManHours;
     this.materialExpenses = materialExpenses;
