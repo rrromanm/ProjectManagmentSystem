@@ -275,6 +275,8 @@ public class AddResidentialViewController
           new ResidentialProjects(budget, date, status, projectID, timeline,
               customer, resources, size, kitchens, bathrooms, plumbing, state));
       manager.appendProjects(projects);
+      viewHandler.openView("ProjectView");
+      JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
       reset();
     }
   }

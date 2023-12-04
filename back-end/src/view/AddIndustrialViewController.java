@@ -252,6 +252,8 @@ public class AddIndustrialViewController
 
       MyFileHandler.appendToTextFile("projects.txt", projects.toString());
       manager.appendProjects(projects);
+      viewHandler.openView("ProjectView");
+      JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
       reset();
     }
   }

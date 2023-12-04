@@ -20,7 +20,6 @@ public class RoadConstruction extends Project {
      * A constructor that creates a road construction project with the given parameters.
      * @param budget the budget of the road construction project in Danish kroner
      * @param startTime the start date of the road construction project
-     * @param endTime the end date of the road construction project
      * @param status the status of the road construction project, such as planned, ongoing, completed, etc.
      * @param projectID the unique identifier of the road construction project
      * @param timeline the estimated duration of the road construction project in months

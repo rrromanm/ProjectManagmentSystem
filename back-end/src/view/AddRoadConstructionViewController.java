@@ -5,10 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import model.*;
-
 import javax.swing.*;
 
 public class AddRoadConstructionViewController {
@@ -38,13 +36,17 @@ public class AddRoadConstructionViewController {
     @FXML private TextField environmentalChallenges;
     @FXML private TextField geographicalChallenges;
     @FXML private Button addProjectButton;
-    @FXML private TextField tunnelsAndBridges;
+    @FXML private TextField tunnels;
+    @FXML private TextField bridges;
 
     public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
     {
         this.viewHandler = viewHandler;
         this.scene = scene;
         this.projectManager = projectManager;
+        String[] statusString = {"Under Construction","Finished","Planned"};
+        statusComboBox.getItems().addAll(statusString);
+        statusComboBox.getSelectionModel().selectFirst();
     }
 
     public void reset()
@@ -65,7 +67,8 @@ public class AddRoadConstructionViewController {
         roadWidth.setText("");
         environmentalChallenges.setText("");
         geographicalChallenges.setText("");
-        tunnelsAndBridges.setText("");
+        tunnels.setText("");
+        bridges.setText("");
     }
 
     public Scene getScene()
@@ -107,9 +110,10 @@ public class AddRoadConstructionViewController {
             int materialExpenses = 0;
             int width = 0;
             int length = 0;
-            String tunnelsBridges = null;
             String environmental = null;
             String geographical = null;
+            int bridge = 0;
+            int tunnel = 0;
 
             String type = projectTypeField.getText();
             try
@@ -245,7 +249,17 @@ public class AddRoadConstructionViewController {
             }
             try
             {
-                tunnelsBridges = tunnelsAndBridges.getText();
+                tunnel = Integer.parseInt(tunnels.getText());
+            }
+            catch (NumberFormatException exception)
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect number inputted",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            try
+            {
+                 bridge = Integer.parseInt(bridges.getText());
             }
             catch (NumberFormatException exception)
             {
@@ -280,10 +294,11 @@ public class AddRoadConstructionViewController {
             Resources resources = new Resources(expectedManHours, materialExpenses);
             projects.addProject(
                 new RoadConstruction(budget, date, status, projectID, timeline,
-                    customer, resources, width, length, tunnelsBridges, environmental, geographical));
+                    customer, resources, width, length, bridge,tunnel, environmental, geographical));
             manager.appendProjects(projects);
+            viewHandler.openView("ProjectView");
+            JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
             reset();
         }
-    }
     }
 }

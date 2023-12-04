@@ -64,7 +64,7 @@
                   <Insets left="10.0" />
                </FlowPane.margin>
             </Label>
-            <ComboBox prefHeight="26.0" prefWidth="166.0" visibleRowCount="3" />
+            <ComboBox fx:id="statusComboBox" onAction="#handleActions" prefHeight="26.0" prefWidth="166.0" visibleRowCount="3" />
             <Label prefHeight="18.0" prefWidth="88.0" text="Project ID :">
                <FlowPane.margin>
                   <Insets left="10.0" />
@@ -115,7 +115,7 @@
                   <Label prefHeight="30.0" prefWidth="125.0" text="Rooms with plumbing:" />
                   <TextField fx:id="RoomsWithPlumbing" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" text="2" />
                   <Label prefHeight="30.0" prefWidth="125.0" text="State:" />
-                  <ComboBox fx:id="statusComboBox" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" />
+                  <ComboBox fx:id="stateComboBox" onAction="#handleActions" prefHeight="26.0" prefWidth="171.0" />
                </children>
             </FlowPane>
          </children></FlowPane>
