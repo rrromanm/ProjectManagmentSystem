@@ -13,9 +13,6 @@ public class Customer implements Serializable
   private String firstName;
   private String surname;
   private int id;
-  private int phoneNumber;
-  private String email;
-  private String address;
 
   /**
    * Creates a customer object with specified attributes
@@ -23,19 +20,13 @@ public class Customer implements Serializable
    * @param firstName to set customers first name
    * @param surname to set customers last name
    * @param id to set customers id
-   * @param phoneNumber to set customers phone number
-   * @param email to set customers email
-   * @param address to set customers email
    */
 
-  public Customer(String firstName, String surname,int id, int phoneNumber, String email, String address)
+  public Customer(String firstName, String surname,int id)
   {
     this.firstName = firstName;
     this.surname = surname;
     this.id = id;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
-    this.address = address;
   }
 
   /**
@@ -103,66 +94,6 @@ public class Customer implements Serializable
   }
 
   /**
-   * Sets the phone number of the customer.
-   *
-   * @param phoneNumber The new phone number of the customer.
-   */
-  public void setPhoneNumber(int phoneNumber)
-  {
-    this.phoneNumber = phoneNumber;
-  }
-
-  /**
-   * Returns the phone number of the customer.
-   *
-   * @return The phone number of the customer.
-   */
-  public int getPhoneNumber()
-  {
-    return phoneNumber;
-  }
-
-  /**
-   * Sets the email address of the customer.
-   *
-   * @param email The new email address of the customer.
-   */
-  public void setEmail(String email)
-  {
-    this.email = email;
-  }
-
-  /**
-   * Returns the email address of the customer.
-   *
-   * @return The email address of the customer.
-   */
-  public String getEmail()
-  {
-    return email;
-  }
-
-  /**
-   * Sets the address of the customer.
-   *
-   * @param address The new address of the customer.
-   */
-  public void setAddress(String address)
-  {
-    this.address = address;
-  }
-
-  /**
-   * Returns the address of the customer.
-   *
-   * @return The address of the customer.
-   */
-  public String getAddress()
-  {
-    return address;
-  }
-
-  /**
    * Checks if two Customer objects are equal.
    *
    * @param obj The object to compare.
@@ -179,10 +110,7 @@ public class Customer implements Serializable
 
     return firstName.equals(other.firstName) &&
         surname.equals(other.surname) &&
-        id == other.id &&
-        phoneNumber == other.phoneNumber &&
-        email.equals(other.email) &&
-        address.equals(other.address);
+        id == other.id;
   }
 
   /**
@@ -192,9 +120,6 @@ public class Customer implements Serializable
    */
   public String toString()
   {
-    return "First Name: " + firstName  + " " + "Surname: " + surname + " " +
-          "ID: " + id + " " +
-        "Address: " + address + "Phone number: " + phoneNumber + " " +
-        "Email: " + email;
+    return firstName  + "," + surname + "," + id;
   }
 }

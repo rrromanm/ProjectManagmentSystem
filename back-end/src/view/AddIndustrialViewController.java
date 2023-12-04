@@ -280,8 +280,7 @@ public class AddIndustrialViewController
         return;
       }
       MyDate date = new MyDate(day, month, year);
-      Customer customer = new Customer(firstName, surname, customerID,
-          phoneNumber, email, address);
+      Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses);
       projects.addProject(
           new IndustrialProjects(budget, date, status, projectID, timeline,

@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import model.*;
 import utils.MyFileHandler;
 
+import java.io.FileNotFoundException;
+
 public class AddCommercialViewController {
 
   @FXML private TextField projectTypeTextField;
@@ -71,7 +73,7 @@ public class AddCommercialViewController {
     return scene;
   }
 
-  public void handleActions(ActionEvent e)
+  public void handleActions(ActionEvent e) throws FileNotFoundException
   {
     if (e.getSource() == backButton)
     {
@@ -88,8 +90,7 @@ public class AddCommercialViewController {
       int projectID = Integer.parseInt(projectIDTextField.getText());
       int timeline = Integer.parseInt(timelineTextField.getText());
       Customer customer = new Customer(firstNameTextField.getText(), surnameTextField.getText(),
-          Integer.parseInt(customerIDTextField.getText()), Integer.parseInt(phoneNumberTextField.getText()),
-          emailTextField.getText(), addressTextField.getText());
+          Integer.parseInt(customerIDTextField.getText()));
       Resources resources = new Resources(Integer.parseInt(expectedManHoursTextField.getText()),
           Integer.parseInt(materialExpensesTextField.getText()));
       int size = Integer.parseInt(sizeTextField.getText());
@@ -99,9 +100,9 @@ public class AddCommercialViewController {
       ProjectList projectList = new ProjectList();
       projectList.addProject(commercialProject);
 
-      reset();
-
+      MyFileHandler.appendToTextFile("projects.txt", projectList.toString());
       manager.appendProjects(projectList);
+      reset();
     }
     else if(e.getSource() == clearButton)
     {
