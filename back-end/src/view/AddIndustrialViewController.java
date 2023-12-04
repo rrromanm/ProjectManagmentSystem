@@ -70,9 +70,6 @@ public class AddIndustrialViewController
     firstNameField.setText("");
     surnameField.setText("");
     customerIDField.setText("");
-    phoneNumberField.setText("");
-    emailField.setText("");
-    addressField.setText("");
     expectedManHoursField.setText("");
     materialExpensesField.setText("");
     sizeField.setText("");
@@ -109,9 +106,6 @@ public class AddIndustrialViewController
       String firstName = null;
       String surname = null;
       int customerID = 0;
-      int phoneNumber = 0;
-      String email = null;
-      String address = null;
       int expectedManHours = 0;
       int materialExpenses = 0;
       int size = 0;
@@ -211,36 +205,6 @@ public class AddIndustrialViewController
       }
       try
       {
-        phoneNumber = Integer.parseInt(phoneNumberField.getText());
-      }
-      catch (NumberFormatException exception)
-      {
-        JOptionPane.showMessageDialog(null, "Incorrect phone number inputted",
-            "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-      if (isValidString(emailField.getText()))
-      {
-        email = emailField.getText();
-      }
-      else
-      {
-        JOptionPane.showMessageDialog(null, "Incorrect customer email inputted",
-            "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-      if (isValidString(addressField.getText()))
-      {
-        address = addressField.getText();
-      }
-      else
-      {
-        JOptionPane.showMessageDialog(null,
-            "Incorrect customer address inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
-      try
-      {
         expectedManHours = Integer.parseInt(expectedManHoursField.getText());
       }
       catch (NumberFormatException exception)
@@ -288,6 +252,8 @@ public class AddIndustrialViewController
 
       MyFileHandler.appendToTextFile("projects.txt", projects.toString());
       manager.appendProjects(projects);
+      viewHandler.openView("ProjectView");
+      JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
       reset();
     }
   }

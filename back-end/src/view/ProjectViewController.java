@@ -20,6 +20,8 @@ public class ProjectViewController {
   private ViewHandler viewHandler;
 
   @FXML private Button searchButton;
+  @FXML private Button addButton;
+  @FXML private Button removeButton;
   @FXML private MenuItem exitMenuItem;
   @FXML private CheckMenuItem editAreaMenuItem;
   @FXML private MenuItem aboutMenuItem;
@@ -76,6 +78,14 @@ public class ProjectViewController {
       statusButton2.setSelected(false);
       statusButton3.setSelected(false);
       statusButton4.setSelected(false);
+    }
+    else if (e.getSource() == addButton)
+    {
+      viewHandler.openView("AddProjectView");
+    }
+    else if (e.getSource() == removeButton)
+    {
+      viewHandler.openView("RemoveProjectView");
     }
     else if (e.getSource() == exitMenuItem)
     {

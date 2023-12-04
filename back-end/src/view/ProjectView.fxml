@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -91,11 +90,13 @@
                         <Button fx:id="searchButton" layoutX="137.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleActions" text="Reset" />
                      </children>
                   </AnchorPane>
-                  <Region prefHeight="536.0" prefWidth="326.0" />
-                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions" text="Back">
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin></Button>
+                  <AnchorPane prefHeight="511.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="backButton" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Back" />
+                        <Button fx:id="removeButton" layoutX="270.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Remove" />
+                        <Button fx:id="addButton" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Add" />
+                     </children>
+                  </AnchorPane>
                </children>
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
