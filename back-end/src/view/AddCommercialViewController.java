@@ -39,6 +39,7 @@ public class AddCommercialViewController {
 
   private Scene scene;
   private ProjectModelManager projectManager;
+  private MyDate dates;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
@@ -110,6 +111,11 @@ public class AddCommercialViewController {
       try
       {
         budget = Integer.parseInt(budgetTextField.getText());
+        if (budget < 500000 || budget > 2000000) {
+        JOptionPane.showMessageDialog(null, "Budget must be between 500,000 and 2,000,000", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
+        return;
+      }
       }
       catch (NumberFormatException exception)
       {

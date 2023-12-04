@@ -1,32 +1,180 @@
 {
   "projects": [
     {
-      "size": 1234,
+      "size": 213123,
+      "facilityType": "Restaurant",
+      "budget": 1000000,
+      "startTime": {
+        "day": 12,
+        "month": 8,
+        "year": 2020
+      },
+      "endTime": {
+        "day": 12,
+        "month": 12,
+        "year": 2023
+      },
+      "customer": {
+        "firstName": "Kuba",
+        "surname": "Abramek",
+        "id": 12312312
+      },
+      "resources": {
+        "manHoursUsed": 500,
+        "materialExpenses": 1.0E7,
+        "expectedManHours": 500
+      },
+      "status": "Finished",
+      "projectID": 21312321,
+      "timeline": 40,
+      "type": "Industrial"
+    },
+    {
+      "size": 234,
       "floors": 1,
-      "usage": "vdsf",
-      "budget": 600000,
+      "usage": "dsadas",
+      "budget": 21312,
+      "startTime": {
+        "day": 11,
+        "month": 11,
+        "year": 23232
+      },
+      "endTime": {
+        "day": 11,
+        "month": 5,
+        "year": 23234
+      },
+      "customer": {
+        "firstName": "sadas",
+        "surname": "dasdas",
+        "id": 23123
+      },
+      "resources": {
+        "manHoursUsed": 231321,
+        "materialExpenses": 12312.0,
+        "expectedManHours": 12123
+      },
+      "status": "Under Construction",
+      "projectID": 12321,
+      "timeline": 18,
+      "type": "Commercial"
+    },
+    {
+      "size": 200,
+      "facilityType": "Factory",
+      "budget": 2000000,
+      "startTime": {
+        "day": 10,
+        "month": 7,
+        "year": 2020
+      },
+      "endTime": {
+        "day": 10,
+        "month": 11,
+        "year": 2023
+      },
+      "customer": {
+        "firstName": "Damian",
+        "surname": "Abramek",
+        "id": 21312312
+      },
+      "resources": {
+        "manHoursUsed": 400,
+        "materialExpenses": 100000.0,
+        "expectedManHours": 400
+      },
+      "status": "Finished",
+      "projectID": 1002134,
+      "timeline": 40,
+      "type": "Industrial"
+    },
+    {
+      "size": 2014,
+      "floors": 1,
+      "usage": "hello",
+      "budget": 1,
       "startTime": {
         "day": 1,
-        "month": 12,
+        "month": 1,
         "year": 2005
       },
       "endTime": {
         "day": 1,
-        "month": 6,
-        "year": 2007
+        "month": 7,
+        "year": 2006
       },
       "customer": {
-        "firstName": "fs",
-        "surname": "svd",
-        "id": 12
+        "firstName": "roma",
+        "surname": "mih",
+        "id": 4
       },
       "resources": {
-        "manHoursUsed": 0,
-        "materialExpenses": 234.0,
-        "expectedManHours": 0
+        "manHoursUsed": 6,
+        "materialExpenses": 230.0,
+        "expectedManHours": 200
       },
       "status": "Under Construction",
       "projectID": 5,
+      "timeline": 18,
+      "type": "Commercial"
+    },
+    {
+      "size": 3432,
+      "floors": 1,
+      "usage": "savd",
+      "budget": 40,
+      "startTime": {
+        "day": 50,
+        "month": 50,
+        "year": 2342
+      },
+      "endTime": {
+        "day": 50,
+        "month": 44,
+        "year": 2344
+      },
+      "customer": {
+        "firstName": "favas",
+        "surname": "sdvasdv",
+        "id": 344
+      },
+      "resources": {
+        "manHoursUsed": 5325,
+        "materialExpenses": 231.0,
+        "expectedManHours": 532
+      },
+      "status": "Finished",
+      "projectID": 142,
+      "timeline": 18,
+      "type": "Commercial"
+    },
+    {
+      "size": 200,
+      "floors": 1,
+      "usage": "perfect",
+      "budget": 500000,
+      "startTime": {
+        "day": 31,
+        "month": 31,
+        "year": 2024
+      },
+      "endTime": {
+        "day": 31,
+        "month": 25,
+        "year": 2026
+      },
+      "customer": {
+        "firstName": "Hello",
+        "surname": "blyat",
+        "id": 7
+      },
+      "resources": {
+        "manHoursUsed": 20,
+        "materialExpenses": 70000.0,
+        "expectedManHours": 200
+      },
+      "status": "Planned",
+      "projectID": 7,
       "timeline": 18,
       "type": "Commercial"
     }

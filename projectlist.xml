@@ -1,33 +1,181 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ProjectList>
   <projects>
-    <floors>1</floors>
-    <size>1234</size>
-    <usage>vdsf</usage>
+    <size>213123</size>
+    <facilityType>Restaurant</facilityType>
     <resources>
-      <expectedManHours>0</expectedManHours>
-      <manHoursUsed>0</manHoursUsed>
-      <materialExpenses>234.0</materialExpenses>
+      <expectedManHours>500</expectedManHours>
+      <manHoursUsed>500</manHoursUsed>
+      <materialExpenses>1.0E7</materialExpenses>
+    </resources>
+    <timeline>40</timeline>
+    <startTime>
+      <month>8</month>
+      <year>2020</year>
+      <day>12</day>
+    </startTime>
+    <endTime>
+      <month>12</month>
+      <year>2023</year>
+      <day>12</day>
+    </endTime>
+    <type>Industrial</type>
+    <projectID>21312321</projectID>
+    <budget>1000000</budget>
+    <customer>
+      <firstName>Kuba</firstName>
+      <surname>Abramek</surname>
+      <id>12312312</id>
+    </customer>
+    <status>Finished</status>
+  </projects>
+  <projects>
+    <floors>1</floors>
+    <size>234</size>
+    <usage>dsadas</usage>
+    <resources>
+      <expectedManHours>12123</expectedManHours>
+      <manHoursUsed>231321</manHoursUsed>
+      <materialExpenses>12312.0</materialExpenses>
     </resources>
     <timeline>18</timeline>
     <startTime>
-      <month>12</month>
+      <month>11</month>
+      <year>23232</year>
+      <day>11</day>
+    </startTime>
+    <endTime>
+      <month>5</month>
+      <year>23234</year>
+      <day>11</day>
+    </endTime>
+    <type>Commercial</type>
+    <projectID>12321</projectID>
+    <budget>21312</budget>
+    <customer>
+      <firstName>sadas</firstName>
+      <surname>dasdas</surname>
+      <id>23123</id>
+    </customer>
+    <status>Under Construction</status>
+  </projects>
+  <projects>
+    <size>200</size>
+    <facilityType>Factory</facilityType>
+    <resources>
+      <expectedManHours>400</expectedManHours>
+      <manHoursUsed>400</manHoursUsed>
+      <materialExpenses>100000.0</materialExpenses>
+    </resources>
+    <timeline>40</timeline>
+    <startTime>
+      <month>7</month>
+      <year>2020</year>
+      <day>10</day>
+    </startTime>
+    <endTime>
+      <month>11</month>
+      <year>2023</year>
+      <day>10</day>
+    </endTime>
+    <type>Industrial</type>
+    <projectID>1002134</projectID>
+    <budget>2000000</budget>
+    <customer>
+      <firstName>Damian</firstName>
+      <surname>Abramek</surname>
+      <id>21312312</id>
+    </customer>
+    <status>Finished</status>
+  </projects>
+  <projects>
+    <floors>1</floors>
+    <size>2014</size>
+    <usage>hello</usage>
+    <resources>
+      <expectedManHours>200</expectedManHours>
+      <manHoursUsed>6</manHoursUsed>
+      <materialExpenses>230.0</materialExpenses>
+    </resources>
+    <timeline>18</timeline>
+    <startTime>
+      <month>1</month>
       <year>2005</year>
       <day>1</day>
     </startTime>
     <endTime>
-      <month>6</month>
-      <year>2007</year>
+      <month>7</month>
+      <year>2006</year>
       <day>1</day>
     </endTime>
     <type>Commercial</type>
     <projectID>5</projectID>
-    <budget>600000</budget>
+    <budget>1</budget>
     <customer>
-      <firstName>fs</firstName>
-      <surname>svd</surname>
-      <id>12</id>
+      <firstName>roma</firstName>
+      <surname>mih</surname>
+      <id>4</id>
     </customer>
     <status>Under Construction</status>
+  </projects>
+  <projects>
+    <floors>1</floors>
+    <size>3432</size>
+    <usage>savd</usage>
+    <resources>
+      <expectedManHours>532</expectedManHours>
+      <manHoursUsed>5325</manHoursUsed>
+      <materialExpenses>231.0</materialExpenses>
+    </resources>
+    <timeline>18</timeline>
+    <startTime>
+      <month>50</month>
+      <year>2342</year>
+      <day>50</day>
+    </startTime>
+    <endTime>
+      <month>44</month>
+      <year>2344</year>
+      <day>50</day>
+    </endTime>
+    <type>Commercial</type>
+    <projectID>142</projectID>
+    <budget>40</budget>
+    <customer>
+      <firstName>favas</firstName>
+      <surname>sdvasdv</surname>
+      <id>344</id>
+    </customer>
+    <status>Finished</status>
+  </projects>
+  <projects>
+    <floors>1</floors>
+    <size>200</size>
+    <usage>perfect</usage>
+    <resources>
+      <expectedManHours>200</expectedManHours>
+      <manHoursUsed>20</manHoursUsed>
+      <materialExpenses>70000.0</materialExpenses>
+    </resources>
+    <timeline>18</timeline>
+    <startTime>
+      <month>31</month>
+      <year>2024</year>
+      <day>31</day>
+    </startTime>
+    <endTime>
+      <month>25</month>
+      <year>2026</year>
+      <day>31</day>
+    </endTime>
+    <type>Commercial</type>
+    <projectID>7</projectID>
+    <budget>500000</budget>
+    <customer>
+      <firstName>Hello</firstName>
+      <surname>blyat</surname>
+      <id>7</id>
+    </customer>
+    <status>Planned</status>
   </projects>
 </ProjectList>

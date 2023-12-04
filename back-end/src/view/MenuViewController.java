@@ -4,8 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import model.ProjectList;
+import main.LoadInitialData;
 import model.ProjectModelManager;
+import parser.ParserException;
+
+import javax.swing.*;
 
 public class MenuViewController
 {
@@ -34,7 +37,7 @@ public class MenuViewController
     return scene;
   }
 
-  public void handleActions(ActionEvent e)
+  public void handleActions(ActionEvent e) throws ParserException
   {
     if (e.getSource() == projects)
     {
@@ -44,5 +47,11 @@ public class MenuViewController
     {
      viewHandler.openView("ManageView");
     }
+    else if (e.getSource() == website){
+      JOptionPane.showMessageDialog(null, "Website successfully updated");
+      LoadInitialData.main(new String[]{});
+    }
   }
+
+
 }
