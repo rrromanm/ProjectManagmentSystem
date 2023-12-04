@@ -171,7 +171,7 @@ public abstract class Project implements Serializable
   public String toString(){
     return budget + "," + startTime.day + "," + startTime.month + "," + startTime.year + "," + status + "," + projectID +
         "," + timeline + "," + customer.getFirstName() + "," + customer.getSurname() + "," + customer.getId() + "," +
-        resources.getManHoursUsed() + "," + resources.getExpenses() + "," + type;
+        resources.getExpectedManHours() + "," + resources.getExpenses() + "," + resources.getManHoursUsed() + "," + type;
   }
 
 }

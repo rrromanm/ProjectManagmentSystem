@@ -28,6 +28,7 @@ public class AddResidentialViewController
   @FXML private TextField customerIDField;
   @FXML private TextField expectedManHoursField;
   @FXML private TextField materialExpensesField;
+  @FXML private TextField manHoursUsedField;
   @FXML private TextField sizeField;
   @FXML private TextField NrOfKitchens;
   @FXML private TextField NrOfBathrooms;
@@ -64,6 +65,7 @@ public class AddResidentialViewController
     customerIDField.setText("");
     expectedManHoursField.setText("");
     materialExpensesField.setText("");
+    manHoursUsedField.setText("");
     sizeField.setText("");
     NrOfKitchens.setText("1");
     NrOfBathrooms.setText("1");
@@ -107,6 +109,7 @@ public class AddResidentialViewController
       int customerID = 0;
       int expectedManHours = 0;
       int materialExpenses = 0;
+      int manHoursUsed = 0;
       int size = 0;
       int kitchens = 0;
       int bathrooms = 0;
@@ -227,6 +230,16 @@ public class AddResidentialViewController
       }
       try
       {
+        manHoursUsed = Integer.parseInt(manHoursUsedField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
         size = Integer.parseInt(sizeField.getText());
       }
       catch (NumberFormatException exception)
@@ -270,7 +283,7 @@ public class AddResidentialViewController
 
       MyDate date = new MyDate(day, month, year);
       Customer customer = new Customer(firstName, surname, customerID);
-      Resources resources = new Resources(expectedManHours, materialExpenses);
+      Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
       projects.addProject(
           new ResidentialProjects(budget, date, status, projectID, timeline,
               customer, resources, size, kitchens, bathrooms, plumbing, state));

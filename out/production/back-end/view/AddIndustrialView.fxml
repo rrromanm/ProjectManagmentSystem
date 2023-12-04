@@ -100,6 +100,11 @@
                   <Insets left="105.0" />
                </FlowPane.margin>
             </TextField>
+            <TextField fx:id="manHoursUsedField" prefHeight="26.0" prefWidth="175.0" promptText="Man Hours Used">
+               <FlowPane.margin>
+                  <Insets left="105.0" />
+               </FlowPane.margin>
+            </TextField>
             <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="70.0" text="Back">
                <FlowPane.margin>
                   <Insets left="10.0" />

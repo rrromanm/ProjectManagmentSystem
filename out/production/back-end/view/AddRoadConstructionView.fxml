@@ -115,8 +115,8 @@
             <TextField fx:id="bridges" layoutX="388.0" layoutY="76.0" onAction="#handleActions" prefHeight="25.0" prefWidth="160.0" />
             <Label layoutX="300.0" layoutY="114.0" prefHeight="17.0" prefWidth="71.0" text="Tunnels:" />
             <TextField fx:id="tunnels" layoutX="388.0" layoutY="110.0" onAction="#handleActions" prefHeight="25.0" prefWidth="160.0" />
+            <TextField fx:id="manHoursUsedField" layoutX="102.0" layoutY="352.0" promptText="Man Hours Used" />
          </children>
     </AnchorPane>
-      <Label text="Label" />
   </children>
 </VBox>

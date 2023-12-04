@@ -31,6 +31,7 @@ public class AddRoadConstructionViewController {
     @FXML private TextField customerIDField;
     @FXML private TextField expectedManHoursField;
     @FXML private TextField materialExpensesField;
+    @FXML private TextField manHoursUsedField;
     @FXML private TextField roadLength;
     @FXML private TextField roadWidth;
     @FXML private TextField environmentalChallenges;
@@ -61,6 +62,7 @@ public class AddRoadConstructionViewController {
         firstNameField.setText("");
         surnameField.setText("");
         customerIDField.setText("");
+        manHoursUsedField.setText("");
         expectedManHoursField.setText("");
         materialExpensesField.setText("");
         roadLength.setText("");
@@ -108,6 +110,7 @@ public class AddRoadConstructionViewController {
             int customerID = 0;
             int expectedManHours = 0;
             int materialExpenses = 0;
+            int manHoursUsed = 0;
             int width = 0;
             int length = 0;
             String environmental = null;
@@ -229,6 +232,16 @@ public class AddRoadConstructionViewController {
             }
             try
             {
+                manHoursUsed = Integer.parseInt(manHoursUsedField.getText());
+            }
+            catch (NumberFormatException exception)
+            {
+                JOptionPane.showMessageDialog(null,
+                    "Incorrect used man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            try
+            {
                 width = Integer.parseInt(roadWidth.getText());
             }
             catch (NumberFormatException exception)
@@ -291,7 +304,7 @@ public class AddRoadConstructionViewController {
 
             MyDate date = new MyDate(day, month, year);
             Customer customer = new Customer(firstName, surname, customerID);
-            Resources resources = new Resources(expectedManHours, materialExpenses);
+            Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
             projects.addProject(
                 new RoadConstruction(budget, date, status, projectID, timeline,
                     customer, resources, width, length, bridge,tunnel, environmental, geographical));

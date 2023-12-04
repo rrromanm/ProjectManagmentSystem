@@ -32,9 +32,7 @@ public class AddIndustrialViewController
   @FXML private TextField firstNameField;
   @FXML private TextField surnameField;
   @FXML private TextField customerIDField;
-  @FXML private TextField phoneNumberField;
-  @FXML private TextField emailField;
-  @FXML private TextField addressField;
+  @FXML private TextField manHoursUsedField;
   @FXML private TextField expectedManHoursField;
   @FXML private TextField materialExpensesField;
   @FXML private TextField sizeField;
@@ -73,6 +71,7 @@ public class AddIndustrialViewController
     expectedManHoursField.setText("");
     materialExpensesField.setText("");
     sizeField.setText("");
+    manHoursUsedField.setText("");
     typeOfTheFacilityField.setText("");
   }
 
@@ -108,6 +107,7 @@ public class AddIndustrialViewController
       int customerID = 0;
       int expectedManHours = 0;
       int materialExpenses = 0;
+      int manHoursUsed = 0;
       int size = 0;
       String typeOfFacility = null;
 
@@ -210,7 +210,7 @@ public class AddIndustrialViewController
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect resources expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -220,7 +220,17 @@ public class AddIndustrialViewController
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect resources material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      try
+      {
+        manHoursUsed = Integer.parseInt(manHoursUsedField.getText());
+      }
+      catch (NumberFormatException exception)
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect  resources man hours used inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -245,7 +255,7 @@ public class AddIndustrialViewController
       }
       MyDate date = new MyDate(day, month, year);
       Customer customer = new Customer(firstName, surname, customerID);
-      Resources resources = new Resources(expectedManHours, materialExpenses);
+      Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
       projects.addProject(
           new IndustrialProjects(budget, date, status, projectID, timeline,
               customer, resources, size, typeOfFacility));
