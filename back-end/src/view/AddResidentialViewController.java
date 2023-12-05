@@ -7,8 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.*;
+import utils.MyFileHandler;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
 
 public class AddResidentialViewController
 {
@@ -39,15 +41,16 @@ public class AddResidentialViewController
   @FXML private Button backButton;
   @FXML private TextField projectTypeField;
 
-  public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
+  public void init(ViewHandler viewHandler, Scene scene,
+      ProjectModelManager projectManager)
   {
     this.viewHandler = viewHandler;
     this.scene = scene;
     this.projectManager = projectManager;
-    String[] statusString = {"Under Construction","Finished","Planned"};
+    String[] statusString = {"Under Construction", "Finished", "Planned"};
     statusComboBox.getItems().addAll(statusString);
     statusComboBox.getSelectionModel().selectFirst();
-    String[] stateString = {"New Build","Reconstruction"};
+    String[] stateString = {"New Build", "Reconstruction"};
     stateComboBox.getItems().addAll(stateString);
     statusComboBox.getSelectionModel().selectFirst();
   }
@@ -94,7 +97,7 @@ public class AddResidentialViewController
     {
       viewHandler.openView("AddProjectView");
     }
-    else if(e.getSource() == addProjectButton)
+    else if (e.getSource() == addProjectButton)
     {
       ProjectList projects = new ProjectList();
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
@@ -126,8 +129,8 @@ public class AddResidentialViewController
       }
       catch (NumberFormatException exception)
       {
-        JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
-            JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Incorrect budget inputted",
+            "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       if (isValidString(projectNameField.getText()))
@@ -136,8 +139,8 @@ public class AddResidentialViewController
       }
       else
       {
-        JOptionPane.showMessageDialog(null,
-            "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Incorrect project name inputted",
+            "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -198,7 +201,8 @@ public class AddResidentialViewController
       else
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect customer first name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect customer first name inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
         return;
       }
       if (isValidString(surnameField.getText()))
@@ -208,7 +212,8 @@ public class AddResidentialViewController
       else
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect customer surname inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect customer surname inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -228,7 +233,8 @@ public class AddResidentialViewController
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect expected man hours inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -238,7 +244,8 @@ public class AddResidentialViewController
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect material expenses inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -248,7 +255,8 @@ public class AddResidentialViewController
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect material expenses inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -258,7 +266,8 @@ public class AddResidentialViewController
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null,
-            "Incorrect size of the facility inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+            "Incorrect size of the facility inputted", "ERROR",
+            JOptionPane.ERROR_MESSAGE);
         return;
       }
       try
@@ -293,16 +302,27 @@ public class AddResidentialViewController
       }
       state = (String) stateComboBox.getValue();
 
-
       MyDate date = new MyDate(day, month, year);
       Customer customer = new Customer(firstName, surname, customerID);
-      Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
+      Resources resources = new Resources(expectedManHours, materialExpenses,
+          manHoursUsed);
       projects.addProject(
-          new ResidentialProjects(projectName,budget, date, status, projectID, timeline,
-              customer, resources, size, kitchens, bathrooms, plumbing, state));
+          new ResidentialProjects(projectName, budget, date, status, projectID,
+              timeline, customer, resources, size, kitchens, bathrooms,
+              plumbing, state));
+
+      try
+      {
+        MyFileHandler.appendToTextFile("projects.txt", projects.toString());
+      }
+      catch (FileNotFoundException ex)
+      {
+        throw new RuntimeException(ex);
+      }
       manager.appendProjects(projects);
       viewHandler.openView("ProjectView");
-      JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Project added!", "Success",
+          JOptionPane.INFORMATION_MESSAGE);
       reset();
     }
   }

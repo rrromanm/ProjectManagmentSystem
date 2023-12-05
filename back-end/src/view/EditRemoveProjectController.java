@@ -203,7 +203,7 @@ public class EditRemoveProjectController
       custom5.setText(String.valueOf(residentialProjects.getState()));
       label5.setText("State :");
     }
-    else if("Road Construction".equals(projectType))
+    else if("RoadConstruction".equals(projectType))
     {
       RoadConstruction roadConstruction = (RoadConstruction) list.get(index);
       hideEverything();
@@ -220,16 +220,17 @@ public class EditRemoveProjectController
       label5.setVisible(true);
       label6.setVisible(true);
       label1.setText("Width :");
-      custom2.setText(String.valueOf(roadConstruction.getWidth()));
+      custom1.setText(String.valueOf(roadConstruction.getWidth()));
       label2.setText("Length :");
-      custom3.setText(String.valueOf(roadConstruction.getLength()));
+      custom2.setText(String.valueOf(roadConstruction.getLength()));
       label3.setText("Bridges :");
-      custom4.setText(String.valueOf(roadConstruction.getBridges()));
+      custom3.setText(String.valueOf(roadConstruction.getBridges()));
       label4.setText("Tunnels :");
-      custom5.setText(String.valueOf(roadConstruction.getEnvironmentalChallenges()));
+      custom4.setText(String.valueOf(roadConstruction.getTunnels()));
       label5.setText("Environmental Challenges :");
-      custom6.setText(String.valueOf(roadConstruction.getGeographicalChallenges()));
+      custom5.setText(String.valueOf(roadConstruction.getEnvironmentalChallenges()));
       label6.setText("Geographical Challenges :");
+      custom6.setText(String.valueOf(roadConstruction.getGeographicalChallenges()));
 
     }
 

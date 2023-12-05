@@ -7,7 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.*;
+import utils.MyFileHandler;
+
 import javax.swing.*;
+import java.io.FileNotFoundException;
 
 public class AddRoadConstructionViewController {
 
@@ -321,6 +324,15 @@ public class AddRoadConstructionViewController {
             projects.addProject(
                 new RoadConstruction(projectName, budget, date, status, projectID, timeline,
                     customer, resources, width, length, bridge,tunnel, environmental, geographical));
+
+            try
+            {
+                MyFileHandler.appendToTextFile("projects.txt", projects.toString());
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw new RuntimeException(ex);
+            }
             manager.appendProjects(projects);
             viewHandler.openView("ProjectView");
             JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
