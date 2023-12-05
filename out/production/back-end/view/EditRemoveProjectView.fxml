@@ -37,44 +37,45 @@
       <FlowPane hgap="10.0" layoutX="7.0" layoutY="26.0" prefHeight="541.0" prefWidth="363.0" vgap="10.0">
          <children>
             <Label prefWidth="150.0" text="Pick project:" />
-            <ComboBox fx:id="projectPick" onAction="#handleActions" prefHeight="17.0" prefWidth="203.0" />
+            <ComboBox fx:id="projectPick" onAction="#handleActions" prefHeight="26.0" prefWidth="197.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Project Type:" />
-            <TextField fx:id="projectType" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="projectType" onAction="#handleActions" prefHeight="26.0" prefWidth="194.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Budget:" />
-            <TextField fx:id="projectBudget" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="projectBudget" onAction="#handleActions" prefHeight="26.0" prefWidth="194.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Project Name:" />
-            <TextField fx:id="projectName" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="projectName" onAction="#handleActions" prefHeight="26.0" prefWidth="192.0" />
             <Label layoutX="10.0" layoutY="119.0" prefHeight="17.0" prefWidth="150.0" text="Start date:" />
             <TextField fx:id="day" onAction="#handleActions" prefHeight="25.0" prefWidth="50.0" />
             <TextField fx:id="month" onAction="#handleActions" prefHeight="25.0" prefWidth="50.0" />
-            <TextField fx:id="year" onAction="#handleActions" prefHeight="25.0" prefWidth="83.0" />
+            <TextField fx:id="year" onAction="#handleActions" prefHeight="26.0" prefWidth="71.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Status:" />
-            <ComboBox fx:id="projectStatus" prefHeight="25.0" prefWidth="203.0" />
+            <ComboBox fx:id="projectStatus" onAction="#handleActions" prefHeight="26.0" prefWidth="193.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Project ID:" />
-            <TextField fx:id="projectID" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="projectID" onAction="#handleActions" prefHeight="26.0" prefWidth="194.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Timeline:" />
-            <TextField fx:id="projectTimeline" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="projectTimeline" onAction="#handleActions" prefHeight="26.0" prefWidth="195.0" />
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="362.0" text="Customer">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
             <Label prefHeight="17.0" prefWidth="150.0" text="First Name:" />
-            <TextField fx:id="firstName" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="firstName" onAction="#handleActions" prefHeight="26.0" prefWidth="191.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Surname:" />
-            <TextField fx:id="surname" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="surname" onAction="#handleActions" prefHeight="26.0" prefWidth="190.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Customer ID" />
-            <TextField fx:id="customerID" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="customerID" onAction="#handleActions" prefHeight="26.0" prefWidth="191.0" />
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="362.0" text="Resources">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <Label prefHeight="17.0" prefWidth="150.0" text="Expected Man Hours:" />
-            <TextField fx:id="expectedManHours" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="expectedManHours" onAction="#handleActions" prefHeight="26.0" prefWidth="193.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Material Expenses:" />
-            <TextField fx:id="materialExpenses" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="materialExpenses" onAction="#handleActions" prefHeight="26.0" prefWidth="194.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Man Hours Used:" />
-            <TextField fx:id="manHoursUsed" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="manHoursUsed" onAction="#handleActions" prefHeight="26.0" prefWidth="193.0" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleActions" text="Back" />
          </children>
       </FlowPane>
       <FlowPane hgap="10.0" layoutX="379.0" layoutY="25.0" prefHeight="207.0" prefWidth="371.0" vgap="10.0">
@@ -93,7 +94,6 @@
             <TextField fx:id="custom6" onAction="#handleActions" prefWidth="203.0" visible="false" />
          </children>
       </FlowPane>
-      <Button fx:id="backButton" layoutX="14.0" layoutY="579.0" mnemonicParsing="false" onAction="#handleActions" text="Back" />
       <Button fx:id="removeButton" layoutX="572.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleActions" text="Remove" />
       <Button fx:id="saveButton" layoutX="499.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="25.0" prefWidth="59.0" text="Save" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="472.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">

@@ -50,6 +50,21 @@ public class MyDate implements Serializable
     year = y;
   }
 
+  public int getMonth()
+  {
+    return month;
+  }
+
+  public int getYear()
+  {
+    return year;
+  }
+
+  public int getDay()
+  {
+    return day;
+  }
+
   /**
    * Creates a new MyDate object with the same day, month, and year as the current object.
    *
