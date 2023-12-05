@@ -1,10 +1,76 @@
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-    table-layout: fixed;
+/* ------------------MADE BY MACIEJ------------------ */
+
+
+/* ---------Media Query for Small Screens--------- */
+@media (max-width: 767px) {
+    /* Styles for screens up to 767px wide (typically phones) */
+
+    table {
+        width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling for the table on small screens */
+    }
+
+    th, td {
+        font-size: 14px; /* Adjust font size for better readability on small screens */
+        white-space: nowrap; /* Prevent text wrapping in cells */
+    }
 }
 
-h1{
+/* ---------Global Styles--------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #001f3f, #ffffff);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+.container {
+    flex: 1; /* Let the container grow to fill the available space */
+}
+
+h1 {
+    color: #ffffff;
     text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Box-shadow for 3D effect */
+}
+
+/* ---------Table Styles--------- */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(to bottom, #001f3f, #003366);
+    color: #ffffff;
+}
+
+/* ---------Responsive Logo Styles--------- */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    bottom: 20%; /* Add margin to separate the logo from the table */
+}
+
+.logo {
+    max-width: 10%; /* Ensure the logo doesn't exceed its original size */
+    height: auto; /* Maintain aspect ratio */
+}
+.back-button{
+    background-color: #001f3f;
 }

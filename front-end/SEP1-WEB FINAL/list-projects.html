@@ -4,28 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XML Display</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/test.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/script.js"></script>
 </head>
 <body>
-    <h1>PROJECTS</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Project ID</th>
-                <th>Customer</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Resources</th>
-                <th>Status</th>
-                <th>Budget</th>
-                <th>Timeline</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody id="xmlData"></tbody>
-    </table>
+    <div class="container p-5">
+        <h1 class="text-center mt-3">PROJECTS</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Project ID</th>
+                    <th>Customer</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Resources</th>
+                    <th>Status</th>
+                    <th>Budget</th>
+                    <th>Timeline</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody id="xmlData"></tbody>
+        </table>
+    </div>
 
+    
+    <div class="logo-container">
+        <a href="index.html"><img class="logo" src="img/logo(1).png" alt="Logo"></a>
+    </div>
+
+    <!-- Responsive Button -->
+    <a href="projects.html" class="btn btn-primary back-button">Go back</a>
+
+
+
+    
 </body>
 </html>
