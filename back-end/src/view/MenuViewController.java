@@ -48,8 +48,8 @@ public class MenuViewController
      viewHandler.openView("ManageView");
     }
     else if (e.getSource() == website){
-      JOptionPane.showMessageDialog(null, "Website successfully updated");
       LoadInitialData.main(new String[]{});
+      JOptionPane.showMessageDialog(null, "Website successfully updated");
     }
   }
 

@@ -35,7 +35,7 @@ public class LoadInitialData
         int year = Integer.parseInt(tempArr[4].trim());
         MyDate startTime = new MyDate(day,month,year);
 
-        String status = tempArr[5];
+        String status = tempArr[5].trim();
         int projectID = Integer.parseInt(tempArr[6].trim());
         int timeline = Integer.parseInt(tempArr[7].trim());
 
