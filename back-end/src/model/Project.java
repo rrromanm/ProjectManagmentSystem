@@ -9,6 +9,7 @@ import java.io.Serializable;
  */
 public abstract class Project implements Serializable
 {
+  private String name;
   private int budget;
   private MyDate startTime;
   private MyDate endTime;

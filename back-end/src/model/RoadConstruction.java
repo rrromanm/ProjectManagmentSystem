@@ -9,6 +9,7 @@ package model;
 public class RoadConstruction extends Project {
 
     // Fields for width, length, number of bridges, number of tunnels, environmental challenges, and geographical challenges
+    private String name;
     private int width;
     private int length;
     private int bridges;
@@ -18,21 +19,23 @@ public class RoadConstruction extends Project {
 
     /**
      * A constructor that creates a road construction project with the given parameters.
-     * @param budget the budget of the road construction project in Danish kroner
-     * @param startTime the start date of the road construction project
-     * @param status the status of the road construction project, such as planned, ongoing, completed, etc.
-     * @param projectID the unique identifier of the road construction project
-     * @param timeline the estimated duration of the road construction project in months
-     * @param customer the customer who ordered the road construction project
-     * @param resources the resources allocated to the road construction project
-     * @param width the width of the road in meters
-     * @param length the length of the road in meters
-     * @param bridges the number of bridges in the road construction project
-     * @param tunnels the number of tunnels in the road construction project
+     *
+     * @param name
+     * @param budget                  the budget of the road construction project in Danish kroner
+     * @param startTime               the start date of the road construction project
+     * @param status                  the status of the road construction project, such as planned, ongoing, completed, etc.
+     * @param projectID               the unique identifier of the road construction project
+     * @param timeline                the estimated duration of the road construction project in months
+     * @param customer                the customer who ordered the road construction project
+     * @param resources               the resources allocated to the road construction project
+     * @param width                   the width of the road in meters
+     * @param length                  the length of the road in meters
+     * @param bridges                 the number of bridges in the road construction project
+     * @param tunnels                 the number of tunnels in the road construction project
      * @param environmentalChallenges the environmental challenges associated with the road construction project
-     * @param geographicalChallenges the geographical challenges associated with the road construction project
+     * @param geographicalChallenges  the geographical challenges associated with the road construction project
      */
-    public RoadConstruction(int budget, MyDate startTime,String status, int projectID, int timeline,
+    public RoadConstruction(String name, int budget, MyDate startTime,String status, int projectID, int timeline,
                             Customer customer, Resources resources, int width, int length, int bridges, int tunnels,
                             String environmentalChallenges, String geographicalChallenges) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
@@ -43,36 +46,6 @@ public class RoadConstruction extends Project {
         this.environmentalChallenges = environmentalChallenges;
         this.geographicalChallenges = geographicalChallenges;
         super.setEndTime(startTime.convertMonthsToDate(timeline));
-        super.setType("RoadConstruction");
-    }
-
-    /**
-     * An alternative constructor that creates a road construction project with default values for some parameters.
-     * @param budget the budget of the road construction project
-     * @param startTime the start date of the road construction project
-     * @param endTime the end date of the road construction project
-     * @param status the status of the road construction project, such as planned, ongoing, completed, etc.
-     * @param projectID the unique identifier of the road construction project
-     * @param timeline the default estimated duration of the road construction project in months (18 months)
-     * @param customer the customer who ordered the road construction project
-     * @param resources the resources allocated to the road construction project
-     * @param length the length of the road in meters
-     * @param width the width of the road in meters
-     * @param bridges the default number of bridges in the road construction project (0)
-     * @param tunnels the default number of tunnels in the road construction project (0)
-     * @param environmentalChallenges the default environmental challenges associated with the road construction project (none)
-     * @param geographicalChallenges the default geographical challenges associated with the road construction project (none)
-     */
-    public RoadConstruction(int budget, MyDate startTime,int projectID,
-                            Customer customer, Resources resources, int length, int width) {
-        super(budget, startTime, "under construction", projectID, 18, customer, resources);
-        this.length = length;
-        this.width = width;
-        this.bridges = 0;
-        this.tunnels = 0;
-        this.environmentalChallenges = "none";
-        this.geographicalChallenges = "none";
-        super.setEndTime(startTime.convertMonthsToDate(18));
         super.setType("RoadConstruction");
     }
 
@@ -224,5 +197,15 @@ public class RoadConstruction extends Project {
         return super.toString() + "," + width + "," + length + "," + bridges +
                 "," + tunnels + "," + environmentalChallenges +
                 "," + geographicalChallenges;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
     }
 }

@@ -8,6 +8,7 @@ package model;
 public class CommercialProject extends Project {
 
     // Fields for size, floors, and usage type
+    private String name;
     private int size;
     private short floors;
     private String usage;
@@ -19,42 +20,19 @@ public class CommercialProject extends Project {
      * @param usage the usage type of the project, such as office, retail, hotel, etc.
      * @param budget the budget of the project in Danish kroner
      * @param startTime the start date of the project
-     * @param endTime the end date of the project
      * @param status the status of the project, such as planned, ongoing, completed, etc.
      * @param projectID the unique identifier of the project
      * @param timeline the estimated duration of the project in months
      * @param customer the customer who ordered the project
      * @param resources the resources allocated to the project
      */
-    public CommercialProject(int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources, int size, short floors, String usage) {
+    public CommercialProject(String name,int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources, int size, short floors, String usage) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
+        this.name = name;
         this.size = size;
         this.floors = floors;
         this.usage = usage;
         super.setEndTime(startTime.convertMonthsToDate(timeline));
-        super.setType("Commercial");
-    }
-
-    /**
-     * A constructor that creates a commercial project with default values for some parameters.
-     * @param floors the default number of floors in the project (1)
-     * @param usage the default usage type of the project (restaurant)
-     * @param budget the budget of the project in Danish kroner
-     * @param startTime the start date of the project
-     * @param endTime the end date of the project
-     * @param status the status of the project, such as planned, ongoing, completed, etc.
-     * @param projectID the unique identifier of the project
-     * @param timeline the default estimated duration of the project in months (18 months)
-     * @param customer the customer who ordered the project
-     * @param resources the resources allocated to the project
-     * @param size the size of the project in square meters
-     */
-    public CommercialProject(int budget, MyDate startTime, int projectID,Customer customer, Resources resources, int size, String usage){
-        super(budget, startTime, "under construction", projectID, 18, customer, resources);
-        this.size = size;
-        this.floors = 1;
-        this.usage = usage;
-        super.setEndTime(startTime.convertMonthsToDate(18));
         super.setType("Commercial");
     }
 
@@ -126,5 +104,15 @@ public class CommercialProject extends Project {
      */
     public String toString(){
         return super.toString() + "," + size + "," + floors + "," + usage;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
     }
 }

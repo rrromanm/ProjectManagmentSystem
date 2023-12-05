@@ -9,6 +9,7 @@ package model;
 public class ResidentialProjects extends Project {
 
     // Fields for size, number of kitchens, number of bathrooms, rooms with plumbing, state, and new build status
+    private String name;
     private int size;
     private int numberOfKitchens;
     private int numberOfBathrooms;
@@ -17,52 +18,30 @@ public class ResidentialProjects extends Project {
 
     /**
      * A constructor that creates a residential project with the given parameters.
-     * @param size the size of the residential project in square meters
-     * @param numberOfKitchens the number of kitchens in the residential project
+     *
+     * @param name              the name of the residential project
+     * @param budget            the budget of the residential project in Danish kroner
+     * @param startTime         the start date of the residential project
+     * @param status            the status of the residential project, such as planned, ongoing, completed, etc.
+     * @param projectID         the unique identifier of the residential project
+     * @param timeline          the estimated duration of the residential project in months
+     * @param customer          the customer who ordered the residential project
+     * @param resources         the resources allocated to the residential project
+     * @param size              the size of the residential project in square meters
+     * @param numberOfKitchens  the number of kitchens in the residential project
      * @param numberOfBathrooms the number of bathrooms in the residential project
      * @param roomsWithPlumbing the number of rooms with plumbing in the residential project
-     * @param budget the budget of the residential project in Danish kroner
-     * @param state the state of the residential project, such as "under construction" or "completed"
-     * @param startTime the start date of the residential project
-     * @param status the status of the residential project, such as planned, ongoing, completed, etc.
-     * @param projectID the unique identifier of the residential project
-     * @param timeline the estimated duration of the residential project in months
-     * @param customer the customer who ordered the residential project
-     * @param resources the resources allocated to the residential project
+     * @param state             the state of the residential project, such as "under construction" or "completed"
      */
-    public ResidentialProjects(int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state) {
+    public ResidentialProjects(String name, int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state) {
         super(budget, startTime, status, projectID, timeline, customer, resources);
+        this.name = name;
         this.size = size;
         this.numberOfKitchens = numberOfKitchens;
         this.numberOfBathrooms = numberOfBathrooms;
         this.roomsWithPlumbing = roomsWithPlumbing;
         this.state = state;
         super.setEndTime(startTime.convertMonthsToDate(timeline));
-        super.setType("Residential");
-    }
-
-    /**
-     * An alternative constructor that creates a residential project with default values for some parameters.
-     * @param size the default size of the residential project in square meters
-     * @param state the state of the residential project, such as "under construction"
-     * @param budget the budget of the residential project in Danish kroner
-     * @param customer the customer who ordered the residential project
-     * @param startDate the start date of the residential project
-     * @param projectID the unique identifier of the residential project
-     * @param timeline the default estimated duration of the residential project in months (9 months)
-     * @param resources the resources allocated to the residential project
-     * @param numberOfKitchens the default number of kitchens in the residential project (1)
-     * @param numberOfBathrooms the default number of bathrooms in the residential project (1)
-     * @param roomsWithPlumbing the default number of rooms with plumbing in the residential project (1)
-     */
-    public ResidentialProjects(int budget, MyDate startDate, int projectID,int timeline, Customer customer, Resources resources, int size, String state) {
-        super(budget, startDate, "under construction", projectID, 9, customer, resources);
-        this.size = size;
-        this.state = state;
-        this.numberOfKitchens = 1;
-        this.numberOfBathrooms = 1;
-        this.roomsWithPlumbing = 1;
-        super.setEndTime(startDate.convertMonthsToDate(9));
         super.setType("Residential");
     }
 
@@ -166,5 +145,15 @@ public class ResidentialProjects extends Project {
      */
     public String toString() {
         return super.toString() + "," + size + "," + numberOfKitchens + "," + numberOfBathrooms + "," + roomsWithPlumbing + "," + state;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
     }
 }
