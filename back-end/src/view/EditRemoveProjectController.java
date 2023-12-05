@@ -72,6 +72,7 @@ public class EditRemoveProjectController
 
   public void handleActions(ActionEvent e)
   {
+    fillFields();
     if(e.getSource() == backButton)
     {
       viewHandler.openView("ManageView");
@@ -84,8 +85,38 @@ public class EditRemoveProjectController
     for (int i = 0; i < list.size(); i++) {
       Project project = list.get(i);
 
-      String projectNameWithType = project.getName() + " - " + project.getType();
+      String projectNameWithType = project.getName();
       projectPick.getItems().add(projectNameWithType);
     }
+  }
+
+  public void fillFields(){
+    ProjectList list = projectManager.getAllProjects();
+    int index = 0;
+
+    for(int i = 0; i < list.size(); i++){
+      if(list.get(i).equals(projectPick.getValue())){
+        index = i;
+        break;
+      }
+    }
+    System.out.println(list.get(index).getType());
+    projectType.setText(list.get(index).getType());
+    projectBudget.setText(String.valueOf(list.get(index).getBudget()));
+
+//    day.setText(String.valueOf(list.get(index).getStartTime().getDays());
+//    month.setText(String.valueOf(list.get(index).getStartTime().getMonth()));
+//    year.setText(String.valueOf(list.get(index).getStartTime().getYear()));
+
+    projectID.setText(String.valueOf(list.get(index).getProjectID()));
+    projectTimeline.setText(String.valueOf(list.get(index).getTimeline()));
+
+    firstName.setText(list.get(index).getCustomer().getFirstName());
+    surname.setText(list.get(index).getCustomer().getSurname());
+    customerID.setText(String.valueOf(list.get(index).getCustomer().getId()));
+
+    expectedManHours.setText(String.valueOf(list.get(index).getResources().getExpectedManHours()));
+    materialExpenses.setText(String.valueOf(list.get(index).getResources().getExpenses()));
+    manHoursUsed.setText(String.valueOf(list.get(index).getResources().getManHoursUsed()));
   }
 }
