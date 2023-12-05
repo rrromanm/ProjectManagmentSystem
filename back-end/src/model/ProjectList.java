@@ -123,4 +123,21 @@ public class ProjectList implements Serializable
     }
     return returnStr.toString();
   }
+
+  public int size()
+  {
+    return projects.size();
+  }
+
+  public Project get(int index)
+  {
+    if(index<projects.size())
+    {
+      return projects.get(index);
+    }
+    else
+    {
+      return null;
+    }
+  }
 }

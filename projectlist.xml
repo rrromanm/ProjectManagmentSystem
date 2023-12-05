@@ -7,17 +7,17 @@
     <resources>
       <expectedManHours>500</expectedManHours>
       <manHoursUsed>500</manHoursUsed>
-      <materialExpenses>1.0E7</materialExpenses>
+      <materialExpenses>1000.0</materialExpenses>
     </resources>
     <timeline>40</timeline>
     <startTime>
       <month>8</month>
-      <year>2020</year>
+      <year>2023</year>
       <day>12</day>
     </startTime>
     <endTime>
       <month>12</month>
-      <year>2023</year>
+      <year>2026</year>
       <day>12</day>
     </endTime>
     <type>Industrial</type>
@@ -31,7 +31,7 @@
     <status>Finished</status>
   </projects>
   <projects>
-    <usage>dsadas</usage>
+    <usage>?</usage>
     <resources>
       <expectedManHours>12123</expectedManHours>
       <manHoursUsed>231321</manHoursUsed>
@@ -44,19 +44,19 @@
     <timeline>18</timeline>
     <startTime>
       <month>11</month>
-      <year>23232</year>
-      <day>11</day>
+      <year>2023</year>
+      <day>110000</day>
     </startTime>
     <endTime>
       <month>5</month>
-      <year>23234</year>
-      <day>11</day>
+      <year>2025</year>
+      <day>110000</day>
     </endTime>
     <projectID>12321</projectID>
     <budget>21312</budget>
     <customer>
-      <firstName>sadas</firstName>
-      <surname>dasdas</surname>
+      <firstName>Romans</firstName>
+      <surname>Spain</surname>
       <id>23123</id>
     </customer>
     <status>Under Construction</status>
@@ -73,12 +73,12 @@
     <timeline>40</timeline>
     <startTime>
       <month>7</month>
-      <year>2020</year>
+      <year>2023</year>
       <day>10</day>
     </startTime>
     <endTime>
       <month>11</month>
-      <year>2023</year>
+      <year>2026</year>
       <day>10</day>
     </endTime>
     <type>Industrial</type>
@@ -114,16 +114,16 @@
       <day>1</day>
     </endTime>
     <projectID>5</projectID>
-    <budget>1</budget>
+    <budget>100000</budget>
     <customer>
-      <firstName>roma</firstName>
-      <surname>mih</surname>
+      <firstName>Roman</firstName>
+      <surname>Latvia</surname>
       <id>4</id>
     </customer>
     <status>Under Construction</status>
   </projects>
   <projects>
-    <usage>savd</usage>
+    <usage>?</usage>
     <resources>
       <expectedManHours>532</expectedManHours>
       <manHoursUsed>5325</manHoursUsed>
@@ -136,19 +136,19 @@
     <timeline>18</timeline>
     <startTime>
       <month>50</month>
-      <year>2342</year>
+      <year>2023</year>
       <day>50</day>
     </startTime>
     <endTime>
       <month>44</month>
-      <year>2344</year>
+      <year>2025</year>
       <day>50</day>
     </endTime>
     <projectID>142</projectID>
-    <budget>40</budget>
+    <budget>400000</budget>
     <customer>
-      <firstName>favas</firstName>
-      <surname>sdvasdv</surname>
+      <firstName>Roman</firstName>
+      <surname>Spain</surname>
       <id>344</id>
     </customer>
     <status>Finished</status>
@@ -178,8 +178,8 @@
     <projectID>7</projectID>
     <budget>500000</budget>
     <customer>
-      <firstName>Hello</firstName>
-      <surname>blyat</surname>
+      <firstName>Roman</firstName>
+      <surname>Russian</surname>
       <id>7</id>
     </customer>
     <status>Planned</status>

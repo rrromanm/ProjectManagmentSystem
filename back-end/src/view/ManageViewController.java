@@ -13,8 +13,7 @@ public class ManageViewController
   private ViewHandler viewHandler;
 
   @FXML private Button addProject;
-  @FXML private Button editProject;
-  @FXML private Button removeProject;
+  @FXML private Button editRemoveProject;
   @FXML private Button back;
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
@@ -40,13 +39,9 @@ public class ManageViewController
     {
       viewHandler.openView("AddProjectView");
     }
-    else if(e.getSource() == editProject)
+    else if(e.getSource() == editRemoveProject)
     {
-      viewHandler.openView("EditProjectView");
-    }
-    else if(e.getSource() == removeProject )
-    {
-      viewHandler.openView("RemoveProjectView");
+      viewHandler.openView("EditRemoveProjectView");
     }
     else if(e.getSource() == back)
     {

@@ -7,9 +7,8 @@
    <children>
       <AnchorPane layoutX="4.0" prefHeight="500.0" prefWidth="800.0">
          <children>
-            <Button fx:id="addProject" layoutX="114.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Add Project" />
-            <Button fx:id="editProject" layoutX="332.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Edit Project" />
-            <Button fx:id="removeProject" layoutX="547.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Remove Project" />
+            <Button fx:id="addProject" layoutX="210.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Add Project" />
+            <Button fx:id="editRemoveProject" layoutX="441.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="101.0" prefWidth="155.0" text="Edit/Remove Project" />
             <Button fx:id="back" layoutX="14.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="69.0" text="Back" />
          </children>
       </AnchorPane>

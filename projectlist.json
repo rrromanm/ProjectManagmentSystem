@@ -8,12 +8,12 @@
       "startTime": {
         "day": 12,
         "month": 8,
-        "year": 2020
+        "year": 2023
       },
       "endTime": {
         "day": 12,
         "month": 12,
-        "year": 2023
+        "year": 2026
       },
       "customer": {
         "firstName": "Kuba",
@@ -22,7 +22,7 @@
       },
       "resources": {
         "manHoursUsed": 500,
-        "materialExpenses": 1.0E7,
+        "materialExpenses": 1000.0,
         "expectedManHours": 500
       },
       "status": "Finished",
@@ -33,22 +33,22 @@
     {
       "size": 234,
       "floors": 1,
-      "usage": "dsadas",
+      "usage": "?",
       "name": "Risky Reels",
       "budget": 21312,
       "startTime": {
-        "day": 11,
+        "day": 110000,
         "month": 11,
-        "year": 23232
+        "year": 2023
       },
       "endTime": {
-        "day": 11,
+        "day": 110000,
         "month": 5,
-        "year": 23234
+        "year": 2025
       },
       "customer": {
-        "firstName": "sadas",
-        "surname": "dasdas",
+        "firstName": "Romans",
+        "surname": "Spain",
         "id": 23123
       },
       "resources": {
@@ -69,12 +69,12 @@
       "startTime": {
         "day": 10,
         "month": 7,
-        "year": 2020
+        "year": 2023
       },
       "endTime": {
         "day": 10,
         "month": 11,
-        "year": 2023
+        "year": 2026
       },
       "customer": {
         "firstName": "Damian",
@@ -96,7 +96,7 @@
       "floors": 1,
       "usage": "hello",
       "name": "Tomato Town",
-      "budget": 1,
+      "budget": 100000,
       "startTime": {
         "day": 1,
         "month": 1,
@@ -108,8 +108,8 @@
         "year": 2006
       },
       "customer": {
-        "firstName": "roma",
-        "surname": "mih",
+        "firstName": "Roman",
+        "surname": "Latvia",
         "id": 4
       },
       "resources": {
@@ -125,22 +125,22 @@
     {
       "size": 3432,
       "floors": 1,
-      "usage": "savd",
+      "usage": "?",
       "name": "Retail Row",
-      "budget": 40,
+      "budget": 400000,
       "startTime": {
         "day": 50,
         "month": 50,
-        "year": 2342
+        "year": 2023
       },
       "endTime": {
         "day": 50,
         "month": 44,
-        "year": 2344
+        "year": 2025
       },
       "customer": {
-        "firstName": "favas",
-        "surname": "sdvasdv",
+        "firstName": "Roman",
+        "surname": "Spain",
         "id": 344
       },
       "resources": {
@@ -170,8 +170,8 @@
         "year": 2026
       },
       "customer": {
-        "firstName": "Hello",
-        "surname": "blyat",
+        "firstName": "Roman",
+        "surname": "Russian",
         "id": 7
       },
       "resources": {

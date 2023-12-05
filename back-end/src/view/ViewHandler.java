@@ -22,6 +22,7 @@ public class ViewHandler {
   private AddCommercialViewController addCommercialViewController;
 
   private AddRoadConstructionViewController addRoadConstructionViewController;
+  private EditRemoveProjectController editRemoveViewController;
 
 
   public ViewHandler(Stage stage, ProjectModelManager projectManager) {
@@ -39,6 +40,7 @@ public class ViewHandler {
     loadAddResidentialView();
     loadAddCommercialView();
     loadAddRoadConstructionView();
+    loadEditRemoveProjectView();
     openView("StartView");
   }
 
@@ -79,6 +81,10 @@ public class ViewHandler {
       case "AddRoadConstructionView":
         stage.setScene(addRoadConstructionViewController.getScene());
         addRoadConstructionViewController.reset();
+        break;
+      case "EditRemoveProjectView":
+        stage.setScene(editRemoveViewController.getScene());
+        editRemoveViewController.reset();
         break;
     }
 
@@ -191,17 +197,36 @@ public class ViewHandler {
   }
 
 
-    private void loadAddRoadConstructionView(){
-      try {
+    private void loadAddRoadConstructionView()
+    {
+      try
+      {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("AddRoadConstructionView.fxml"));
         Region root = loader.load();
         addRoadConstructionViewController = loader.getController();
-        addRoadConstructionViewController.init(this, new Scene(root), projectManager);
+        addRoadConstructionViewController.init(this, new Scene(root),
+            projectManager);
 
-      } catch (IOException e) {
+      }
+      catch (IOException e)
+      {
         e.printStackTrace();
       }
     }
+
+    private void loadEditRemoveProjectView(){
+      try {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("EditRemoveProjectView.fxml"));
+        Region root = loader.load();
+        editRemoveViewController = loader.getController();
+        editRemoveViewController.init(this, new Scene(root), projectManager);
+
+      } catch (IOException e)
+        {
+          e.printStackTrace();
+        }
   }
+}
 
