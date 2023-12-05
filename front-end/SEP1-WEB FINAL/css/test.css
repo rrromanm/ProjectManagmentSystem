@@ -68,7 +68,7 @@ th {
 }
 
 .logo {
-    max-width: 10%; /* Ensure the logo doesn't exceed its original size */
+    max-width: 20%; /* Ensure the logo doesn't exceed its original size */
     height: auto; /* Maintain aspect ratio */
 }
 .back-button{
