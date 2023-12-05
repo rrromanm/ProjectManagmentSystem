@@ -16,6 +16,7 @@ public class AddResidentialViewController
   private Scene scene;
   private ProjectModelManager projectManager;
   @FXML private TextField budgetField;
+  @FXML private TextField projectNameField;
   @FXML private TextField dayField;
   @FXML private TextField monthField;
   @FXML private TextField yearField;
@@ -70,6 +71,7 @@ public class AddResidentialViewController
     NrOfKitchens.setText("1");
     NrOfBathrooms.setText("1");
     RoomsWithPlumbing.setText("2");
+    projectNameField.setText("");
   }
 
   public Scene getScene()
@@ -98,6 +100,7 @@ public class AddResidentialViewController
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
       int budget = 0;
+      String projectName = null;
       int day = 0;
       int month = 0;
       int year = 0;
@@ -125,6 +128,16 @@ public class AddResidentialViewController
       {
         JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
             JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      if (isValidString(projectNameField.getText()))
+      {
+        projectName = projectNameField.getText();
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       try

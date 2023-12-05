@@ -23,6 +23,7 @@ public class AddIndustrialViewController
 
   @FXML private TextField projectTypeField;
   @FXML private TextField budgetField;
+  @FXML private TextField projectNameField;
   @FXML private TextField dayField;
   @FXML private TextField monthField;
   @FXML private TextField yearField;
@@ -73,6 +74,7 @@ public class AddIndustrialViewController
     sizeField.setText("");
     manHoursUsedField.setText("");
     typeOfTheFacilityField.setText("");
+    projectNameField.setText("");
   }
 
   public Scene getScene()
@@ -96,6 +98,7 @@ public class AddIndustrialViewController
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
       int budget = 0;
+      String projectName;
       int day = 0;
       int month = 0;
       int year = 0;
@@ -120,6 +123,16 @@ public class AddIndustrialViewController
       {
         JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
             JOptionPane.ERROR_MESSAGE);
+        return;
+      }
+      if (isValidString(projectNameField.getText()))
+      {
+        projectName = projectNameField.getText();
+      }
+      else
+      {
+        JOptionPane.showMessageDialog(null,
+            "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
         return;
       }
       try

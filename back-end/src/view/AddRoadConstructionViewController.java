@@ -20,6 +20,7 @@ public class AddRoadConstructionViewController {
     @FXML private Button clearButton;
     @FXML private TextField projectTypeField;
     @FXML private TextField budgetField;
+    @FXML private TextField projectNameField;
     @FXML private TextField dayField;
     @FXML private TextField monthField;
     @FXML private TextField yearField;
@@ -71,6 +72,7 @@ public class AddRoadConstructionViewController {
         geographicalChallenges.setText("");
         tunnels.setText("");
         bridges.setText("");
+        projectNameField.setText("");
     }
 
     public Scene getScene()
@@ -99,6 +101,7 @@ public class AddRoadConstructionViewController {
             ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
             int budget = 0;
+            String projectName = null;
             int day = 0;
             int month = 0;
             int year = 0;
@@ -127,6 +130,16 @@ public class AddRoadConstructionViewController {
             {
                 JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
                     JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (isValidString(projectNameField.getText()))
+            {
+                projectName = projectNameField.getText();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,
+                    "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
             }
             try

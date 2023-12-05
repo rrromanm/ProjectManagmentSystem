@@ -16,6 +16,7 @@ public class AddCommercialViewController {
 
   @FXML private TextField projectTypeTextField;
   @FXML private TextField budgetTextField;
+  @FXML private TextField projectNameField;
   @FXML private TextField dayTextField;
   @FXML private TextField monthTextField;
   @FXML private TextField yearTextField;
@@ -71,6 +72,7 @@ public class AddCommercialViewController {
     materialExpensesTextField.clear();
     sizeTextField.clear();
     usageTextField.clear();
+    projectNameField.clear();
   }
 
   public Scene getScene()
@@ -90,6 +92,7 @@ public class AddCommercialViewController {
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
       int budget = 0;
+      String projectName = null;
       int day = 0;
       int month = 0;
       int year = 0;
@@ -116,6 +119,16 @@ public class AddCommercialViewController {
             JOptionPane.ERROR_MESSAGE);
         return;
       }
+        if (isValidString(projectNameField.getText()))
+        {
+          projectName = projectNameField.getText();
+        }
+        else
+        {
+          JOptionPane.showMessageDialog(null,
+              "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+          return;
+        }
       }
       catch (NumberFormatException exception)
       {
