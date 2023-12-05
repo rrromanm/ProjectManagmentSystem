@@ -9,7 +9,6 @@ package model;
 public class RoadConstruction extends Project {
 
     // Fields for width, length, number of bridges, number of tunnels, environmental challenges, and geographical challenges
-    private String name;
     private int width;
     private int length;
     private int bridges;
@@ -20,7 +19,6 @@ public class RoadConstruction extends Project {
     /**
      * A constructor that creates a road construction project with the given parameters.
      *
-     * @param name
      * @param budget                  the budget of the road construction project in Danish kroner
      * @param startTime               the start date of the road construction project
      * @param status                  the status of the road construction project, such as planned, ongoing, completed, etc.
@@ -38,7 +36,7 @@ public class RoadConstruction extends Project {
     public RoadConstruction(String name, int budget, MyDate startTime,String status, int projectID, int timeline,
                             Customer customer, Resources resources, int width, int length, int bridges, int tunnels,
                             String environmentalChallenges, String geographicalChallenges) {
-        super(budget, startTime, status, projectID, timeline, customer, resources);
+        super(name, budget, startTime, status, projectID, timeline, customer, resources);
         this.width = width;
         this.length = length;
         this.bridges = bridges;
@@ -197,15 +195,5 @@ public class RoadConstruction extends Project {
         return super.toString() + "," + width + "," + length + "," + bridges +
                 "," + tunnels + "," + environmentalChallenges +
                 "," + geographicalChallenges;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
     }
 }

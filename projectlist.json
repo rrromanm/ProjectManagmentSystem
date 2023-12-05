@@ -3,6 +3,7 @@
     {
       "size": 213123,
       "facilityType": "Restaurant",
+      "name": "Tilted Towers",
       "budget": 1000000,
       "startTime": {
         "day": 12,
@@ -33,6 +34,7 @@
       "size": 234,
       "floors": 1,
       "usage": "dsadas",
+      "name": "Risky Reels",
       "budget": 21312,
       "startTime": {
         "day": 11,
@@ -62,6 +64,7 @@
     {
       "size": 200,
       "facilityType": "Factory",
+      "name": "Frienzy Fields",
       "budget": 2000000,
       "startTime": {
         "day": 10,
@@ -92,6 +95,7 @@
       "size": 2014,
       "floors": 1,
       "usage": "hello",
+      "name": "Tomato Town",
       "budget": 1,
       "startTime": {
         "day": 1,
@@ -122,6 +126,7 @@
       "size": 3432,
       "floors": 1,
       "usage": "savd",
+      "name": "Retail Row",
       "budget": 40,
       "startTime": {
         "day": 50,
@@ -152,6 +157,7 @@
       "size": 200,
       "floors": 1,
       "usage": "perfect",
+      "name": "Lucky Landing",
       "budget": 500000,
       "startTime": {
         "day": 31,

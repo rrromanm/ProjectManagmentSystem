@@ -44,7 +44,7 @@
    <center>
       <HBox prefHeight="628.0" prefWidth="1027.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox>
+            <VBox prefHeight="695.0" prefWidth="285.0">
                <children>
                   <AnchorPane prefHeight="46.0" prefWidth="382.0">
                      <children>
@@ -85,7 +85,7 @@
                         <RadioButton fx:id="statusButton4" mnemonicParsing="false" onAction="#handleActions" prefHeight="21.0" prefWidth="62.0" text="All" toggleGroup="$status" />
                      </children>
                   </FlowPane>
-                  <AnchorPane prefHeight="50.0" prefWidth="379.0">
+                  <AnchorPane prefHeight="48.0" prefWidth="337.0">
                      <children>
                         <Button fx:id="searchButton" layoutX="137.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleActions" text="Reset" />
                      </children>
@@ -102,18 +102,19 @@
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </VBox>
-            <TableView fx:id="projectTableView" editable="true" prefHeight="811.0" prefWidth="980.0">
+            <TableView fx:id="projectTableView" editable="true" prefHeight="695.0" prefWidth="1000.0">
                <columns>
-                  <TableColumn fx:id="projectTypeColumn" prefWidth="142.0" text="Type" />
+                  <TableColumn fx:id="projectNameColumn" onEditStart="#handleActions" prefWidth="102.0" text="Name" />
+                  <TableColumn fx:id="projectTypeColumn" prefWidth="114.0" text="Type" />
                   <TableColumn fx:id="projectIdColumn" minWidth="0.0" prefWidth="38.0" text="ID" />
                   <TableColumn fx:id="projectStatusColumn" prefWidth="124.0" text="Status" />
-                  <TableColumn fx:id="projectBudgetColumn" prefWidth="63.0" text="Budget" />
-                  <TableColumn fx:id="projectTimelineColumn" prefWidth="73.0" text="Timeline" />
-                  <TableColumn fx:id="projectDeadlineColumn" prefWidth="63.0" text="Deadline" />
+                  <TableColumn fx:id="projectBudgetColumn" prefWidth="74.0" text="Budget" />
+                  <TableColumn fx:id="projectTimelineColumn" prefWidth="58.0" text="Timeline" />
+                  <TableColumn fx:id="projectDeadlineColumn" prefWidth="59.0" text="Deadline" />
                   <TableColumn fx:id="projectCustomer" prefWidth="110.0" text="Customer" />
-                  <TableColumn fx:id="projectCustomerID" prefWidth="78.0" text="Customer ID" />
-                  <TableColumn fx:id="projectManHours" prefWidth="95.0" text="Man Hours" />
-                  <TableColumn fx:id="projectCosts" prefWidth="81.0" text="Costs" />
+                  <TableColumn fx:id="projectCustomerID" prefWidth="90.0" text="Customer ID" />
+                  <TableColumn fx:id="projectManHours" prefWidth="96.0" text="Man Hours" />
+                  <TableColumn fx:id="projectCosts" prefWidth="64.0" text="Costs" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

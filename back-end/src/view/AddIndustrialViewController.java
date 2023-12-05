@@ -270,7 +270,7 @@ public class AddIndustrialViewController
       Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
       projects.addProject(
-          new IndustrialProjects(budget, date, status, projectID, timeline,
+          new IndustrialProjects(projectName,budget, date, status, projectID, timeline,
               customer, resources, size, typeOfFacility));
 
       MyFileHandler.appendToTextFile("projects.txt", projects.toString());

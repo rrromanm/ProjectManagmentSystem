@@ -298,7 +298,7 @@ public class AddResidentialViewController
       Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
       projects.addProject(
-          new ResidentialProjects(budget, date, status, projectID, timeline,
+          new ResidentialProjects(projectName,budget, date, status, projectID, timeline,
               customer, resources, size, kitchens, bathrooms, plumbing, state));
       manager.appendProjects(projects);
       viewHandler.openView("ProjectView");

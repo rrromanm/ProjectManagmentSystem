@@ -281,7 +281,7 @@ public class AddCommercialViewController {
       Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
       projects.addProject(
-          new CommercialProject(budget, date, status, projectID, timeline,
+          new CommercialProject(projectName, budget, date, status, projectID, timeline,
               customer, resources, size, floors,usage));
 
       MyFileHandler.appendToTextFile("projects.txt", projects.toString());

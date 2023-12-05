@@ -30,7 +30,8 @@ public abstract class Project implements Serializable
    * @param customer The customer of the project.
    * @param resources The resources of the project.
    */
-  public Project(int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources){
+  public Project(String name ,int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources){
+    this.name = name;
     this.budget = budget;
     this.status = status;
     this.projectID = projectID;
@@ -175,4 +176,13 @@ public abstract class Project implements Serializable
         resources.getExpectedManHours() + "," + resources.getExpenses() + "," + resources.getManHoursUsed() + "," + type;
   }
 
+  public String getName()
+  {
+    return name;
+  }
+
+  public void setName(String name)
+  {
+    this.name = name;
+  }
 }

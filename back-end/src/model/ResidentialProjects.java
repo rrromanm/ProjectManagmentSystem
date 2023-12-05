@@ -9,7 +9,6 @@ package model;
 public class ResidentialProjects extends Project {
 
     // Fields for size, number of kitchens, number of bathrooms, rooms with plumbing, state, and new build status
-    private String name;
     private int size;
     private int numberOfKitchens;
     private int numberOfBathrooms;
@@ -34,8 +33,7 @@ public class ResidentialProjects extends Project {
      * @param state             the state of the residential project, such as "under construction" or "completed"
      */
     public ResidentialProjects(String name, int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state) {
-        super(budget, startTime, status, projectID, timeline, customer, resources);
-        this.name = name;
+        super(name, budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.numberOfKitchens = numberOfKitchens;
         this.numberOfBathrooms = numberOfBathrooms;
@@ -145,15 +143,5 @@ public class ResidentialProjects extends Project {
      */
     public String toString() {
         return super.toString() + "," + size + "," + numberOfKitchens + "," + numberOfBathrooms + "," + roomsWithPlumbing + "," + state;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
     }
 }

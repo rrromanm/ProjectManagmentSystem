@@ -37,6 +37,7 @@ public class ProjectViewController {
   @FXML private TableView<ProjectTableItem> projectTableView;
   @FXML private TableColumn<ProjectTableItem, Integer> projectIdColumn;
   @FXML private TableColumn<ProjectTableItem, String> projectTypeColumn;
+  @FXML private TableColumn<ProjectTableItem, String> projectNameColumn;
   @FXML private TableColumn<ProjectTableItem, String> projectStatusColumn;
   @FXML private TableColumn<ProjectTableItem, Integer> projectBudgetColumn;
   @FXML private TableColumn<ProjectTableItem, Integer> projectTimelineColumn;
@@ -205,6 +206,7 @@ public class ProjectViewController {
   private void initializeTableView() {
     projectIdColumn.setCellValueFactory(new PropertyValueFactory<>("projectId"));
     projectTypeColumn.setCellValueFactory(new PropertyValueFactory<>("projectType"));
+    projectNameColumn.setCellValueFactory(new PropertyValueFactory<>("projectName"));
     projectStatusColumn.setCellValueFactory(new PropertyValueFactory<>("projectStatus"));
     projectBudgetColumn.setCellValueFactory(new PropertyValueFactory<>("projectBudget"));
     projectTimelineColumn.setCellValueFactory(new PropertyValueFactory<>("projectTimeline"));
@@ -229,6 +231,7 @@ public class ProjectViewController {
       ProjectTableItem tableItem = new ProjectTableItem(
           project.getProjectID(),
           project.getType(),
+          project.getName(),
           project.getStatus(),
           project.getBudget(),
           project.getTimeline(),

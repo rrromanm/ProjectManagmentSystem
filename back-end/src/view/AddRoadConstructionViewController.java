@@ -319,7 +319,7 @@ public class AddRoadConstructionViewController {
             Customer customer = new Customer(firstName, surname, customerID);
             Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
             projects.addProject(
-                new RoadConstruction(budget, date, status, projectID, timeline,
+                new RoadConstruction(projectName, budget, date, status, projectID, timeline,
                     customer, resources, width, length, bridge,tunnel, environmental, geographical));
             manager.appendProjects(projects);
             viewHandler.openView("ProjectView");

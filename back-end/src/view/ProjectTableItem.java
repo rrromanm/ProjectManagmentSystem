@@ -11,6 +11,7 @@ import model.MyDate;
 public class ProjectTableItem {
   private final SimpleIntegerProperty projectId;
   private final SimpleStringProperty projectType;
+  private final SimpleStringProperty projectName;
   private final SimpleStringProperty projectStatus;
   private final SimpleIntegerProperty projectBudget;
   private final SimpleIntegerProperty projectTimeline;
@@ -20,11 +21,12 @@ public class ProjectTableItem {
   private final SimpleIntegerProperty projectManHours;
   private final SimpleDoubleProperty projectCosts;
 
-  public ProjectTableItem(int projectId, String projectType, String projectStatus, int projectBudget,
+  public ProjectTableItem(int projectId, String projectType, String projectName ,String projectStatus, int projectBudget,
       int projectTimeline, MyDate projectDeadline, String projectCustomer, int projectCustomerID,
       int projectManHours, double projectCosts) {
     this.projectId = new SimpleIntegerProperty(projectId);
     this.projectType = new SimpleStringProperty(projectType);
+    this.projectName = new SimpleStringProperty(projectName);
     this.projectStatus = new SimpleStringProperty(projectStatus);
     this.projectBudget = new SimpleIntegerProperty(projectBudget);
     this.projectTimeline = new SimpleIntegerProperty(projectTimeline);
@@ -42,6 +44,8 @@ public class ProjectTableItem {
   public String getProjectType() {
     return projectType.get();
   }
+  public String getProjectName() {return projectName.get();}
+
 
   public String getProjectStatus() {
     return projectStatus.get();

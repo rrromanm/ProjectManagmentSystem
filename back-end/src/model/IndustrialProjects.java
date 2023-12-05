@@ -8,7 +8,6 @@ package model;
 public class IndustrialProjects extends Project {
 
     // Fields for size and facility type
-    private String name;
     private int size;
     private String facilityType;
 
@@ -27,8 +26,7 @@ public class IndustrialProjects extends Project {
      * @param facilityType the facility type of the industrial project, such as plant, warehouse, etc.
      */
     public IndustrialProjects(String name, int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, String facilityType) {
-        super(budget, startTime, status, projectID, timeline, customer, resources);
-        this.name = name;
+        super(name, budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.facilityType = facilityType;
         super.setEndTime(startTime.convertMonthsToDate(timeline));
@@ -86,15 +84,5 @@ public class IndustrialProjects extends Project {
      */
     public String toString() {
         return super.toString() + "," + size + "," + facilityType;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
     }
 }

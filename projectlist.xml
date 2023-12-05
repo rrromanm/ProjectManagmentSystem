@@ -3,6 +3,7 @@
   <projects>
     <size>213123</size>
     <facilityType>Restaurant</facilityType>
+    <name>Tilted Towers</name>
     <resources>
       <expectedManHours>500</expectedManHours>
       <manHoursUsed>500</manHoursUsed>
@@ -30,14 +31,16 @@
     <status>Finished</status>
   </projects>
   <projects>
-    <floors>1</floors>
-    <size>234</size>
     <usage>dsadas</usage>
     <resources>
       <expectedManHours>12123</expectedManHours>
       <manHoursUsed>231321</manHoursUsed>
       <materialExpenses>12312.0</materialExpenses>
     </resources>
+    <type>Commercial</type>
+    <floors>1</floors>
+    <size>234</size>
+    <name>Risky Reels</name>
     <timeline>18</timeline>
     <startTime>
       <month>11</month>
@@ -49,7 +52,6 @@
       <year>23234</year>
       <day>11</day>
     </endTime>
-    <type>Commercial</type>
     <projectID>12321</projectID>
     <budget>21312</budget>
     <customer>
@@ -62,6 +64,7 @@
   <projects>
     <size>200</size>
     <facilityType>Factory</facilityType>
+    <name>Frienzy Fields</name>
     <resources>
       <expectedManHours>400</expectedManHours>
       <manHoursUsed>400</manHoursUsed>
@@ -89,14 +92,16 @@
     <status>Finished</status>
   </projects>
   <projects>
-    <floors>1</floors>
-    <size>2014</size>
     <usage>hello</usage>
     <resources>
       <expectedManHours>200</expectedManHours>
       <manHoursUsed>6</manHoursUsed>
       <materialExpenses>230.0</materialExpenses>
     </resources>
+    <type>Commercial</type>
+    <floors>1</floors>
+    <size>2014</size>
+    <name>Tomato Town</name>
     <timeline>18</timeline>
     <startTime>
       <month>1</month>
@@ -108,7 +113,6 @@
       <year>2006</year>
       <day>1</day>
     </endTime>
-    <type>Commercial</type>
     <projectID>5</projectID>
     <budget>1</budget>
     <customer>
@@ -119,14 +123,16 @@
     <status>Under Construction</status>
   </projects>
   <projects>
-    <floors>1</floors>
-    <size>3432</size>
     <usage>savd</usage>
     <resources>
       <expectedManHours>532</expectedManHours>
       <manHoursUsed>5325</manHoursUsed>
       <materialExpenses>231.0</materialExpenses>
     </resources>
+    <type>Commercial</type>
+    <floors>1</floors>
+    <size>3432</size>
+    <name>Retail Row</name>
     <timeline>18</timeline>
     <startTime>
       <month>50</month>
@@ -138,7 +144,6 @@
       <year>2344</year>
       <day>50</day>
     </endTime>
-    <type>Commercial</type>
     <projectID>142</projectID>
     <budget>40</budget>
     <customer>
@@ -149,14 +154,16 @@
     <status>Finished</status>
   </projects>
   <projects>
-    <floors>1</floors>
-    <size>200</size>
     <usage>perfect</usage>
     <resources>
       <expectedManHours>200</expectedManHours>
       <manHoursUsed>20</manHoursUsed>
       <materialExpenses>70000.0</materialExpenses>
     </resources>
+    <type>Commercial</type>
+    <floors>1</floors>
+    <size>200</size>
+    <name>Lucky Landing</name>
     <timeline>18</timeline>
     <startTime>
       <month>31</month>
@@ -168,7 +175,6 @@
       <year>2026</year>
       <day>31</day>
     </endTime>
-    <type>Commercial</type>
     <projectID>7</projectID>
     <budget>500000</budget>
     <customer>

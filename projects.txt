@@ -1,6 +1,6 @@
-1000000,12,8,2020,Finished,21312321,40,Kuba,Abramek,12312312,500,1.0E7,500,Industrial,213123,Restaurant
-21312,11,11,23232,Under Construction,12321,18,sadas,dasdas,23123,12123,12312.0,231321,Commercial,234,1,dsadas
-2000000,10,7,2020,Finished,1002134,40,Damian,Abramek,21312312,400,100000.0,400,Industrial,200,Factory
-1,1,1,2005,Under Construction,5,18,roma,mih,4,200,230.0,6,Commercial,2014,1,hello
-40,50,50,2342,Finished,142,18,favas,sdvasdv,344,532,231.0,5325,Commercial,3432,1,savd
-500000,31,31,2024,Planned,7,18,Hello,blyat,7,200,70000.0,20,Commercial,200,1,perfect
+Tilted Towers,1000000,12,8,2020,Finished,21312321,40,Kuba,Abramek,12312312,500,1.0E7,500,Industrial,213123,Restaurant
+Risky Reels,21312,11,11,23232,Under Construction,12321,18,sadas,dasdas,23123,12123,12312.0,231321,Commercial,234,1,dsadas
+Frienzy Fields,2000000,10,7,2020,Finished,1002134,40,Damian,Abramek,21312312,400,100000.0,400,Industrial,200,Factory
+Tomato Town,1,1,1,2005,Under Construction,5,18,roma,mih,4,200,230.0,6,Commercial,2014,1,hello
+Retail Row,40,50,50,2342,Finished,142,18,favas,sdvasdv,344,532,231.0,5325,Commercial,3432,1,savd
+Lucky Landing,500000,31,31,2024,Planned,7,18,Hello,blyat,7,200,70000.0,20,Commercial,200,1,perfect
