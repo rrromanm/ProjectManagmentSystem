@@ -148,4 +148,10 @@ public class ProjectModelManager
     }
     saveProjects(allProjects);
   }
+  public int generateProjectID()
+  {
+    ProjectList list = getAllProjects();
+    int result = (list.size() + 1);
+    return result;
+  }
 }

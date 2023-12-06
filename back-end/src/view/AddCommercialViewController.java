@@ -21,7 +21,6 @@ public class AddCommercialViewController {
   @FXML private TextField monthTextField;
   @FXML private TextField yearTextField;
   @FXML private ComboBox<String> statusComboBox;
-  @FXML private TextField projectIDTextField;
   @FXML private TextField timelineTextField;
   @FXML private TextField firstNameTextField;
   @FXML private TextField surnameTextField;
@@ -41,6 +40,7 @@ public class AddCommercialViewController {
   private Scene scene;
   private ProjectModelManager projectManager;
   private MyDate dates;
+
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
@@ -63,7 +63,6 @@ public class AddCommercialViewController {
     monthTextField.clear();
     yearTextField.clear();
     statusComboBox.getSelectionModel().clearSelection();
-    projectIDTextField.clear();
     firstNameTextField.clear();
     surnameTextField.clear();
     customerIDTextField.clear();
@@ -97,7 +96,7 @@ public class AddCommercialViewController {
       int month = 0;
       int year = 0;
       String status = null;
-      int projectID = 0;
+      int projectID = projectManager.generateProjectID();
       int timeline = 0;
       String firstName = null;
       String surname = null;
@@ -114,11 +113,16 @@ public class AddCommercialViewController {
       try
       {
         budget = Integer.parseInt(budgetTextField.getText());
-        if (budget < 500000 || budget > 2000000) {
-        JOptionPane.showMessageDialog(null, "Budget must be between 500,000 and 2,000,000", "ERROR",
-            JOptionPane.ERROR_MESSAGE);
-        return;
-      }
+        if (budget < 500000 || budget > 2000000)
+        {
+          int option = JOptionPane.showOptionDialog(null,
+              "Budget must be between 500,000 and 2,000,000.\nDo you want to continue with the entered budget?",
+              "ERROR", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+          if (option == JOptionPane.NO_OPTION)
+          {
+            return;
+          }
+        }
         if (isValidString(projectNameField.getText()))
         {
           projectName = projectNameField.getText();
@@ -167,16 +171,6 @@ public class AddCommercialViewController {
         return;
       }
       status = (String) statusComboBox.getValue();
-      try
-      {
-        projectID = Integer.parseInt(projectIDTextField.getText());
-      }
-      catch (NumberFormatException exception)
-      {
-        JOptionPane.showMessageDialog(null, "Incorrect project ID inputted",
-            "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
       try
       {
         timeline = Integer.parseInt(timelineTextField.getText());

@@ -28,7 +28,6 @@ public class AddIndustrialViewController
   @FXML private TextField monthField;
   @FXML private TextField yearField;
   @FXML private ComboBox statusComboBox;
-  @FXML private TextField projectIDField;
   @FXML private TextField timelineField;
   @FXML private TextField firstNameField;
   @FXML private TextField surnameField;
@@ -64,7 +63,6 @@ public class AddIndustrialViewController
     monthField.setText("");
     yearField.setText("");
     statusComboBox.getSelectionModel().selectFirst();
-    projectIDField.setText("");
     timelineField.setText("");
     firstNameField.setText("");
     surnameField.setText("");
@@ -103,7 +101,7 @@ public class AddIndustrialViewController
       int month = 0;
       int year = 0;
       String status = null;
-      int projectID = 0;
+      int projectID = projectManager.generateProjectID();
       int timeline = 0;
       String firstName = null;
       String surname = null;
@@ -118,12 +116,23 @@ public class AddIndustrialViewController
       try
       {
         budget = Integer.parseInt(budgetField.getText());
+        if (budget < 2000000 || budget > 10000000)
+        {
+          int option = JOptionPane.showOptionDialog(null,
+              "Budget must be between 2,000,000 and 10,000,000.\nDo you want to continue with the entered budget?",
+              "ERROR", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+          if (option == JOptionPane.NO_OPTION)
+          {
+            return;
+          }
+        }
       }
       catch (NumberFormatException exception)
       {
         JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
             JOptionPane.ERROR_MESSAGE);
         return;
+
       }
       if (isValidString(projectNameField.getText()))
       {
@@ -166,16 +175,6 @@ public class AddIndustrialViewController
         return;
       }
       status = (String) statusComboBox.getValue();
-      try
-      {
-        projectID = Integer.parseInt(projectIDField.getText());
-      }
-      catch (NumberFormatException exception)
-      {
-        JOptionPane.showMessageDialog(null, "Incorrect project ID inputted",
-            "ERROR", JOptionPane.ERROR_MESSAGE);
-        return;
-      }
       try
       {
         timeline = Integer.parseInt(timelineField.getText());

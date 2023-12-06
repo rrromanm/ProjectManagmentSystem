@@ -119,7 +119,7 @@ public class ProjectList implements Serializable
     {
       Project temp = projects.get(i);
 
-      returnStr.append(temp).append("\n");
+      returnStr.append(temp);
     }
     return returnStr.toString();
   }

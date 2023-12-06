@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import main.LoadInitialData;
 import model.*;
 import model.ProjectModelManager;
 import view.ProjectViewController;
@@ -53,6 +54,7 @@ public class EditRemoveProjectController
   @FXML private Button backButton;
   @FXML private Button removeButton;
   @FXML private Button saveButton;
+  @FXML private Button updateButton;
 
 
 
@@ -114,6 +116,10 @@ public class EditRemoveProjectController
       viewHandler.openView("MenuView");
       JOptionPane.showMessageDialog(null, "Project removed!", "Remove",
           JOptionPane.INFORMATION_MESSAGE);
+    }
+    else if(e.getSource() == updateButton)
+    {
+      populateComboBox();
     }
   }
 
@@ -303,6 +309,10 @@ public class EditRemoveProjectController
     label5.setVisible(false);
     label6.setVisible(false);
   }
+  public boolean isValidString(String string) {
+    return string.matches("[a-zA-Z ]+");
+  }
+
 
   private void saveChanges()
   {
@@ -325,26 +335,159 @@ public class EditRemoveProjectController
 
     Project project = list.get(index);
 
-    String newType = projectType.getText();
-    int newBudget = Integer.parseInt(projectBudget.getText());
-    String newName = projectName.getText();
-    String newStatus =  projectStatus.getValue();
-    int newProjectID = Integer.parseInt(projectID.getText());
-    int newTimeline = Integer.parseInt(projectTimeline.getText());
+    String newType = null;
+    int newBudget = 0;
+    String newName = null;
+    String newStatus =  null;
+    int newProjectID = 0;
+    int newTimeline = 0;
+    int newDay = 0;
+    int newMonth = 0;
+    int newYear = 0;
 
-    int newDay = Integer.parseInt(day.getText());
-    int newMonth = Integer.parseInt(month.getText());
-    int newYear = Integer.parseInt(year.getText());
+    String newCustomerFirstName = null;
+    String newCustomerSurname = null;
+    int newCustomerId = 0;
+
+    double newExpenses = 0;
+    int newManHoursUsed = 0;
+    int newExpectedManHours = 0;
+
+     newType = projectType.getText();
+    try
+    {
+      newBudget = Integer.parseInt(projectBudget.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
+          JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    if (isValidString(projectName.getText()))
+    {
+      newName = projectName.getText();
+    }
+    else
+    {
+      JOptionPane.showMessageDialog(null,
+          "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newDay = Integer.parseInt(day.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect day inputted", "ERROR",
+          JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newMonth = Integer.parseInt(month.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect month inputted", "ERROR",
+          JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newYear = Integer.parseInt(year.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect year inputted", "ERROR",
+          JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    newStatus = (String) projectStatus.getValue();
+    try
+    {
+      newProjectID = Integer.parseInt(projectID.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect project ID inputted",
+          "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newTimeline = Integer.parseInt(projectTimeline.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect timeline inputted",
+          "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    if (isValidString(firstName.getText()))
+    {
+      newCustomerFirstName = firstName.getText();
+    }
+    else
+    {
+      JOptionPane.showMessageDialog(null,
+          "Incorrect customer first name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    if (isValidString(surname.getText()))
+    {
+      newCustomerSurname = surname.getText();
+    }
+    else
+    {
+      JOptionPane.showMessageDialog(null,
+          "Incorrect customer surname inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newCustomerId = Integer.parseInt(customerID.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null, "Incorrect customer ID inputted",
+          "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newExpectedManHours = Integer.parseInt(expectedManHours.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null,
+          "Incorrect resources expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newExpenses = Double.parseDouble(materialExpenses.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null,
+          "Incorrect resources material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+    try
+    {
+      newManHoursUsed = Integer.parseInt(manHoursUsed.getText());
+    }
+    catch (NumberFormatException exception)
+    {
+      JOptionPane.showMessageDialog(null,
+          "Incorrect  resources man hours used inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+
     MyDate newDate = new MyDate(newDay,newMonth,newYear);
-
-    String newCustomerFirstName = firstName.getText();
-    String newCustomerSurname = surname.getText();
-    int newCustomerId = Integer.parseInt(customerID.getText());
     Customer newCustomer = new Customer(newCustomerFirstName,newCustomerSurname,newCustomerId);
-
-    double newExpenses = Double.parseDouble(materialExpenses.getText());
-    int newManHoursUsed = Integer.parseInt(manHoursUsed.getText());
-    int newExpectedManHours = Integer.parseInt(expectedManHours.getText());
     Resources newResources = new Resources(newExpectedManHours, newExpenses, newManHoursUsed);
 
     try
@@ -355,6 +498,19 @@ public class EditRemoveProjectController
         String facilityType = custom2.getText();
 
         project = new IndustrialProjects(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, facilityType);
+        IndustrialProjects projects = (IndustrialProjects) list.get(index);
+        projects.setName(newName);
+        projects.setBudget(newBudget);
+        projects.setStartTime(newDate);
+        projects.setStatus(newStatus);
+        projects.setProjectID(newProjectID);
+        projects.setTimeline(newTimeline);
+        projects.setCustomer(newCustomer);
+        projects.setResources(newResources);
+        projects.setSize(size);
+        projects.setFacilityType(facilityType);
+
+        MyFileHandler.writeToTextFile("projects.txt",list.toString());
       }
       else if (newType.equals("Commercial"))
       {
@@ -363,6 +519,20 @@ public class EditRemoveProjectController
         String usage = custom3.getText();
 
         project = new CommercialProject(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, floors, usage);
+        CommercialProject projects = (CommercialProject) list.get(index);
+        projects.setName(newName);
+        projects.setBudget(newBudget);
+        projects.setStartTime(newDate);
+        projects.setStatus(newStatus);
+        projects.setProjectID(newProjectID);
+        projects.setTimeline(newTimeline);
+        projects.setCustomer(newCustomer);
+        projects.setResources(newResources);
+        projects.setSize(size);
+        projects.setFloors(floors);
+        projects.setUsage(usage);
+
+        MyFileHandler.writeToTextFile("projects.txt",list.toString());
       }
       else if (newType.equals("Residential"))
       {
@@ -373,6 +543,22 @@ public class EditRemoveProjectController
         String state = custom5.getText();
 
         project = new ResidentialProjects(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, kitchens, bathrooms, plumbing, state);
+        ResidentialProjects projects = (ResidentialProjects) list.get(index);
+        projects.setName(newName);
+        projects.setBudget(newBudget);
+        projects.setStartTime(newDate);
+        projects.setStatus(newStatus);
+        projects.setProjectID(newProjectID);
+        projects.setTimeline(newTimeline);
+        projects.setCustomer(newCustomer);
+        projects.setResources(newResources);
+        projects.setSize(size);
+        projects.setNumberOfKitchens(kitchens);
+        projects.setNumberOfBathrooms(bathrooms);
+        projects.setRoomsWithPlumbing(plumbing);
+        projects.setState(state);
+
+        MyFileHandler.writeToTextFile("projects.txt",list.toString());
       }
       else if (newType.equals("RoadConstruction"))
       {
@@ -384,7 +570,25 @@ public class EditRemoveProjectController
         String geographical = custom6.getText();
 
         project = new RoadConstruction(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, width, length, bridges, tunnels, environmental, geographical);
+        RoadConstruction projects = (RoadConstruction) list.get(index);
+        projects.setName(newName);
+        projects.setBudget(newBudget);
+        projects.setStartTime(newDate);
+        projects.setStatus(newStatus);
+        projects.setProjectID(newProjectID);
+        projects.setTimeline(newTimeline);
+        projects.setCustomer(newCustomer);
+        projects.setResources(newResources);
+        projects.setWidth(width);
+        projects.setLength(length);
+        projects.setBridges(bridges);
+        projects.setTunnels(tunnels);
+        projects.setEnvironmentalChallenges(environmental);
+        projects.setGeographicalChallenges(geographical);
+
+        MyFileHandler.writeToTextFile("projects.txt",list.toString());
       }
+
 
       projectManager.updateProject(project);
       updateProjectArea();
@@ -396,6 +600,10 @@ public class EditRemoveProjectController
     catch (NumberFormatException e)
     {
       e.printStackTrace();
+    }
+    catch (FileNotFoundException e)
+    {
+      throw new RuntimeException(e);
     }
   }
 
