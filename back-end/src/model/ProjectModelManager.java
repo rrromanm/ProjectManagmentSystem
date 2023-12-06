@@ -91,4 +91,38 @@ public class ProjectModelManager
   {
     ProjectList projectByStatus = new ProjectList();
   }
+
+  public void updateProject(Project projectToUpdate)
+  {
+    ProjectList allProjects = getAllProjects();
+
+    for (int i = 0; i < allProjects.size(); i++)
+    {
+      Project project = allProjects.get(i);
+
+      if (project.getProjectID() == projectToUpdate.getProjectID())
+      {
+        project.setName(projectToUpdate.getName());
+        project.setStatus(projectToUpdate.getStatus());
+        project.setBudget(projectToUpdate.getBudget());
+        project.setTimeline(projectToUpdate.getTimeline());
+
+        int day = projectToUpdate.getStartTime().getDay();
+        int month = projectToUpdate.getStartTime().getMonth();
+        int year = projectToUpdate.getStartTime().getYear();
+        project.setStartTime(new MyDate(day, month, year));
+
+        String firstName = projectToUpdate.getCustomer().getFirstName();
+        String surname = projectToUpdate.getCustomer().getSurname();
+        int id  = projectToUpdate.getCustomer().getId();
+        project.setCustomer(new Customer(firstName,surname,id));
+
+        double expenses = projectToUpdate.getResources().getExpenses();
+        int manHoursExpects = projectToUpdate.getResources().getExpectedManHours();
+        int manHoursUsed = projectToUpdate.getResources().getManHoursUsed();
+        project.setResources(new Resources(manHoursExpects, expenses, manHoursUsed));
+      }
+    }
+    saveProjects(allProjects);
+  }
 }

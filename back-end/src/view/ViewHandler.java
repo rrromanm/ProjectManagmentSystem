@@ -221,7 +221,7 @@ public class ViewHandler {
         loader.setLocation(getClass().getResource("EditRemoveProjectView.fxml"));
         Region root = loader.load();
         editRemoveViewController = loader.getController();
-        editRemoveViewController.init(this, new Scene(root), projectManager);
+        editRemoveViewController.init(this, new Scene(root), projectManager, projectViewController);
 
       } catch (IOException e)
         {

@@ -86,7 +86,7 @@ public class ProjectViewController {
     }
     else if (e.getSource() == removeButton)
     {
-      viewHandler.openView("RemoveProjectView");
+      viewHandler.openView("EditRemoveProjectView");
     }
     else if (e.getSource() == exitMenuItem)
     {
@@ -224,7 +224,7 @@ public class ProjectViewController {
     populateTable(projectList);
   }
 
-  private void populateTable(ProjectList projectList) {
+  public void populateTable(ProjectList projectList) {
     projectTableData.clear();
 
     for (Project project : projectList.getProjects()) {
