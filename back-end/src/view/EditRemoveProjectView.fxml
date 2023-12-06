@@ -51,7 +51,7 @@
             <Label prefHeight="17.0" prefWidth="150.0" text="Status:" />
             <ComboBox fx:id="projectStatus" onAction="#handleActions" prefHeight="26.0" prefWidth="193.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Project ID:" />
-            <TextField fx:id="projectID" onAction="#handleActions" prefHeight="26.0" prefWidth="194.0" />
+            <TextField fx:id="projectID" editable="false" onAction="#handleActions" prefHeight="26.0" prefWidth="194.0" />
             <Label prefHeight="17.0" prefWidth="150.0" text="Timeline:" />
             <TextField fx:id="projectTimeline" onAction="#handleActions" prefHeight="26.0" prefWidth="195.0" />
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="362.0" text="Customer">

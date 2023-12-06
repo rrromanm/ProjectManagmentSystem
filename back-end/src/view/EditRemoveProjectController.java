@@ -328,33 +328,63 @@ public class EditRemoveProjectController
     String newType = projectType.getText();
     int newBudget = Integer.parseInt(projectBudget.getText());
     String newName = projectName.getText();
+    String newStatus =  projectStatus.getValue();
+    int newProjectID = Integer.parseInt(projectID.getText());
+    int newTimeline = Integer.parseInt(projectTimeline.getText());
+
     int newDay = Integer.parseInt(day.getText());
     int newMonth = Integer.parseInt(month.getText());
     int newYear = Integer.parseInt(year.getText());
+    MyDate newDate = new MyDate(newDay,newMonth,newYear);
+
     String newCustomerFirstName = firstName.getText();
     String newCustomerSurname = surname.getText();
     int newCustomerId = Integer.parseInt(customerID.getText());
+    Customer newCustomer = new Customer(newCustomerFirstName,newCustomerSurname,newCustomerId);
+
     double newExpenses = Double.parseDouble(materialExpenses.getText());
     int newManHoursUsed = Integer.parseInt(manHoursUsed.getText());
     int newExpectedManHours = Integer.parseInt(expectedManHours.getText());
+    Resources newResources = new Resources(newExpectedManHours, newExpenses, newManHoursUsed);
 
     try
     {
-      project.setType(newType);
-      project.setBudget(newBudget);
-      project.setName(newName);
-      project.getStartTime().setDay(newDay);
-      project.getStartTime().setMonth(newMonth);
-      project.getStartTime().setYear(newYear);
-      project.setStatus(projectStatus.getValue());
+      if (newType.equals("Industrial"))
+      {
+        int size = Integer.parseInt(custom1.getText());
+        String facilityType = custom2.getText();
 
-      project.getCustomer().setFirstName(newCustomerFirstName);
-      project.getCustomer().setSurname(newCustomerSurname);
-      project.getCustomer().setId(newCustomerId);
+        project = new IndustrialProjects(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, facilityType);
+      }
+      else if (newType.equals("Commercial"))
+      {
+        int size = Integer.parseInt(custom1.getText());
+        short floors = Short.parseShort(custom2.getText());
+        String usage = custom3.getText();
 
-      project.getResources().setExpenses(newExpenses);
-      project.getResources().setManHoursUsed(newManHoursUsed);
-      project.getResources().setExpectedManHours(newExpectedManHours);
+        project = new CommercialProject(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, floors, usage);
+      }
+      else if (newType.equals("Residential"))
+      {
+        int size = Integer.parseInt(custom1.getText());
+        int kitchens = Integer.parseInt(custom2.getText());
+        int bathrooms = Integer.parseInt(custom3.getText());
+        int plumbing = Integer.parseInt(custom4.getText());
+        String state = custom5.getText();
+
+        project = new ResidentialProjects(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, kitchens, bathrooms, plumbing, state);
+      }
+      else if (newType.equals("RoadConstruction"))
+      {
+        int width = Integer.parseInt(custom1.getText());
+        int length = Integer.parseInt(custom2.getText());
+        int bridges = Integer.parseInt(custom3.getText());
+        int tunnels = Integer.parseInt(custom4.getText());
+        String environmental = custom5.getText();
+        String geographical = custom6.getText();
+
+        project = new RoadConstruction(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, width, length, bridges, tunnels, environmental, geographical);
+      }
 
       projectManager.updateProject(project);
       updateProjectArea();

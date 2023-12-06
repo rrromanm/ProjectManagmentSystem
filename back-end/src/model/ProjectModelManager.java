@@ -104,35 +104,46 @@ public class ProjectModelManager
     ProjectList projectByStatus = new ProjectList();
   }
 
-  public void updateProject(Project projectToUpdate)
-  {
+  public void updateProject(Project projectToUpdate) {
     ProjectList allProjects = getAllProjects();
 
-    for (int i = 0; i < allProjects.size(); i++)
-    {
+    for (int i = 0; i < allProjects.size(); i++) {
       Project project = allProjects.get(i);
 
-      if (project.getProjectID() == projectToUpdate.getProjectID())
-      {
+      if (project.getProjectID() == projectToUpdate.getProjectID()) {
         project.setName(projectToUpdate.getName());
         project.setStatus(projectToUpdate.getStatus());
         project.setBudget(projectToUpdate.getBudget());
         project.setTimeline(projectToUpdate.getTimeline());
+        project.setStartTime(projectToUpdate.getStartTime());
+        project.setCustomer(projectToUpdate.getCustomer());
+        project.setResources(projectToUpdate.getResources());
 
-        int day = projectToUpdate.getStartTime().getDay();
-        int month = projectToUpdate.getStartTime().getMonth();
-        int year = projectToUpdate.getStartTime().getYear();
-        project.setStartTime(new MyDate(day, month, year));
-
-        String firstName = projectToUpdate.getCustomer().getFirstName();
-        String surname = projectToUpdate.getCustomer().getSurname();
-        int id  = projectToUpdate.getCustomer().getId();
-        project.setCustomer(new Customer(firstName,surname,id));
-
-        double expenses = projectToUpdate.getResources().getExpenses();
-        int manHoursExpects = projectToUpdate.getResources().getExpectedManHours();
-        int manHoursUsed = projectToUpdate.getResources().getManHoursUsed();
-        project.setResources(new Resources(manHoursExpects, expenses, manHoursUsed));
+        if (project.getType().equals("Industrial")) {
+          IndustrialProjects updatedProject = (IndustrialProjects) projectToUpdate;
+          ((IndustrialProjects) project).setSize(updatedProject.getSize());
+          ((IndustrialProjects) project).setFacilityType(updatedProject.getFacilityType());
+        } else if (project.getType().equals("Commercial")) {
+          CommercialProject updatedProject = (CommercialProject) projectToUpdate;
+          ((CommercialProject) project).setSize(updatedProject.getSize());
+          ((CommercialProject) project).setFloors(updatedProject.getFloors());
+          ((CommercialProject) project).setUsage(updatedProject.getUsage());
+        } else if (project.getType().equals("RoadConstruction")) {
+          RoadConstruction updatedProject = (RoadConstruction) projectToUpdate;
+          ((RoadConstruction) project).setWidth(updatedProject.getWidth());
+          ((RoadConstruction) project).setLength(updatedProject.getLength());
+          ((RoadConstruction) project).setBridges(updatedProject.getBridges());
+          ((RoadConstruction) project).setTunnels(updatedProject.getTunnels());
+          ((RoadConstruction) project).setEnvironmentalChallenges(updatedProject.getEnvironmentalChallenges());
+          ((RoadConstruction) project).setGeographicalChallenges(updatedProject.getGeographicalChallenges());
+        } else if (project.getType().equals("Residential")) {
+          ResidentialProjects updatedProject = (ResidentialProjects) projectToUpdate;
+          ((ResidentialProjects) project).setSize(updatedProject.getSize());
+          ((ResidentialProjects) project).setNumberOfKitchens(updatedProject.getNumberOfKitchens());
+          ((ResidentialProjects) project).setNumberOfBathrooms(updatedProject.getNumberOfBathrooms());
+          ((ResidentialProjects) project).setRoomsWithPlumbing(updatedProject.getRoomsWithPlumbing());
+          ((ResidentialProjects) project).setState(updatedProject.getState());
+        }
       }
     }
     saveProjects(allProjects);
