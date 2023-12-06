@@ -9,6 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.*;
 import model.ProjectModelManager;
+import utils.MyFileHandler;
+
+import javax.swing.*;
+import java.io.FileNotFoundException;
+
 public class EditRemoveProjectController
 {
   private ViewHandler viewHandler;
@@ -87,7 +92,10 @@ public class EditRemoveProjectController
     }
     else if(e.getSource() == removeButton)
     {
-
+      removeProject();
+      viewHandler.openView("MenuView");
+      JOptionPane.showMessageDialog(null, "Project removed!", "Remove",
+          JOptionPane.INFORMATION_MESSAGE);
     }
   }
 
@@ -232,6 +240,28 @@ public class EditRemoveProjectController
       label6.setText("Geographical Challenges :");
       custom6.setText(String.valueOf(roadConstruction.getGeographicalChallenges()));
 
+    }
+
+  }
+
+  public void removeProject(){
+    ProjectModelManager manager = new ProjectModelManager("projects.bin");
+    ProjectList list = projectManager.getAllProjects();
+
+    for(int i = 0; i < list.size(); i++){
+      if(list.get(i).getName().equals(projectPick.getValue())){
+        list.removeProject(list.get(i));
+      }
+    }
+    try{
+      manager.removeProject(list);
+
+      MyFileHandler.writeToTextFile("projects.txt", list.toString());
+
+    }
+    catch (FileNotFoundException e)
+    {
+      throw new RuntimeException(e);
     }
 
   }
