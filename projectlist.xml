@@ -10,40 +10,7 @@
     <type>Residential</type>
     <size>412</size>
     <roomsWithPlumbing>2</roomsWithPlumbing>
-    <name>Hello</name>
-    <timeline>9</timeline>
-    <startTime>
-      <month>1</month>
-      <year>1</year>
-      <day>1</day>
-    </startTime>
-    <state>Reconstruction</state>
-    <endTime>
-      <month>10</month>
-      <year>1</year>
-      <day>1</day>
-    </endTime>
-    <projectID>1</projectID>
-    <numberOfBathrooms>1</numberOfBathrooms>
-    <budget>500000</budget>
-    <customer>
-      <firstName>dcdd</firstName>
-      <surname>asca</surname>
-      <id>21</id>
-    </customer>
-    <status>Finished</status>
-  </projects>
-  <projects>
-    <resources>
-      <expectedManHours>134</expectedManHours>
-      <manHoursUsed>123</manHoursUsed>
-      <materialExpenses>14.0</materialExpenses>
-    </resources>
-    <numberOfKitchens>1</numberOfKitchens>
-    <type>Residential</type>
-    <size>412</size>
-    <roomsWithPlumbing>2</roomsWithPlumbing>
-    <name>Hello2</name>
+    <name>Hello5</name>
     <timeline>9</timeline>
     <startTime>
       <month>1</month>
@@ -110,6 +77,39 @@
     <size>412</size>
     <roomsWithPlumbing>2</roomsWithPlumbing>
     <name>Hello7</name>
+    <timeline>9</timeline>
+    <startTime>
+      <month>1</month>
+      <year>1</year>
+      <day>1</day>
+    </startTime>
+    <state>Reconstruction</state>
+    <endTime>
+      <month>10</month>
+      <year>1</year>
+      <day>1</day>
+    </endTime>
+    <projectID>1</projectID>
+    <numberOfBathrooms>1</numberOfBathrooms>
+    <budget>500000</budget>
+    <customer>
+      <firstName>dcdd</firstName>
+      <surname>asca</surname>
+      <id>21</id>
+    </customer>
+    <status>Finished</status>
+  </projects>
+  <projects>
+    <resources>
+      <expectedManHours>134</expectedManHours>
+      <manHoursUsed>123</manHoursUsed>
+      <materialExpenses>14.0</materialExpenses>
+    </resources>
+    <numberOfKitchens>1</numberOfKitchens>
+    <type>Residential</type>
+    <size>412</size>
+    <roomsWithPlumbing>2</roomsWithPlumbing>
+    <name>Hello8</name>
     <timeline>9</timeline>
     <startTime>
       <month>1</month>

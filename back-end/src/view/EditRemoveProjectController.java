@@ -68,7 +68,21 @@ public class EditRemoveProjectController
 
   public void reset()
   {
-
+    projectBudget.setText("");
+    day.setText("");
+    month.setText("");
+    year.setText("");
+    projectStatus.getSelectionModel().selectFirst();
+    projectID.setText("");
+    projectTimeline.setText("");
+    firstName.setText("");
+    surname.setText("");
+    customerID.setText("");
+    expectedManHours.setText("");
+    materialExpenses.setText("");
+    manHoursUsed.setText("");
+    projectName.setText("");
+    projectType.setText("");
   }
 
   public Scene getScene()
@@ -93,6 +107,7 @@ public class EditRemoveProjectController
     else if(e.getSource() == removeButton)
     {
       removeProject();
+      populateComboBox();
       viewHandler.openView("MenuView");
       JOptionPane.showMessageDialog(null, "Project removed!", "Remove",
           JOptionPane.INFORMATION_MESSAGE);
@@ -100,6 +115,10 @@ public class EditRemoveProjectController
   }
 
   public void populateComboBox() {
+    projectPick.getItems().clear();
+    reset();
+    hideEverything();
+
     ProjectList list = projectManager.getAllProjects();
 
     for (int i = 0; i < list.size(); i++) {

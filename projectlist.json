@@ -6,40 +6,7 @@
       "numberOfBathrooms": 1,
       "roomsWithPlumbing": 2,
       "state": "Reconstruction",
-      "name": "Hello",
-      "budget": 500000,
-      "startTime": {
-        "day": 1,
-        "month": 1,
-        "year": 1
-      },
-      "endTime": {
-        "day": 1,
-        "month": 10,
-        "year": 1
-      },
-      "customer": {
-        "firstName": "dcdd",
-        "surname": "asca",
-        "id": 21
-      },
-      "resources": {
-        "manHoursUsed": 123,
-        "materialExpenses": 14.0,
-        "expectedManHours": 134
-      },
-      "status": "Finished",
-      "projectID": 1,
-      "timeline": 9,
-      "type": "Residential"
-    },
-    {
-      "size": 412,
-      "numberOfKitchens": 1,
-      "numberOfBathrooms": 1,
-      "roomsWithPlumbing": 2,
-      "state": "Reconstruction",
-      "name": "Hello2",
+      "name": "Hello5",
       "budget": 500000,
       "startTime": {
         "day": 1,
@@ -106,6 +73,39 @@
       "roomsWithPlumbing": 2,
       "state": "Reconstruction",
       "name": "Hello7",
+      "budget": 500000,
+      "startTime": {
+        "day": 1,
+        "month": 1,
+        "year": 1
+      },
+      "endTime": {
+        "day": 1,
+        "month": 10,
+        "year": 1
+      },
+      "customer": {
+        "firstName": "dcdd",
+        "surname": "asca",
+        "id": 21
+      },
+      "resources": {
+        "manHoursUsed": 123,
+        "materialExpenses": 14.0,
+        "expectedManHours": 134
+      },
+      "status": "Finished",
+      "projectID": 1,
+      "timeline": 9,
+      "type": "Residential"
+    },
+    {
+      "size": 412,
+      "numberOfKitchens": 1,
+      "numberOfBathrooms": 1,
+      "roomsWithPlumbing": 2,
+      "state": "Reconstruction",
+      "name": "Hello8",
       "budget": 500000,
       "startTime": {
         "day": 1,
