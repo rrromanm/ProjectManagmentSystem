@@ -10,8 +10,10 @@ import javafx.scene.control.TextField;
 import model.*;
 import model.ProjectModelManager;
 import view.ProjectViewController;
-
 import javax.swing.*;
+import utils.MyFileHandler;
+import javax.swing.*;
+import java.io.FileNotFoundException;
 
 public class EditRemoveProjectController
 {
@@ -69,7 +71,21 @@ public class EditRemoveProjectController
 
   public void reset()
   {
-
+    projectBudget.setText("");
+    day.setText("");
+    month.setText("");
+    year.setText("");
+    projectStatus.getSelectionModel().selectFirst();
+    projectID.setText("");
+    projectTimeline.setText("");
+    firstName.setText("");
+    surname.setText("");
+    customerID.setText("");
+    expectedManHours.setText("");
+    materialExpenses.setText("");
+    manHoursUsed.setText("");
+    projectName.setText("");
+    projectType.setText("");
   }
 
   public Scene getScene()
@@ -93,11 +109,19 @@ public class EditRemoveProjectController
     }
     else if(e.getSource() == removeButton)
     {
-
+      removeProject();
+      populateComboBox();
+      viewHandler.openView("MenuView");
+      JOptionPane.showMessageDialog(null, "Project removed!", "Remove",
+          JOptionPane.INFORMATION_MESSAGE);
     }
   }
 
   public void populateComboBox() {
+    projectPick.getItems().clear();
+    reset();
+    hideEverything();
+
     ProjectList list = projectManager.getAllProjects();
 
     for (int i = 0; i < list.size(); i++) {
@@ -241,6 +265,29 @@ public class EditRemoveProjectController
     }
 
   }
+
+  public void removeProject(){
+    ProjectModelManager manager = new ProjectModelManager("projects.bin");
+    ProjectList list = projectManager.getAllProjects();
+
+    for(int i = 0; i < list.size(); i++){
+      if(list.get(i).getName().equals(projectPick.getValue())){
+        list.removeProject(list.get(i));
+      }
+    }
+    try{
+      manager.removeProject(list);
+
+      MyFileHandler.writeToTextFile("projects.txt", list.toString());
+
+    }
+    catch (FileNotFoundException e)
+    {
+      throw new RuntimeException(e);
+    }
+
+  }
+
   public void hideEverything ()
   {
     custom1.setVisible(false);

@@ -87,6 +87,18 @@ public class ProjectModelManager
     }
   }
 
+  public void removeProject(ProjectList list){
+
+      try {
+        MyFileHandler.writeToBinaryFile(fileName, list);
+
+        System.out.println("Successfully removed project.");
+      } catch (IOException e) {
+        System.out.println("Error writing to file");
+        e.printStackTrace();
+      }
+  }
+
   public void changeStatus(int ID, String status)
   {
     ProjectList projectByStatus = new ProjectList();
