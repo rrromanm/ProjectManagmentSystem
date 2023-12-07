@@ -53,7 +53,7 @@ public class AddCommercialViewController {
   }
   public boolean isValidString(String string)
   {
-    return string.matches("[a-zA-Z]+");
+    return string.matches("[a-zA-Z ]+");
   }
 
   public void reset()

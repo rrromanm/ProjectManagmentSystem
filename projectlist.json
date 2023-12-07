@@ -5,18 +5,18 @@
       "numberOfKitchens": 1,
       "numberOfBathrooms": 1,
       "roomsWithPlumbing": 2,
-      "state": "Reconstruction",
+      "state": "Reconstructiondsads",
       "name": "dsasad",
       "budget": 21321,
       "startTime": {
-        "day": 123,
-        "month": 3123,
-        "year": 213
+        "day": 30,
+        "month": 12,
+        "year": 2023
       },
       "endTime": {
-        "day": 123,
-        "month": 3120,
-        "year": 214
+        "day": 30,
+        "month": 9,
+        "year": 2024
       },
       "customer": {
         "firstName": "das",
@@ -32,36 +32,6 @@
       "projectID": 1,
       "timeline": 9,
       "type": "Residential"
-    },
-    {
-      "size": 321,
-      "facilityType": "fsafas",
-      "name": "dsads",
-      "budget": 321321,
-      "startTime": {
-        "day": 123,
-        "month": 123,
-        "year": 213
-      },
-      "endTime": {
-        "day": 123,
-        "month": 120,
-        "year": 1240
-      },
-      "customer": {
-        "firstName": "dsa",
-        "surname": "das",
-        "id": 12321
-      },
-      "resources": {
-        "manHoursUsed": 213321,
-        "materialExpenses": 3123.0,
-        "expectedManHours": 3213
-      },
-      "status": "Under Construction",
-      "projectID": 2,
-      "timeline": 12321,
-      "type": "Industrial"
     }
   ]
 }

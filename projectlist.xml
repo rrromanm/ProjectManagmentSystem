@@ -13,15 +13,15 @@
     <name>dsasad</name>
     <timeline>9</timeline>
     <startTime>
-      <month>3123</month>
-      <year>213</year>
-      <day>123</day>
+      <month>12</month>
+      <year>2023</year>
+      <day>30</day>
     </startTime>
-    <state>Reconstruction</state>
+    <state>Reconstructiondsads</state>
     <endTime>
-      <month>3120</month>
-      <year>214</year>
-      <day>123</day>
+      <month>9</month>
+      <year>2024</year>
+      <day>30</day>
     </endTime>
     <projectID>1</projectID>
     <numberOfBathrooms>1</numberOfBathrooms>
@@ -30,36 +30,6 @@
       <firstName>das</firstName>
       <surname>das</surname>
       <id>321321</id>
-    </customer>
-    <status>Under Construction</status>
-  </projects>
-  <projects>
-    <size>321</size>
-    <facilityType>fsafas</facilityType>
-    <name>dsads</name>
-    <resources>
-      <expectedManHours>3213</expectedManHours>
-      <manHoursUsed>213321</manHoursUsed>
-      <materialExpenses>3123.0</materialExpenses>
-    </resources>
-    <timeline>12321</timeline>
-    <startTime>
-      <month>123</month>
-      <year>213</year>
-      <day>123</day>
-    </startTime>
-    <endTime>
-      <month>120</month>
-      <year>1240</year>
-      <day>123</day>
-    </endTime>
-    <type>Industrial</type>
-    <projectID>2</projectID>
-    <budget>321321</budget>
-    <customer>
-      <firstName>dsa</firstName>
-      <surname>das</surname>
-      <id>12321</id>
     </customer>
     <status>Under Construction</status>
   </projects>
