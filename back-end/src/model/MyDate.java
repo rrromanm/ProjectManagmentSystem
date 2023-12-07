@@ -115,7 +115,7 @@ public class MyDate implements Serializable
     int days = day;
 
     for (int i = 1; i < month; i++) {
-      days += getDaysInMonth(year);
+      days += getDaysInMonth();
     }
 
     days += countLeapYears(year);
@@ -130,7 +130,7 @@ public class MyDate implements Serializable
    *
    * @return The number of days in the specified month of the given year.
    */
-  public int getDaysInMonth(int year)
+  public int getDaysInMonth()
   {
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
     {
@@ -196,6 +196,16 @@ public class MyDate implements Serializable
     }
 
     return new MyDate(day, newMonth, newYear);
+  }
+
+  public boolean isValidDate() {
+    int daysInMonth = getDaysInMonth();
+
+    if (this.day > daysInMonth || this.day <= 0) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   /**

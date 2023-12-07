@@ -3,10 +3,7 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import main.LoadInitialData;
 import model.*;
 import model.ProjectModelManager;
@@ -313,7 +310,6 @@ public class EditRemoveProjectController
     return string.matches("[a-zA-Z ]+");
   }
 
-
   private void saveChanges()
   {
     if (projectPick.getValue() == null)
@@ -487,6 +483,17 @@ public class EditRemoveProjectController
     }
 
     MyDate newDate = new MyDate(newDay,newMonth,newYear);
+
+    if (!newDate.isValidDate())
+    {
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText(null);
+      alert.setContentText("Invalid date input");
+      alert.show();
+      return;
+    }
+
     Customer newCustomer = new Customer(newCustomerFirstName,newCustomerSurname,newCustomerId);
     Resources newResources = new Resources(newExpectedManHours, newExpenses, newManHoursUsed);
 

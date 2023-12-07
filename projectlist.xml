@@ -10,18 +10,18 @@
     <type>Residential</type>
     <size>321</size>
     <roomsWithPlumbing>2</roomsWithPlumbing>
-    <name>dsasad</name>
+    <name>VIA Uni</name>
     <timeline>9</timeline>
     <startTime>
-      <month>12</month>
+      <month>2</month>
       <year>2023</year>
-      <day>30</day>
+      <day>34</day>
     </startTime>
     <state>Reconstructiondsads</state>
     <endTime>
-      <month>9</month>
-      <year>2024</year>
-      <day>30</day>
+      <month>11</month>
+      <year>2023</year>
+      <day>34</day>
     </endTime>
     <projectID>1</projectID>
     <numberOfBathrooms>1</numberOfBathrooms>
