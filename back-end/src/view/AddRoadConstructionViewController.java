@@ -3,15 +3,13 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import model.*;
 import utils.MyFileHandler;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
+import java.util.Optional;
 
 public class AddRoadConstructionViewController {
 
@@ -128,21 +126,27 @@ public class AddRoadConstructionViewController {
             try
             {
                 budget = Integer.parseInt(budgetField.getText());
-                if (budget < 1000000 || budget > 5000000)
+                if (budget < 1000000|| budget > 5000000)
                 {
-                    int option = JOptionPane.showOptionDialog(null,
-                        "Budget must be between 1,000,000 and 5,000,000.\nDo you want to continue with the entered budget?",
-                        "ERROR", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
-                    if (option == JOptionPane.NO_OPTION)
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("");
+                    alert.setContentText("Budget must be between 1,000,000 and 5,000,000.\nDo you want to continue with the entered budget?");
+
+                    Optional<ButtonType> result = alert.showAndWait();
+                    if (result.get() == ButtonType.CANCEL)
                     {
                         return;
                     }
                 }
             }
-            catch (NumberFormatException exception)
+            catch(NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid budget input");
+                alert.showAndWait();
                 return;
             }
             if (isValidString(projectNameField.getText()))
@@ -151,8 +155,11 @@ public class AddRoadConstructionViewController {
             }
             else
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid name input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -161,8 +168,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect day inputted", "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid day input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -171,8 +181,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect month inputted", "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid month input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -181,8 +194,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect year inputted", "ERROR",
-                    JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid year input");
+                alert.showAndWait();
                 return;
             }
             status = (String) statusComboBox.getValue();
@@ -192,8 +208,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect timeline inputted",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid timeline input");
+                alert.showAndWait();
                 return;
             }
             if (isValidString(firstNameField.getText()))
@@ -202,8 +221,11 @@ public class AddRoadConstructionViewController {
             }
             else
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect customer first name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid customer first name input");
+                alert.showAndWait();
                 return;
             }
             if (isValidString(surnameField.getText()))
@@ -212,8 +234,11 @@ public class AddRoadConstructionViewController {
             }
             else
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect customer surname inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid customer surname input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -222,8 +247,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect customer ID inputted",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid customer ID input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -232,8 +260,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid expected man hours input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -242,8 +273,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid material expenses input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -252,8 +286,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect used man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid man hours used input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -262,8 +299,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null,
-                    "Incorrect value inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid road width input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -272,8 +312,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect value inputted",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid road length input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -282,8 +325,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect number inputted",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid tunnel number input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -292,8 +338,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect number inputted",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid number of bridges input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -302,8 +351,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect value",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid number of environmental challenges input");
+                alert.showAndWait();
                 return;
             }
             try
@@ -312,8 +364,11 @@ public class AddRoadConstructionViewController {
             }
             catch (NumberFormatException exception)
             {
-                JOptionPane.showMessageDialog(null, "Incorrect value",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("");
+                alert.setContentText("Invalid number of geographical challenges input");
+                alert.showAndWait();
                 return;
             }
 

@@ -44,6 +44,7 @@ public class ProjectViewController {
   @FXML private TableColumn<ProjectTableItem, MyDate> projectDeadlineColumn;
   @FXML private TableColumn<ProjectTableItem, String> projectCustomer;
   @FXML private TableColumn<ProjectTableItem, Integer> projectCustomerID;
+  @FXML private TableColumn<ProjectTableItem, Integer> projectExpectedManHours;
   @FXML private TableColumn<ProjectTableItem, Integer> projectManHours;
   @FXML private TableColumn<ProjectTableItem, Double> projectCosts;
 
@@ -213,6 +214,7 @@ public class ProjectViewController {
     projectDeadlineColumn.setCellValueFactory(new PropertyValueFactory<>("projectDeadline"));
     projectCustomer.setCellValueFactory(new PropertyValueFactory<>("projectCustomer"));
     projectCustomerID.setCellValueFactory(new PropertyValueFactory<>("projectCustomerID"));
+    projectExpectedManHours.setCellValueFactory(new PropertyValueFactory<>("expectedProjectManHours"));
     projectManHours.setCellValueFactory(new PropertyValueFactory<>("projectManHours"));
     projectCosts.setCellValueFactory(new PropertyValueFactory<>("projectCosts"));
 
@@ -238,6 +240,7 @@ public class ProjectViewController {
           project.getEndTime(),
           project.getCustomer().getSurname(),
           project.getCustomer().getId(),
+          project.getResources().getExpectedManHours(),
           project.getResources().getManHoursUsed(),
           project.getResources().getExpenses()
       );

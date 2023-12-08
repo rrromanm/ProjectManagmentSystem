@@ -18,12 +18,13 @@ public class ProjectTableItem {
   private final SimpleObjectProperty<MyDate> projectDeadline;
   private final SimpleStringProperty projectCustomer;
   private final SimpleIntegerProperty projectCustomerID;
+  private final SimpleIntegerProperty projectExpectedManHours;
   private final SimpleIntegerProperty projectManHours;
   private final SimpleDoubleProperty projectCosts;
 
   public ProjectTableItem(int projectId, String projectType, String projectName ,String projectStatus, int projectBudget,
       int projectTimeline, MyDate projectDeadline, String projectCustomer, int projectCustomerID,
-      int projectManHours, double projectCosts) {
+      int projectExpectedManHours ,int projectManHours, double projectCosts) {
     this.projectId = new SimpleIntegerProperty(projectId);
     this.projectType = new SimpleStringProperty(projectType);
     this.projectName = new SimpleStringProperty(projectName);
@@ -32,6 +33,7 @@ public class ProjectTableItem {
     this.projectTimeline = new SimpleIntegerProperty(projectTimeline);
     this.projectDeadline = new SimpleObjectProperty<>(projectDeadline);
     this.projectCustomer = new SimpleStringProperty(projectCustomer);
+    this.projectExpectedManHours = new SimpleIntegerProperty(projectExpectedManHours);
     this.projectManHours = new SimpleIntegerProperty(projectManHours);
     this.projectCosts = new SimpleDoubleProperty(projectCosts);
     this.projectCustomerID = new SimpleIntegerProperty(projectCustomerID);
@@ -66,9 +68,16 @@ public class ProjectTableItem {
   public String getProjectCustomer() {
     return projectCustomer.get();
   }
-  public int getProjectCustomerID() {return projectCustomerID.get();}
+  public int getProjectCustomerID() {
+    return projectCustomerID.get();
+  }
+  public int getExpectedProjectManHours() {
+    return projectExpectedManHours.get();
+  }
   public int getProjectManHours() {
     return projectManHours.get();
   }
-  public double getProjectCosts() {return projectCosts.get();}
+  public double getProjectCosts() {
+    return projectCosts.get();
+  }
 }

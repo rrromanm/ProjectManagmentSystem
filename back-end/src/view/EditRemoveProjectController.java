@@ -356,8 +356,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect budget inputted", "ERROR",
-          JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid budget input");
+      alert.showAndWait();
       return;
     }
     if (isValidString(projectName.getText()))
@@ -366,8 +369,11 @@ public class EditRemoveProjectController
     }
     else
     {
-      JOptionPane.showMessageDialog(null,
-          "Incorrect project name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid name input");
+      alert.showAndWait();
       return;
     }
     try
@@ -376,8 +382,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect day inputted", "ERROR",
-          JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid day input");
+      alert.showAndWait();
       return;
     }
     try
@@ -386,8 +395,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect month inputted", "ERROR",
-          JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid month input");
+      alert.showAndWait();
       return;
     }
     try
@@ -396,8 +408,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect year inputted", "ERROR",
-          JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid year input");
+      alert.showAndWait();
       return;
     }
     newStatus = (String) projectStatus.getValue();
@@ -407,8 +422,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect project ID inputted",
-          "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid projectID input");
+      alert.showAndWait();
       return;
     }
     try
@@ -417,8 +435,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect timeline inputted",
-          "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid project timeline input");
+      alert.showAndWait();
       return;
     }
     if (isValidString(firstName.getText()))
@@ -427,8 +448,11 @@ public class EditRemoveProjectController
     }
     else
     {
-      JOptionPane.showMessageDialog(null,
-          "Incorrect customer first name inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid customer first name input");
+      alert.showAndWait();
       return;
     }
     if (isValidString(surname.getText()))
@@ -437,8 +461,11 @@ public class EditRemoveProjectController
     }
     else
     {
-      JOptionPane.showMessageDialog(null,
-          "Incorrect customer surname inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid customer surname input");
+      alert.showAndWait();
       return;
     }
     try
@@ -447,8 +474,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null, "Incorrect customer ID inputted",
-          "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid customer id input");
+      alert.showAndWait();
       return;
     }
     try
@@ -457,8 +487,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null,
-          "Incorrect resources expected man hours inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid expected man hours input");
+      alert.showAndWait();
       return;
     }
     try
@@ -467,8 +500,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null,
-          "Incorrect resources material expenses inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid material expenses input");
+      alert.showAndWait();
       return;
     }
     try
@@ -477,8 +513,11 @@ public class EditRemoveProjectController
     }
     catch (NumberFormatException exception)
     {
-      JOptionPane.showMessageDialog(null,
-          "Incorrect  resources man hours used inputted", "ERROR", JOptionPane.ERROR_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setTitle("Error");
+      alert.setHeaderText("");
+      alert.setContentText("Invalid man hours used input");
+      alert.showAndWait();
       return;
     }
 
@@ -501,8 +540,36 @@ public class EditRemoveProjectController
     {
       if (newType.equals("Industrial"))
       {
-        int size = Integer.parseInt(custom1.getText());
-        String facilityType = custom2.getText();
+        int size = 0;
+        String facilityType = null;
+
+        try
+        {
+          size = Integer.parseInt(custom1.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid size input");
+          alert.showAndWait();
+          return;
+        }
+
+        if (isValidString(custom2.getText()))
+        {
+          facilityType = projectName.getText();
+        }
+        else
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid usage input");
+          alert.showAndWait();
+          return;
+        }
 
         project = new IndustrialProjects(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, facilityType);
         IndustrialProjects projects = (IndustrialProjects) list.get(index);
@@ -521,9 +588,51 @@ public class EditRemoveProjectController
       }
       else if (newType.equals("Commercial"))
       {
-        int size = Integer.parseInt(custom1.getText());
-        short floors = Short.parseShort(custom2.getText());
-        String usage = custom3.getText();
+        int size = 0;
+        short floors = 0;
+        String usage = null;
+
+        try
+        {
+          size = Integer.parseInt(custom1.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid size input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          floors = Short.parseShort(custom2.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid number of floors input");
+          alert.showAndWait();
+          return;
+        }
+
+        if (isValidString(custom3.getText()))
+        {
+          usage = custom3.getText();
+        }
+        else
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid usage input");
+          alert.showAndWait();
+          return;
+        }
 
         project = new CommercialProject(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, floors, usage);
         CommercialProject projects = (CommercialProject) list.get(index);
@@ -543,11 +652,81 @@ public class EditRemoveProjectController
       }
       else if (newType.equals("Residential"))
       {
-        int size = Integer.parseInt(custom1.getText());
-        int kitchens = Integer.parseInt(custom2.getText());
-        int bathrooms = Integer.parseInt(custom3.getText());
-        int plumbing = Integer.parseInt(custom4.getText());
-        String state = custom5.getText();
+        int size = 0;
+        int kitchens = 0;
+        int bathrooms = 0;
+        int plumbing = 0;
+        String state = null;
+
+        try
+        {
+          size = Integer.parseInt(custom1.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid size input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          kitchens = Integer.parseInt(custom2.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid number of kitchens input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          bathrooms = Integer.parseInt(custom3.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid number of bathrooms input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          plumbing = Integer.parseInt(custom4.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid number of rooms with plumbing input");
+          alert.showAndWait();
+          return;
+        }
+
+        if (isValidString(custom5.getText()))
+        {
+          state = custom5.getText();
+        }
+        else
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid state input");
+          alert.showAndWait();
+          return;
+        }
 
         project = new ResidentialProjects(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, size, kitchens, bathrooms, plumbing, state);
         ResidentialProjects projects = (ResidentialProjects) list.get(index);
@@ -569,14 +748,100 @@ public class EditRemoveProjectController
       }
       else if (newType.equals("RoadConstruction"))
       {
-        int width = Integer.parseInt(custom1.getText());
-        int length = Integer.parseInt(custom2.getText());
-        int bridges = Integer.parseInt(custom3.getText());
-        int tunnels = Integer.parseInt(custom4.getText());
-        String environmental = custom5.getText();
-        String geographical = custom6.getText();
+        int width = 0;
+        int length = 0;
+        int bridges = 0;
+        int tunnels = 0;
+        String environmental = null;
+        String geographical = null;
 
-        project = new RoadConstruction(newName,newBudget, newDate, newStatus, newProjectID, newTimeline, newCustomer, newResources, width, length, bridges, tunnels, environmental, geographical);
+        try
+        {
+          width = Integer.parseInt(custom1.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid road width input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          length = Integer.parseInt(custom2.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid road length input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          bridges = Integer.parseInt(custom3.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid number of bridges input");
+          alert.showAndWait();
+          return;
+        }
+
+        try
+        {
+          tunnels = Integer.parseInt(custom4.getText());
+        }
+        catch (NumberFormatException exception)
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid number of tunnels input");
+          alert.showAndWait();
+          return;
+        }
+
+        if (isValidString(custom5.getText()))
+        {
+          environmental = custom5.getText();
+        }
+        else
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid environmental challenges input");
+          alert.showAndWait();
+          return;
+        }
+
+        if (isValidString(custom6.getText()))
+        {
+          geographical = custom6.getText();
+        }
+        else
+        {
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+          alert.setTitle("Error");
+          alert.setHeaderText("");
+          alert.setContentText("Invalid geographical challenges input");
+          alert.showAndWait();
+          return;
+        }
+
+        project = new RoadConstruction(newName, newBudget, newDate, newStatus,
+            newProjectID, newTimeline, newCustomer, newResources, width, length,
+            bridges, tunnels, environmental, geographical);
         RoadConstruction projects = (RoadConstruction) list.get(index);
         projects.setName(newName);
         projects.setBudget(newBudget);
@@ -593,7 +858,7 @@ public class EditRemoveProjectController
         projects.setEnvironmentalChallenges(environmental);
         projects.setGeographicalChallenges(geographical);
 
-        MyFileHandler.writeToTextFile("projects.txt",list.toString());
+        MyFileHandler.writeToTextFile("projects.txt", list.toString());
       }
 
 

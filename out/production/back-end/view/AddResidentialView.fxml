@@ -124,7 +124,7 @@
                </children>
             </FlowPane>
          </children></FlowPane>
-      <Button fx:id="addProjectButton" layoutX="458.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="79.0" text="Add Project" />
+      <Button fx:id="addProjectButton" layoutX="458.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="79.0" text="Create" />
       <Button fx:id="clearButton" layoutX="343.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="79.0" text="Clear" />
       <Button fx:id="backButton" layoutX="14.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="70.0" text="Back" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="345.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
