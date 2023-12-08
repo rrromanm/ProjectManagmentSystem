@@ -49,7 +49,11 @@ public class MenuViewController
     }
     else if (e.getSource() == website){
       LoadInitialData.main(new String[]{});
-      JOptionPane.showMessageDialog(null, "Website successfully updated");
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("Success");
+      alert.setHeaderText("");
+      alert.setContentText("Website successfully updated!");
+      alert.showAndWait();
     }
   }
 

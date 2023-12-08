@@ -11,7 +11,8 @@ $(document).ready(function () {
                 var startTime = $(this).find('startTime').text();
                 var endTime = $(this).find('endTime').text();
                 var customer = $(this).find('customer').find('firstName').text(); // Updated to find 'firstName' within 'customer'
-                var resources = $(this).find('resources').text();
+                var resources = $(this).find('resources').find('manHoursUsed').text();
+                var expenses = $(this).find('resources').find('materialExpenses').text();
                 var status = $(this).find('status').text();
                 var projectID = $(this).find('projectID').text();
                 var timeline = $(this).find('timeline').text();
@@ -23,7 +24,7 @@ $(document).ready(function () {
                     '<td>' + customer + '</td>' +
                     '<td>' + startTime + '</td>' +
                     '<td>' + endTime + '</td>' +
-                    '<td>' + resources + '</td>' +
+                    '<td>' + resources + "/" + expenses + '</td>' +
                     '<td>' + status + '</td>' +
                     '<td>' + budget + '</td>' +
                     '<td>' + timeline + '</td>' +
