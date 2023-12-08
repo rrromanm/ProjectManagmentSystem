@@ -94,13 +94,12 @@
             <TextField fx:id="custom6" onAction="#handleActions" prefWidth="203.0" visible="false" />
          </children>
       </FlowPane>
-      <Button fx:id="removeButton" layoutX="555.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleActions" text="Remove" />
-      <Button fx:id="saveButton" layoutX="480.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="25.0" prefWidth="59.0" text="Save" />
+      <Button fx:id="removeButton" layoutX="572.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleActions" text="Remove" />
+      <Button fx:id="saveButton" layoutX="506.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="25.0" prefWidth="59.0" text="Save" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="472.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logo(1).png" />
          </image>
       </ImageView>
-      <Button fx:id="updateButton" layoutX="628.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleActions" prefHeight="26.0" prefWidth="59.0" text="Update" />
    </children>
 </AnchorPane>
