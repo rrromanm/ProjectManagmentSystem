@@ -94,7 +94,7 @@
                      <children>
                         <Button fx:id="backButton" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Back" />
                         <Button fx:id="removeButton" layoutX="270.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Remove" />
-                        <Button fx:id="addButton" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Add" />
+                        <Button fx:id="addButton" layoutX="219.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Create" />
                      </children>
                   </AnchorPane>
                </children>

@@ -94,7 +94,7 @@
                      <children>
                         <Button fx:id="backButton" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Back" />
                         <Button fx:id="removeButton" layoutX="270.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Remove" />
-                        <Button fx:id="addButton" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Add" />
+                        <Button fx:id="addButton" layoutX="219.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleActions" text="Create" />
                      </children>
                   </AnchorPane>
                </children>
@@ -106,9 +106,9 @@
                <columns>
                   <TableColumn fx:id="projectNameColumn" onEditStart="#handleActions" prefWidth="123.0" resizable="false" text="Name" />
                   <TableColumn fx:id="projectTypeColumn" prefWidth="117.0" resizable="false" text="Type" />
-                  <TableColumn fx:id="projectIdColumn" minWidth="0.0" prefWidth="29.0" resizable="false" text="ID" />
-                  <TableColumn fx:id="projectStatusColumn" prefWidth="106.0" resizable="false" text="Status" />
-                  <TableColumn fx:id="projectBudgetColumn" prefWidth="82.0" resizable="false" text="Budget" />
+                  <TableColumn fx:id="projectIdColumn" minWidth="0.0" prefWidth="23.0" resizable="false" text="ID" />
+                  <TableColumn fx:id="projectStatusColumn" prefWidth="116.0" resizable="false" text="Status" />
+                  <TableColumn fx:id="projectBudgetColumn" prefWidth="78.0" resizable="false" text="Budget" />
                   <TableColumn fx:id="projectTimelineColumn" prefWidth="53.0" resizable="false" text="Timeline" />
                   <TableColumn fx:id="projectDeadlineColumn" prefWidth="74.0" resizable="false" text="Deadline" />
                   <TableColumn fx:id="projectCustomer" prefWidth="90.0" resizable="false" text="Customer" />

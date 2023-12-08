@@ -17,7 +17,7 @@
       <year>2023</year>
       <day>28</day>
     </startTime>
-    <state>Reconstructiondsads</state>
+    <state>Reconstruction</state>
     <endTime>
       <month>11</month>
       <year>2023</year>
@@ -30,6 +30,39 @@
       <firstName>das</firstName>
       <surname>das</surname>
       <id>321321</id>
+    </customer>
+    <status>Under Construction</status>
+  </projects>
+  <projects>
+    <resources>
+      <expectedManHours>150</expectedManHours>
+      <manHoursUsed>0</manHoursUsed>
+      <materialExpenses>100000.0</materialExpenses>
+    </resources>
+    <numberOfKitchens>1</numberOfKitchens>
+    <type>Residential</type>
+    <size>150</size>
+    <roomsWithPlumbing>2</roomsWithPlumbing>
+    <name>House</name>
+    <timeline>9</timeline>
+    <startTime>
+      <month>12</month>
+      <year>2023</year>
+      <day>30</day>
+    </startTime>
+    <state>New Build</state>
+    <endTime>
+      <month>9</month>
+      <year>2024</year>
+      <day>30</day>
+    </endTime>
+    <projectID>2</projectID>
+    <numberOfBathrooms>1</numberOfBathrooms>
+    <budget>100000</budget>
+    <customer>
+      <firstName>Samuel</firstName>
+      <surname>Kacenga</surname>
+      <id>1</id>
     </customer>
     <status>Under Construction</status>
   </projects>

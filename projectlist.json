@@ -5,7 +5,7 @@
       "numberOfKitchens": 1,
       "numberOfBathrooms": 1,
       "roomsWithPlumbing": 2,
-      "state": "Reconstructiondsads",
+      "state": "Reconstruction",
       "name": "VIA Uni",
       "budget": 21321,
       "startTime": {
@@ -30,6 +30,39 @@
       },
       "status": "Under Construction",
       "projectID": 1,
+      "timeline": 9,
+      "type": "Residential"
+    },
+    {
+      "size": 150,
+      "numberOfKitchens": 1,
+      "numberOfBathrooms": 1,
+      "roomsWithPlumbing": 2,
+      "state": "New Build",
+      "name": "House",
+      "budget": 100000,
+      "startTime": {
+        "day": 30,
+        "month": 12,
+        "year": 2023
+      },
+      "endTime": {
+        "day": 30,
+        "month": 9,
+        "year": 2024
+      },
+      "customer": {
+        "firstName": "Samuel",
+        "surname": "Kacenga",
+        "id": 1
+      },
+      "resources": {
+        "manHoursUsed": 0,
+        "materialExpenses": 100000.0,
+        "expectedManHours": 150
+      },
+      "status": "Under Construction",
+      "projectID": 2,
       "timeline": 9,
       "type": "Residential"
     }
