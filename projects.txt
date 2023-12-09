@@ -1,1 +1,1 @@
-VIA Uni,890000,28,2,2023,Under Construction,1,9,das,das,321321,900,900000.0,25,Residential,321,1,1,2,ReconstructionHouse,100000,30,12,2023,Under Construction,2,9,Samuel,Kacenga,1,150,100000.0,0,Residential,150,1,1,2,New Build
+House,100000,20,12,2023,Under Construction,7,9,Samuel,Kacenga,15,15,15.0,15,Residential,15,1,1,2,New Build

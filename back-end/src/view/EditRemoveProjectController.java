@@ -4,14 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import main.LoadInitialData;
 import model.*;
 import model.ProjectModelManager;
-import view.ProjectViewController;
-import javax.swing.*;
 import utils.MyFileHandler;
-import javax.swing.*;
 import java.io.FileNotFoundException;
+import java.util.Optional;
 
 /**
  * The {@code EditRemoveProjectController} class controls the behavior of the "Edit/Remove Project" view,
@@ -57,7 +54,6 @@ public class EditRemoveProjectController
   @FXML private Button backButton;
   @FXML private Button removeButton;
   @FXML private Button saveButton;
-  @FXML private Button updateButton;
 
   /**
    * Initializes the controller with the necessary components and dependencies.
@@ -130,17 +126,21 @@ public class EditRemoveProjectController
     {
       saveChanges();
     }
-    else if(e.getSource() == removeButton)
-    {
-      removeProject();
-      populateComboBox();
-      viewHandler.openView("MenuView");
-      JOptionPane.showMessageDialog(null, "Project removed!", "Remove",
-          JOptionPane.INFORMATION_MESSAGE);
-    }
-    else if(e.getSource() == updateButton)
-    {
-      populateComboBox();
+    else if (e.getSource() == removeButton) {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Confirmation");
+      alert.setHeaderText("");
+      alert.setContentText("Are you sure you want to remove this project?");
+
+      Optional<ButtonType> result = alert.showAndWait();
+
+      if (result.isPresent() && result.get() == ButtonType.OK) {
+        removeProject();
+        populateComboBox();
+        viewHandler.openView("ProjectView");
+      } else {
+        return;
+      }
     }
   }
 
@@ -911,8 +911,11 @@ public class EditRemoveProjectController
       updateProjectArea();
       populateComboBox();
       viewHandler.openView("ProjectView");
-      JOptionPane.showMessageDialog(null, "Project changes have been saved.",
-          "Success", JOptionPane.INFORMATION_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("Success");
+      alert.setHeaderText("");
+      alert.setContentText("Changes successfully saved!");
+      alert.showAndWait();
     }
     catch (NumberFormatException e)
     {

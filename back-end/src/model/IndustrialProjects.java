@@ -3,11 +3,10 @@ package model;
 /**
  * A class that represents an industrial project, which is a subclass of Project.
  * An industrial project has a size, a facility type, and inherits attributes from the Project class.
- * @author Maciej Matuszewski
+ *
+ * @author Group 1
  */
 public class IndustrialProjects extends Project {
-
-    // Fields for size and facility type
     private int size;
     private String facilityType;
 

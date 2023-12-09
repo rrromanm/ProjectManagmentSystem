@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.*;
 import utils.MyFileHandler;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
@@ -51,7 +49,7 @@ public class AddResidentialViewController
     statusComboBox.getSelectionModel().selectFirst();
     String[] stateString = {"New Build", "Reconstruction"};
     stateComboBox.getItems().addAll(stateString);
-    statusComboBox.getSelectionModel().selectFirst();
+    stateComboBox.getSelectionModel().selectFirst();
   }
 
   public void reset()
@@ -87,9 +85,22 @@ public class AddResidentialViewController
 
   public void handleActions(ActionEvent e)
   {
-    if (e.getSource() == clearButton)
-    {
-      reset();
+    if (e.getSource() == clearButton) {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Confirmation");
+      alert.setHeaderText("");
+      alert.setContentText("Are you sure you want to clear? This action cannot be undone.");
+
+      Optional<ButtonType> result = alert.showAndWait();
+
+      if (result.isPresent() && result.get() == ButtonType.OK)
+      {
+        reset();
+      }
+      else
+      {
+        return;
+      }
     }
     else if (e.getSource() == backButton)
     {
@@ -374,8 +385,11 @@ public class AddResidentialViewController
       }
       manager.appendProjects(projects);
       viewHandler.openView("ProjectView");
-      JOptionPane.showMessageDialog(null, "Project added!", "Success",
-          JOptionPane.INFORMATION_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("Success");
+      alert.setHeaderText(null);
+      alert.setContentText("Project successfully added!");
+      alert.showAndWait();
       reset();
     }
   }

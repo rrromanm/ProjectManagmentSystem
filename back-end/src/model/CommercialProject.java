@@ -3,12 +3,11 @@ package model;
 /**
  * A class that represents a commercial project, which is a subclass of Project.
  * A commercial project has a size, a number of floors, and a usage type.
- * @author Maciej Matuszewski
+ *
+ * @author Group 1
  */
 public class CommercialProject extends Project
 {
-
-    // Fields for size, floors, and usage type
     private int size;
     private short floors;
     private String usage;
@@ -16,6 +15,7 @@ public class CommercialProject extends Project
     /**
      * A constructor that creates a commercial project with the given parameters.
      *
+     * @param name      the name of the project
      * @param size      the size of the project in square meters
      * @param floors    the number of floors in the project
      * @param usage     the usage type of the project, such as office, retail, hotel, etc.

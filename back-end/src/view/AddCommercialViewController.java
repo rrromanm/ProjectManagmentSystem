@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.*;
 import utils.MyFileHandler;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
@@ -34,11 +32,9 @@ public class AddCommercialViewController {
   @FXML private Button addProject;
   @FXML private Button backButton;
   private ViewHandler viewHandler;
-  private CommercialProject commercialProject;
 
   private Scene scene;
   private ProjectModelManager projectManager;
-  private MyDate dates;
 
 
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
@@ -61,7 +57,7 @@ public class AddCommercialViewController {
     dayTextField.clear();
     monthTextField.clear();
     yearTextField.clear();
-    statusComboBox.getSelectionModel().clearSelection();
+    statusComboBox.getSelectionModel().selectFirst();
     firstNameTextField.clear();
     surnameTextField.clear();
     customerIDTextField.clear();
@@ -84,7 +80,7 @@ public class AddCommercialViewController {
     {
       viewHandler.openView("AddProjectView");
     }
-    else if(e.getSource() == addProject)
+    else if (e.getSource() == addProject)
     {
       ProjectList projects = new ProjectList();
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
@@ -104,20 +100,20 @@ public class AddCommercialViewController {
       int materialExpenses = 0;
       int manHoursUsed = 0;
       int size = 0;
-      short floors =0;
+      short floors = 0;
       String usage = null;
-
 
       String type = projectTypeTextField.getText();
       try
       {
         budget = Integer.parseInt(budgetTextField.getText());
-        if (budget < 100000 || budget > 2000000)
+        if (budget < 500000 || budget > 2000000)
         {
           Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
           alert.setTitle("Error");
           alert.setHeaderText("");
-          alert.setContentText("Budget must be between 2,000,000 and 10,000,000.\nDo you want to continue with the entered budget?");
+          alert.setContentText(
+              "Budget must be between 2,000,000 and 10,000,000.\nDo you want to continue with the entered budget?");
 
           Optional<ButtonType> result = alert.showAndWait();
           if (result.get() == ButtonType.CANCEL)
@@ -126,7 +122,7 @@ public class AddCommercialViewController {
           }
         }
       }
-      catch(NumberFormatException exception)
+      catch (NumberFormatException exception)
       {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
@@ -331,22 +327,40 @@ public class AddCommercialViewController {
       }
 
       Customer customer = new Customer(firstName, surname, customerID);
-      Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
+      Resources resources = new Resources(expectedManHours, materialExpenses,
+          manHoursUsed);
       projects.addProject(
-          new CommercialProject(projectName, budget, date, status, projectID, timeline,
-              customer, resources, size, floors,usage));
+          new CommercialProject(projectName, budget, date, status, projectID,
+              timeline, customer, resources, size, floors, usage));
 
       MyFileHandler.appendToTextFile("projects.txt", projects.toString());
       manager.appendProjects(projects);
       viewHandler.openView("ProjectView");
-      JOptionPane.showMessageDialog(null,"Project added!", "Success", JOptionPane.INFORMATION_MESSAGE);
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("Success");
+      alert.setHeaderText(null);
+      alert.setContentText("Project successfully added!");
+      alert.showAndWait();
       reset();
-
-
     }
-    else if(e.getSource() == clearButton)
+    else if (e.getSource() == clearButton)
     {
-      reset();
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+      alert.setTitle("Confirmation");
+      alert.setHeaderText("");
+      alert.setContentText(
+          "Are you sure you want to clear? This action cannot be undone.");
+
+      Optional<ButtonType> result = alert.showAndWait();
+
+      if (result.isPresent() && result.get() == ButtonType.OK)
+      {
+        reset();
+      }
+      else
+      {
+        return;
+      }
     }
   }
 }

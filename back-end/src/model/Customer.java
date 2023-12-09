@@ -5,7 +5,8 @@ import java.io.Serializable;
 /**
  * Represents information about a customer.
  * This class includes details such as first name, surname, birthday, etc.
- * @author Samuel Kacenga
+ *
+ * @author Group 1
  */
 
 public class Customer implements Serializable
@@ -21,7 +22,6 @@ public class Customer implements Serializable
    * @param surname to set customers last name
    * @param id to set customers id
    */
-
   public Customer(String firstName, String surname,int id)
   {
     this.firstName = firstName;
@@ -34,7 +34,6 @@ public class Customer implements Serializable
    *
    * @param firstName The new first name of customer
    */
-
   public void setFirstName(String firstName)
   {
     this.firstName = firstName;
@@ -45,7 +44,6 @@ public class Customer implements Serializable
    *
    * @return The first name of customer
    */
-
   public String getFirstName()
   {
     return firstName;
@@ -56,7 +54,6 @@ public class Customer implements Serializable
    *
    * @param surname The new last name of customer
    */
-
   public void setSurname(String surname)
   {
     this.surname = surname;
@@ -67,7 +64,6 @@ public class Customer implements Serializable
    *
    * @return The last name of the customer.
    */
-
   public String getSurname()
   {
     return surname;

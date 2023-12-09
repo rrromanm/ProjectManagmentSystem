@@ -6,7 +6,8 @@ import java.time.LocalDate;
 /**
  * Represents a date with day, month, and year components.
  * This class provides methods for working with date information.
- * @author Samuel Kacenga
+ *
+ * @author Group 1
  */
 public class MyDate implements Serializable
 {
@@ -50,79 +51,64 @@ public class MyDate implements Serializable
     year = y;
   }
 
+  /**
+   * Gets the month of the date.
+   *
+   * @return The month value of the date.
+   */
   public int getMonth()
   {
     return month;
   }
 
+  /**
+   * Sets the month of the date.
+   *
+   * @param month The month value to set.
+   */
   public void setMonth(int month)
   {
     this.month = month;
   }
 
+  /**
+   * Gets the year of the date.
+   *
+   * @return The year value of the date.
+   */
   public int getYear()
   {
     return year;
   }
 
+  /**
+   * Sets the year of the date.
+   *
+   * @param year The year value to set.
+   */
   public void setYear(int year)
   {
     this.year = year;
   }
 
+  /**
+   * Gets the day of the date.
+   *
+   * @return The day value of the date.
+   */
   public int getDay()
   {
     return day;
   }
 
+  /**
+   * Sets the day of the date.
+   *
+   * @param day The day value to set.
+   */
   public void setDay(int day)
   {
     this.day = day;
-  }
-
-  /**
-   * Creates a new MyDate object with the same day, month, and year as the current object.
-   *
-   * @return A copy of the current MyDate object.
-   */
-  public MyDate copy()
-  {
-    return new MyDate(day,month,year);
-  }
-
-  /**
-   * Calculates the difference in days between two MyDate objects, considering leap years.
-   *
-   * @param other The other MyDate object to calculate the difference.
-   * @return The difference in days between the two MyDate objects.
-   */
-  public int differenceInDays(MyDate other) {
-    int days1 = countDays(this.day, this.month, this.year);
-    int days2 = countDays(other.day, other.month, other.year);
-
-    return Math.abs(days1 - days2);
-  }
-
-  /**
-   * Counts the total number of days from the beginning of a reference year including leap years.
-   *
-   * @param day   The day component of the date.
-   * @param month The month component of the date.
-   * @param year  The year component of the date.
-   * @return The total number of days from the beginning of a reference year.
-   */
-  private int countDays(int day, int month, int year) {
-    int days = day;
-
-    for (int i = 1; i < month; i++) {
-      days += getDaysInMonth();
-    }
-
-    days += countLeapYears(year);
-
-    days += (year - 1) * 365;
-
-    return days;
   }
 
   /**
@@ -162,22 +148,6 @@ public class MyDate implements Serializable
   }
 
   /**
-   * Counts the number of leap years from the reference year to the specified year.
-   *
-   * @param year The year to which the leap years are counted.
-   * @return The number of leap years.
-   */
-  private int countLeapYears(int year) {
-    int leapYears = 0;
-    for (int i = 0; i < year; i++) {
-      if (isLeapYear(i)) {
-        leapYears++;
-      }
-    }
-    return leapYears;
-  }
-
-  /**
    * Adds a specified number of months to the current date and returns a new MyDate object.
    *
    * @param months The number of months to add to the current date.
@@ -198,6 +168,11 @@ public class MyDate implements Serializable
     return new MyDate(day, newMonth, newYear);
   }
 
+  /**
+   * Checks if the current date is a valid date.
+   *
+   * @return {@code true} if the date is valid, otherwise {@code false}.
+   */
   public boolean isValidDate() {
     int daysInMonth = getDaysInMonth();
 

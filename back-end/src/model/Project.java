@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * This class contains all variables that will be shared by project types.
  *
- * @author Maciej Matuszewski / Romans Mihalonoks
+ * @author Group 1
  */
 public abstract class Project implements Serializable
 {
@@ -22,6 +22,7 @@ public abstract class Project implements Serializable
 
   /**
    * This is the constructor method for the Project class with variables that will be inherited by project type classes.
+   *
    * @param budget The budget for the project.
    * @param startTime The start time of the project.
    * @param status The status of the project.
