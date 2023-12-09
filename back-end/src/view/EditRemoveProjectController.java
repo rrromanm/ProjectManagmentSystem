@@ -4,13 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import main.LoadInitialData;
 import model.*;
 import model.ProjectModelManager;
-import view.ProjectViewController;
-import javax.swing.*;
 import utils.MyFileHandler;
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 

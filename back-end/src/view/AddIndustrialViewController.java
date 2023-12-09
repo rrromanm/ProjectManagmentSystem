@@ -8,8 +8,6 @@ import javafx.scene.layout.AnchorPane;
 import model.ProjectModelManager;
 import model.*;
 import utils.MyFileHandler;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 

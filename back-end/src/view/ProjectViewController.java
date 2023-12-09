@@ -12,7 +12,6 @@ import model.ProjectList;
 import model.ProjectModelManager;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
 
 public class ProjectViewController {
   private Scene scene;

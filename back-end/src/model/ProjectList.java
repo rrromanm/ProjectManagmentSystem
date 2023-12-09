@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * It provides methods to add and remove projects, as well as retrieve projects based on status or type.
  * The class also has a method to generate a string representation of all projects in the list.
  *
- * @author Samuel Kacenga / Romans Mihalonoks
+ * @author Group 1
  */
 public class ProjectList implements Serializable
 {
@@ -73,6 +73,13 @@ public class ProjectList implements Serializable
     return projectListByStatus;
   }
 
+  /**
+   * Retrieves a list of projects based on a given type and status.
+   *
+   * @param type   The type of project to filter by.
+   * @param status The status of the projects to filter by.
+   * @return A ProjectList containing projects matching the provided type and status.
+   */
   public ProjectList getProjectsFromTypeAndStatus(String type, String status) {
     ProjectList filteredProjects = new ProjectList();
 
@@ -107,6 +114,34 @@ public class ProjectList implements Serializable
   }
 
   /**
+   * Retrieves the number of projects in the list.
+   *
+   * @return The number of projects in the list.
+   */
+  public int size()
+  {
+    return projects.size();
+  }
+
+  /**
+   * Retrieves a project at a specific index from the list.
+   *
+   * @param index The index of the project to retrieve.
+   * @return The project at the specified index, or null if the index is out of bounds.
+   */
+  public Project get(int index)
+  {
+    if(index<projects.size())
+    {
+      return projects.get(index);
+    }
+    else
+    {
+      return null;
+    }
+  }
+
+  /**
    * Generates a string representation of all projects in the list.
    *
    * @return A string containing information about all projects in the list.
@@ -122,22 +157,5 @@ public class ProjectList implements Serializable
       returnStr.append(temp);
     }
     return returnStr.toString();
-  }
-
-  public int size()
-  {
-    return projects.size();
-  }
-
-  public Project get(int index)
-  {
-    if(index<projects.size())
-    {
-      return projects.get(index);
-    }
-    else
-    {
-      return null;
-    }
   }
 }

@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.*;
 import utils.MyFileHandler;
-
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
