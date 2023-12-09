@@ -1,23 +1,35 @@
 package model;
 
-import main.LoadInitialData;
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
+/**
+ * The ProjectModelManager class manage the files of the projects.
+ * It provides methods to read, write, update and retrieve project information
+ * It utilizes serialization for storing and retrieving project data in binary format.
+ *
+ * @author Samuel Kacenga
+ */
 public class ProjectModelManager
 {
   private String fileName;
 
+  /**
+   * Constructs a ProjectModelManager with the specified file name.
+   * @param fileName The name of the file used for project data storage.
+   */
   public ProjectModelManager(String fileName)
   {
     this.fileName = fileName;
   }
 
+  /**
+   * Return all projects stored in the binary file.
+   *
+   * @return A ProjectList containing all projects.
+   */
   public ProjectList getAllProjects()
   {
     ProjectList allProjects = new ProjectList();
@@ -40,21 +52,33 @@ public class ProjectModelManager
     }
     return allProjects;
   }
-
+  /**
+   * Returns projects based on the type.
+   *
+   * @param type The type of projects to return.
+   * @return A ProjectList containing projects of the specified type.
+   */
   public ProjectList getProjectsFromType(String type)
   {
     return getAllProjects().getAllByType(type);
   }
 
-  public ProjectList getProjectsByStatus(String status)
-  {
-    return getAllProjects().getAllByStatus(status);
-  }
-
+  /**
+   * Return projects of a specific type and status.
+   *
+   * @param type   The type of projects to return.
+   * @param status The status of projects to return.
+   * @return A ProjectList containing projects of the specified type and status.
+   */
   public ProjectList getProjectsFromTypeAndStatus(String type, String status) {
    return getAllProjects().getProjectsFromTypeAndStatus(type,status);
   }
 
+  /**
+   * Saves the provided projects to the file.
+   *
+   * @param projects The {@code ProjectList} to be saved.
+   */
   public void saveProjects(ProjectList projects)
   {
     try
@@ -70,7 +94,11 @@ public class ProjectModelManager
       System.out.println("IO Error writing to file");
     }
   }
-
+  /**
+   * Appends the provided projects to the existing projects in the binary file.
+   *
+   * @param projects The {@code ProjectList} to be appended.
+   */
   public void appendProjects(ProjectList projects) {
     ProjectList existingProjects = getAllProjects();
 
@@ -86,7 +114,11 @@ public class ProjectModelManager
       System.out.println("IO Error writing to file");
     }
   }
-
+  /**
+   * Removes projects specified in the list from the file.
+   *
+   * @param list The {@code ProjectList} containing projects to be removed.
+   */
   public void removeProject(ProjectList list){
 
       try {
@@ -98,12 +130,11 @@ public class ProjectModelManager
         e.printStackTrace();
       }
   }
-
-  public void changeStatus(int ID, String status)
-  {
-    ProjectList projectByStatus = new ProjectList();
-  }
-
+  /**
+   * Updates the information of a specific project in the file.
+   *
+   * @param projectToUpdate The {@code Project} with updated information.
+   */
   public void updateProject(Project projectToUpdate) {
     ProjectList allProjects = getAllProjects();
 
@@ -148,6 +179,11 @@ public class ProjectModelManager
     }
     saveProjects(allProjects);
   }
+  /**
+   * Generates a new unique project ID based on the existing projects.
+   *
+   * @return A new project ID.
+   */
   public int generateProjectID()
   {
     ProjectList list = getAllProjects();
