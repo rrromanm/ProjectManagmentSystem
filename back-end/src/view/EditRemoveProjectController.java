@@ -10,6 +10,12 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
+/**
+ * The {@code EditRemoveProjectController} class controls the behavior of the "Edit/Remove Project" view,
+ * allowing users to edit or remove existing projects, and update the display accordingly.
+ *
+ * @author Maciej Matuszewski / Samuel Kacenga / Jakub Mateusz Abramek / Romans Mihalonoks
+ */
 public class EditRemoveProjectController
 {
   private ViewHandler viewHandler;
@@ -49,6 +55,14 @@ public class EditRemoveProjectController
   @FXML private Button removeButton;
   @FXML private Button saveButton;
 
+  /**
+   * Initializes the controller with the necessary components and dependencies.
+   *
+   * @param viewHandler            The handler for managing views and navigation.
+   * @param scene                  The JavaFX scene associated with the "Edit/Remove Project" view.
+   * @param projectManager         The manager for handling project-related operations and data.
+   * @param projectViewController  The controller for the main project view.
+   */
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager, ProjectViewController projectViewController)
   {
     this.viewHandler = viewHandler;
@@ -61,6 +75,9 @@ public class EditRemoveProjectController
     projectStatus.getSelectionModel().selectFirst();
   }
 
+  /**
+   * Resets the state of the controller by clearing input fields and hiding custom project details.
+   */
   public void reset()
   {
     projectBudget.setText("");
@@ -80,11 +97,21 @@ public class EditRemoveProjectController
     projectType.setText("");
   }
 
+  /**
+   * Gets the JavaFX {@code Scene} associated with the "Edit/Remove Project" view.
+   *
+   * @return The JavaFX scene.
+   */
   public Scene getScene()
   {
     return scene;
   }
 
+  /**
+   * Handles button actions triggered by user interactions.
+   *
+   * @param e The {@code ActionEvent} triggered by the user.
+   */
   public void handleActions(ActionEvent e)
   {
     if(e.getSource() == backButton)
@@ -117,6 +144,9 @@ public class EditRemoveProjectController
     }
   }
 
+  /**
+   * Populates the project selection {@code ComboBox} with project names.
+   */
   public void populateComboBox() {
     projectPick.getItems().clear();
     reset();
@@ -132,6 +162,9 @@ public class EditRemoveProjectController
     }
   }
 
+  /**
+   * Fills input fields with details of the selected project for editing.
+   */
   public void fillFields(){
     ProjectList list = projectManager.getAllProjects();
     int index = 0;
@@ -266,6 +299,9 @@ public class EditRemoveProjectController
 
   }
 
+  /**
+   * Removes the selected project and updates the project list and view.
+   */
   public void removeProject(){
     ProjectModelManager manager = new ProjectModelManager("projects.bin");
     ProjectList list = projectManager.getAllProjects();
@@ -288,6 +324,9 @@ public class EditRemoveProjectController
 
   }
 
+  /**
+   * Hides custom project details labels and text fields.
+   */
   public void hideEverything ()
   {
     custom1.setVisible(false);
@@ -303,10 +342,19 @@ public class EditRemoveProjectController
     label5.setVisible(false);
     label6.setVisible(false);
   }
+  /**
+   * Checks if a given string is a valid alphabetical string.
+   *
+   * @param string The string to validate.
+   * @return {@code true} if the string is valid, {@code false} otherwise.
+   */
   public boolean isValidString(String string) {
     return string.matches("[a-zA-Z ]+");
   }
 
+  /**
+   * Saves changes made to the selected project.
+   */
   private void saveChanges()
   {
     if (projectPick.getValue() == null)
@@ -879,6 +927,9 @@ public class EditRemoveProjectController
     }
   }
 
+  /**
+   * Updates the project area in the main project view.
+   */
   private void updateProjectArea() {
     ProjectList projectList = projectManager.getAllProjects();
     projectViewController.populateTable(projectList);
