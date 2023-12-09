@@ -9,6 +9,13 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
+/**
+ * This class represents the controller responsible for managing the addition of Residential Projects within the application.
+ * This controller interacts with the user interface components and facilitates the creation and addition of Residential Projects.
+ *
+ *
+ * @author Group 1
+ */
 public class AddResidentialViewController
 {
   private ViewHandler viewHandler;
@@ -38,6 +45,13 @@ public class AddResidentialViewController
   @FXML private Button backButton;
   @FXML private TextField projectTypeField;
 
+  /**
+   * Initializes the view with the provided view handler, scene, and project manager. Also sets up initial values for the status combo box.
+   *
+   * @param viewHandler     The view handler managing views.
+   * @param scene           The scene to be initialized.
+   * @param projectManager  The project manager for handling projects.
+   */
   public void init(ViewHandler viewHandler, Scene scene,
       ProjectModelManager projectManager)
   {
@@ -52,6 +66,9 @@ public class AddResidentialViewController
     stateComboBox.getSelectionModel().selectFirst();
   }
 
+  /**
+   * Resets all input fields and selections in the form to their default values or empty strings.
+   */
   public void reset()
   {
     budgetField.setText("");
@@ -73,16 +90,32 @@ public class AddResidentialViewController
     projectNameField.setText("");
   }
 
+  /**
+   * Resets all input fields and selections in the form to their default values or empty strings.
+   */
   public Scene getScene()
   {
     return scene;
   }
 
+
+  /**
+   * Checks whether the provided string contains valid alphabetic characters and spaces.
+   *
+   * @param string The string to be validated.
+   * @return {@code true} if the string contains valid characters, otherwise {@code false}.
+   */
   public boolean isValidString(String string)
   {
     return string.matches("[a-zA-Z ]+");
   }
 
+  /**
+   * Handles various actions triggered by UI components, such as adding projects or clearing input fields.
+   *
+   * @param e The ActionEvent representing the action triggered.
+   * @throws FileNotFoundException If a file required for project handling is not found.
+   */
   public void handleActions(ActionEvent e)
   {
     if (e.getSource() == clearButton) {

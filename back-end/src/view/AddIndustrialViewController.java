@@ -11,6 +11,13 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
+/**
+ * This class represents the controller handling the addition of Industrial Projects within the application.
+ * This controller manages the user interface components and interacts with the project model manager
+ * to handle the creation and addition of Industrial Projects.
+ *
+ * @author Group 1
+ */
 public class AddIndustrialViewController
 {
   public AnchorPane AddIndustrialProjectView;
@@ -38,6 +45,13 @@ public class AddIndustrialViewController
   @FXML private Button addProjectButton;
   @FXML private Button backButton;
 
+  /**
+   * Initializes the view with the provided view handler, scene, and project manager. Also sets up initial values for the status combo box.
+   *
+   * @param viewHandler     The view handler managing views.
+   * @param scene           The scene to be initialized.
+   * @param projectManager  The project manager for handling projects.
+   */
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
     this.viewHandler = viewHandler;
@@ -47,12 +61,21 @@ public class AddIndustrialViewController
     statusComboBox.getItems().addAll(statusString);
     statusComboBox.getSelectionModel().selectFirst();
   }
+
+  /**
+   * Checks whether the provided string contains valid alphabetic characters and spaces.
+   *
+   * @param string The string to be validated.
+   * @return {@code true} if the string contains valid characters, otherwise {@code false}.
+   */
   public boolean isValidString(String string)
   {
     return string.matches("[a-zA-Z ]+");
   }
 
-
+  /**
+   * Resets all input fields and selections in the form to their default values or empty strings.
+   */
   public void reset()
   {
     budgetField.setText("");
@@ -72,11 +95,22 @@ public class AddIndustrialViewController
     projectNameField.setText("");
   }
 
+  /**
+   * Retrieves the scene associated with this handler.
+   *
+   * @return The Scene object associated with this handler.
+   */
   public Scene getScene()
   {
     return scene;
   }
 
+  /**
+   * Handles various actions triggered by UI components, such as adding projects or clearing input fields.
+   *
+   * @param e The ActionEvent representing the action triggered.
+   * @throws FileNotFoundException If a file required for project handling is not found.
+   */
   public void handleActions(ActionEvent e) throws FileNotFoundException
   {
     if(e.getSource()==backButton)

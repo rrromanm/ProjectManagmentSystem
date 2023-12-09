@@ -9,6 +9,12 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
+/**
+ * This class handles the creation and management of commercial projects, including
+ * their details such as budget, timelines, and customer information.
+ *
+ * @author Group 1
+ **/
 public class AddCommercialViewController {
 
   @FXML private TextField projectTypeTextField;
@@ -36,7 +42,13 @@ public class AddCommercialViewController {
   private Scene scene;
   private ProjectModelManager projectManager;
 
-
+  /**
+   * Initializes the view with the necessary components and values.
+   *
+   * @param viewHandler     The view handler managing views.
+   * @param scene           The scene to be initialized.
+   * @param projectManager  The project manager for handling projects.
+   */
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
   {
     this.viewHandler = viewHandler;
@@ -46,11 +58,21 @@ public class AddCommercialViewController {
     statusComboBox.getItems().addAll(statusString);
     statusComboBox.getSelectionModel().selectFirst();
   }
+
+  /**
+   * Checks if a given string consists of valid alphabetic characters and spaces.
+   *
+   * @param string The string to be validated.
+   * @return {@code true} if the string contains valid characters, otherwise {@code false}.
+   */
   public boolean isValidString(String string)
   {
     return string.matches("[a-zA-Z ]+");
   }
 
+  /**
+   * Resets all input fields and selections in the form.
+   */
   public void reset()
   {
     budgetTextField.clear();
@@ -69,11 +91,22 @@ public class AddCommercialViewController {
     projectNameField.clear();
   }
 
+  /**
+   * Retrieves the scene associated with this handler.
+   *
+   * @return The Scene object associated with this handler.
+   */
   public Scene getScene()
   {
     return scene;
   }
 
+  /**
+   * Handles actions triggered by UI components.
+   *
+   * @param e The ActionEvent representing the action triggered.
+   * @throws FileNotFoundException If a file required for project handling is not found.
+   */
   public void handleActions(ActionEvent e) throws FileNotFoundException
   {
     if (e.getSource() == backButton)

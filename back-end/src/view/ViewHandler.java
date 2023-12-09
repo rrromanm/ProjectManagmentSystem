@@ -5,9 +5,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import model.ProjectModelManager;
-
 import java.io.IOException;
 
+/**
+ * This class handles the loading of various views in the application, initializes
+ * their respective controllers, and manages the switching of scenes based on user actions
+ *
+ * @author Group 1
+ */
 public class ViewHandler {
   private Stage stage;
   private ProjectModelManager projectManager;
@@ -24,12 +29,20 @@ public class ViewHandler {
   private AddRoadConstructionViewController addRoadConstructionViewController;
   private EditRemoveProjectController editRemoveViewController;
 
-
+  /**
+   * Constructs a ViewHandler instance with a stage and a project manager.
+   *
+   * @param stage          The primary stage of the application.
+   * @param projectManager The project manager handling project-related functionalities.
+   */
   public ViewHandler(Stage stage, ProjectModelManager projectManager) {
     this.stage = stage;
     this.projectManager = projectManager;
   }
 
+  /**
+   * Starts the application by loading initial views and setting up the start view.
+   */
   public void start() {
     loadStartView();
     loadMenuView();
@@ -44,6 +57,11 @@ public class ViewHandler {
     openView("StartView");
   }
 
+  /**
+   * Opens a specific view based on the provided ID.
+   *
+   * @param id The ID of the view to be opened.
+   */
   public void openView(String id) {
     switch (id) {
       case "ProjectView":

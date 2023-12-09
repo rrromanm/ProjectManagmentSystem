@@ -9,6 +9,14 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
+/**
+ * This class represents the controller managing the addition of Road Construction Projects in the application.
+ * This controller interacts with the user interface components, facilitating the creation and addition of Road Construction Projects.
+ *
+ * <p>Group 1 - Authors</p>
+ *
+ * @author Group 1
+ */
 public class AddRoadConstructionViewController {
 
 
@@ -41,6 +49,13 @@ public class AddRoadConstructionViewController {
     @FXML private TextField tunnels;
     @FXML private TextField bridges;
 
+    /**
+     * Initializes the view with the provided view handler, scene, and project manager. Sets up initial values for the status combo box.
+     *
+     * @param viewHandler    The view handler managing views.
+     * @param scene          The scene to be initialized.
+     * @param projectManager The project manager for handling projects.
+     */
     public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager)
     {
         this.viewHandler = viewHandler;
@@ -51,6 +66,9 @@ public class AddRoadConstructionViewController {
         statusComboBox.getSelectionModel().selectFirst();
     }
 
+    /**
+     * Resets all input fields and selections in the form to their default values or empty strings.
+     */
     public void reset()
     {
         budgetField.setText("");
@@ -74,16 +92,32 @@ public class AddRoadConstructionViewController {
         projectNameField.setText("");
     }
 
+    /**
+     * Retrieves the scene managed by this controller.
+     *
+     * @return The scene associated with this controller.
+     */
     public Scene getScene()
     {
         return scene;
     }
 
+    /**
+     * Checks whether the provided string contains valid alphabetic characters and spaces.
+     *
+     * @param string The string to be validated.
+     * @return {@code true} if the string contains valid characters, otherwise {@code false}.
+     */
     public boolean isValidString(String string)
     {
         return string.matches("[a-zA-Z ]+");
     }
 
+    /**
+     * Handles various actions triggered by UI components, such as adding projects or clearing input fields.
+     *
+     * @param e The ActionEvent representing the action triggered.
+     */
     public void handleActions(ActionEvent e)
     {
         if(e.getSource()==backButton)

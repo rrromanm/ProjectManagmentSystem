@@ -12,7 +12,14 @@ import model.ProjectList;
 import model.ProjectModelManager;
 import javafx.collections.ObservableList;
 
-
+/**
+ * This controller class handles user interactions with the project view and updates the
+ * displayed projects based on various filters.
+ *
+ * <p>Group 1 - Authors</p>
+ *
+ * @author Group 1
+ */
 public class ProjectViewController {
   private Scene scene;
   private ProjectModelManager projectManager;
@@ -49,6 +56,13 @@ public class ProjectViewController {
 
   private ObservableList<ProjectTableItem> projectTableData = FXCollections.observableArrayList();
 
+  /**
+   * Initializes the Project View Controller with the ViewHandler, Scene, and ProjectModelManager.
+   *
+   * @param viewHandler    The ViewHandler responsible for managing views.
+   * @param scene          The scene where the project view is displayed.
+   * @param projectManager The ProjectModelManager handling project-related functionalities.
+   */
   public void init(ViewHandler viewHandler, Scene scene, ProjectModelManager projectManager) {
     this.viewHandler = viewHandler;
     this.scene = scene;
@@ -58,14 +72,28 @@ public class ProjectViewController {
     updateProjectArea();
   }
 
+  /**
+   * Resets the project view to its default state.
+   * This method updates the displayed projects.
+   */
   public void reset() {
     updateProjectArea();
   }
 
+  /**
+   * Retrieves the scene associated with the project view.
+   *
+   * @return The scene of the project view.
+   */
   public Scene getScene() {
     return scene;
   }
 
+  /**
+   * Handles various user actions triggered in the project view.
+   *
+   * @param e The ActionEvent representing the user action.
+   */
   public void handleActions(ActionEvent e)
   {
     if (e.getSource() == searchButton)
@@ -202,7 +230,9 @@ public class ProjectViewController {
     populateTable(projects);
   }
 
-
+  /**
+   * Initializes the table view to display project-related information.
+   */
   private void initializeTableView() {
     projectIdColumn.setCellValueFactory(new PropertyValueFactory<>("projectId"));
     projectTypeColumn.setCellValueFactory(new PropertyValueFactory<>("projectType"));
@@ -220,11 +250,19 @@ public class ProjectViewController {
     projectTableView.setItems(projectTableData);
   }
 
+  /**
+   * Updates the project area by fetching all projects and populating the table view.
+   */
   private void updateProjectArea() {
     ProjectList projectList = projectManager.getAllProjects();
     populateTable(projectList);
   }
 
+  /**
+   * Populates the table view with projects from the provided ProjectList.
+   *
+   * @param projectList The list of projects to display in the table view.
+   */
   public void populateTable(ProjectList projectList) {
     projectTableData.clear();
 
