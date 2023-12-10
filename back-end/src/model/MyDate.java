@@ -11,19 +11,9 @@ import java.time.LocalDate;
  */
 public class MyDate implements Serializable
 {
-   int day;
-  int month;
-  int year;
-
-  /**
-   * Default constructor that initializes the date to the current system date.
-   */
-  public MyDate(){
-    LocalDate currentDate = LocalDate.now();
-    day = currentDate.getDayOfMonth();
-    month = currentDate.getMonthValue();
-    year = currentDate.getYear();
-  }
+  private int day;
+  private int month;
+  private int year;
 
   /**
    * Parameterized constructor that allows setting the day, month, and year.
@@ -112,6 +102,16 @@ public class MyDate implements Serializable
   }
 
   /**
+   * Checks if a year is a leap year.
+   *
+   * @return true if the year is a leap year, false otherwise.
+   */
+  public boolean isLeapYear(int year)
+  {
+    return year % 4 == 0 && year % 100 != 0 || (year % 400 == 0);
+  }
+
+  /**
    * Gets the number of days in a specific month of a given year, considering leap years.
    *
    * @return The number of days in the specified month of the given year.
@@ -135,16 +135,6 @@ public class MyDate implements Serializable
       return 28;
     }
     return 0;
-  }
-
-  /**
-   * Checks if a year is a leap year.
-   *
-   * @return true if the year is a leap year, false otherwise.
-   */
-  public boolean isLeapYear(int year)
-  {
-    return year % 4 == 0 && year % 100 != 0 || (year % 400 == 0);
   }
 
   /**

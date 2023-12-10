@@ -53,27 +53,6 @@ public class ProjectList implements Serializable
   }
 
   /**
-   * Retrieves all projects with a specified status.
-   *
-   * @param status The status to filter projects by.
-   * @return An ArrayList containing indices of projects with the specified status.
-   */
-  public ProjectList getAllByStatus(String status)
-  {
-    ProjectList projectListByStatus = new ProjectList();
-
-    for (Project project : projects)
-    {
-      if (project.getStatus().equals(status))
-      {
-        projectListByStatus.addProject(project);
-      }
-    }
-
-    return projectListByStatus;
-  }
-
-  /**
    * Retrieves a list of projects based on a given type and status.
    *
    * @param type   The type of project to filter by.

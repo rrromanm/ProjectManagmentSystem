@@ -77,16 +77,6 @@ public class Resources implements Serializable
   }
 
   /**
-   * Adds expenses to the total material expenses for the project.
-   *
-   * @param value The value to be added to the material expenses.
-   */
-  public void addExpenses(double value)
-  {
-    materialExpenses += value;
-  }
-
-  /**
    * Retrieves the total man-hours used for the project.
    *
    * @return The total man-hours used.
@@ -104,16 +94,6 @@ public class Resources implements Serializable
   public void setManHoursUsed(int manHoursUsed)
   {
     this.manHoursUsed = manHoursUsed;
-  }
-
-  /**
-   * Adds hours to the total man-hours used for the project.
-   *
-   * @param hours The hours to be added to the total man-hours used.
-   */
-  public void addManHoursUsed(int hours)
-  {
-    manHoursUsed += hours;
   }
 
   /**
