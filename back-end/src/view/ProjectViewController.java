@@ -31,6 +31,7 @@ public class ProjectViewController {
   @FXML private MenuItem exitMenuItem;
   @FXML private CheckMenuItem editAreaMenuItem;
   @FXML private MenuItem aboutMenuItem;
+  @FXML private MenuItem contactMenuItem;
   @FXML private Button backButton;
   @FXML private RadioButton typeButton1;
   @FXML private RadioButton typeButton2;
@@ -147,6 +148,14 @@ public class ProjectViewController {
       alert.setHeaderText(null);
       alert.setTitle("About");
       alert.setContentText("Made by SEP-1 team, enjoy!");
+      alert.showAndWait();
+    }
+    else if (e.getSource() == contactMenuItem)
+    {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setHeaderText(null);
+      alert.setTitle("Contact Info");
+      alert.setContentText("Contact us!\nPhone Number: +45 87 55 00 20\nEmail address: via@via.dk");
       alert.showAndWait();
     }
     else if (e.getSource() == backButton)
