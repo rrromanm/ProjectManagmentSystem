@@ -107,10 +107,5 @@ public class LoadInitialData
     }
 
     System.out.println("Done");
-
-    XmlJsonParser parser = new XmlJsonParser();
-    File file1 = parser.toJson(projects, "projectlist.json");
-
-    File file2 = parser.toXml(projects, "projectlist.xml");
   }
 }

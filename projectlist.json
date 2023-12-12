@@ -1,3 +1,132 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "size": 123,
+      "numberOfKitchens": 1,
+      "numberOfBathrooms": 1,
+      "roomsWithPlumbing": 2,
+      "state": "New Build",
+      "name": "dsadas",
+      "budget": 23123231,
+      "startTime": {
+        "day": 11,
+        "month": 11,
+        "year": 1111
+      },
+      "endTime": {
+        "day": 11,
+        "month": 8,
+        "year": 1112
+      },
+      "customer": {
+        "firstName": "dsaads",
+        "surname": "dasasd",
+        "id": 3123221
+      },
+      "resources": {
+        "manHoursUsed": 2312,
+        "materialExpenses": 12.0,
+        "expectedManHours": 123123
+      },
+      "status": "Under Construction",
+      "projectID": 1,
+      "timeline": 1,
+      "type": "Residential"
+    },
+    {
+      "size": 23123,
+      "floors": 1,
+      "usage": "dsadsa",
+      "name": "dsas",
+      "budget": 213,
+      "startTime": {
+        "day": 1,
+        "month": 2,
+        "year": 2
+      },
+      "endTime": {
+        "day": 1,
+        "month": 8,
+        "year": 3
+      },
+      "customer": {
+        "firstName": "dsadsa",
+        "surname": "dsaads",
+        "id": 2321321
+      },
+      "resources": {
+        "manHoursUsed": 2332,
+        "materialExpenses": 23123.0,
+        "expectedManHours": 3122
+      },
+      "status": "Under Construction",
+      "projectID": 2,
+      "timeline": 12,
+      "type": "Commercial"
+    },
+    {
+      "size": 1,
+      "facilityType": "sdadsa",
+      "name": "sdadsa",
+      "budget": 321231,
+      "startTime": {
+        "day": 12,
+        "month": 3,
+        "year": 32123
+      },
+      "endTime": {
+        "day": 12,
+        "month": 9,
+        "year": 32125
+      },
+      "customer": {
+        "firstName": "sadadssa",
+        "surname": "dsasad",
+        "id": 12312
+      },
+      "resources": {
+        "manHoursUsed": 312,
+        "materialExpenses": 1212.0,
+        "expectedManHours": 2312
+      },
+      "status": "Under Construction",
+      "projectID": 3,
+      "timeline": 30,
+      "type": "Industrial"
+    },
+    {
+      "width": 1212,
+      "length": 312,
+      "bridges": 312,
+      "tunnels": 12,
+      "environmentalChallenges": "dsa",
+      "geographicalChallenges": "dsa",
+      "name": "KYS",
+      "budget": 2112,
+      "startTime": {
+        "day": 11,
+        "month": 11,
+        "year": 11
+      },
+      "endTime": {
+        "day": 11,
+        "month": 8,
+        "year": 12
+      },
+      "customer": {
+        "firstName": "sad",
+        "surname": "sda",
+        "id": 2332
+      },
+      "resources": {
+        "manHoursUsed": 22,
+        "materialExpenses": 1231.0,
+        "expectedManHours": 3213
+      },
+      "status": "Under Construction",
+      "projectID": 4,
+      "timeline": 9,
+      "type": "RoadConstruction"
+    }
+  ]
 }

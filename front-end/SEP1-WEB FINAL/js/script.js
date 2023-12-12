@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Fetch XML data
     $.ajax({
         type: "GET",
-        url: "../../projectlist.xml",
+        url: "/projectlist.xml",
         dataType: "xml",
         success: function (xml) {
             // Parse XML and populate table

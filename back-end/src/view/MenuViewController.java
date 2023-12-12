@@ -7,6 +7,9 @@ import javafx.scene.control.*;
 import main.LoadInitialData;
 import model.ProjectModelManager;
 import parser.ParserException;
+import parser.XmlJsonParser;
+
+import java.io.File;
 
 /**
  * The {@code MenuViewController} class controls the behavior of the main menu view,
@@ -76,7 +79,10 @@ public class MenuViewController
      viewHandler.openView("ManageView");
     }
     else if (e.getSource() == website){
-      LoadInitialData.main(new String[]{});
+      XmlJsonParser parser = new XmlJsonParser();
+      File file1 = parser.toJson(projectManager.getAllProjects(), "projectlist.json");
+
+      File file2 = parser.toXml(projectManager.getAllProjects(), "projectlist.xml");
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Success");
       alert.setHeaderText("");
