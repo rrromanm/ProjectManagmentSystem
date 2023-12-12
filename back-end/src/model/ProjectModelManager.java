@@ -106,7 +106,6 @@ public class ProjectModelManager
 
     try {
       MyFileHandler.writeToBinaryFile(fileName, existingProjects);
-
       System.out.println("Successfully added project");
     } catch (FileNotFoundException e) {
       System.out.println("File not found");

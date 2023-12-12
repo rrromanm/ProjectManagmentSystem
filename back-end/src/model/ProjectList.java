@@ -81,7 +81,7 @@ public class ProjectList implements Serializable
   {
     ProjectList projectListByType = new ProjectList();
 
-    for (Project project : projects)
+    for (Project project : projects) //The loop will run n times
     {
       if (project.getType().equals(type))
       {
@@ -91,6 +91,16 @@ public class ProjectList implements Serializable
 
     return projectListByType;
   }
+  // We have no recursion, so we do not need base case
+  // We loop through the projectList O(n) times
+  // If statement has a time complexity of O(1)
+  // In the worst case where getType() method has to compare long strings
+  // time complexity can reach O(n) complexity with n being the
+  // length of the string
+  // Assuming addProject has constant time complexity, it does not affect
+  // the overall complexity
+  // T(n) = 1 + n + 1 + n + 1 = 3 + 2n, ignoring constants and coefficients
+  // T(n) = O(n)
 
   /**
    * Retrieves the number of projects in the list.
