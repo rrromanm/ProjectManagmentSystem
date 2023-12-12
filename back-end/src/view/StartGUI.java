@@ -23,7 +23,6 @@ public class StartGUI extends Application
    */
   public void start(Stage window) throws ParserException
   {
-    LoadInitialData.main(new String[]{});
     ProjectModelManager modelManager = new ProjectModelManager("projects.bin");
     ViewHandler viewHandler = new ViewHandler(window, modelManager);
     viewHandler.start();

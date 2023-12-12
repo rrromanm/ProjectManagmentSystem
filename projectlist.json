@@ -1,37 +1,3 @@
 {
-  "projects": [
-    {
-      "size": 15,
-      "numberOfKitchens": 1,
-      "numberOfBathrooms": 1,
-      "roomsWithPlumbing": 2,
-      "state": "New Build",
-      "name": "House",
-      "budget": 100000,
-      "startTime": {
-        "day": 20,
-        "month": 12,
-        "year": 2023
-      },
-      "endTime": {
-        "day": 20,
-        "month": 9,
-        "year": 2024
-      },
-      "customer": {
-        "firstName": "Samuel",
-        "surname": "Kacenga",
-        "id": 15
-      },
-      "resources": {
-        "manHoursUsed": 15,
-        "materialExpenses": 15.0,
-        "expectedManHours": 15
-      },
-      "status": "Under Construction",
-      "projectID": 7,
-      "timeline": 9,
-      "type": "Residential"
-    }
-  ]
+  "projects": []
 }

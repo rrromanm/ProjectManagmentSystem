@@ -95,6 +95,7 @@ public class EditRemoveProjectController
     manHoursUsed.setText("");
     projectName.setText("");
     projectType.setText("");
+    populateComboBox();
   }
 
   /**
@@ -149,7 +150,6 @@ public class EditRemoveProjectController
    */
   public void populateComboBox() {
     projectPick.getItems().clear();
-    reset();
     hideEverything();
 
     ProjectList list = projectManager.getAllProjects();
@@ -302,28 +302,22 @@ public class EditRemoveProjectController
   /**
    * Removes the selected project and updates the project list and view.
    */
-  public void removeProject(){
+  public void removeProject()
+  {
     ProjectModelManager manager = new ProjectModelManager("projects.bin");
     ProjectList list = projectManager.getAllProjects();
 
-    for(int i = 0; i < list.size(); i++){
-      if(list.get(i).getName().equals(projectPick.getValue())){
+    for (int i = 0; i < list.size(); i++)
+    {
+      if (list.get(i).getName().equals(projectPick.getValue()))
+      {
         list.removeProject(list.get(i));
       }
     }
-    try{
-      manager.removeProject(list);
+    manager.removeProject(list);
 
-      MyFileHandler.writeToTextFile("projects.txt", list.toString());
-
-    }
-    catch (FileNotFoundException e)
-    {
-      throw new RuntimeException(e);
-    }
-
+    manager.saveProjects(list);
   }
-
   /**
    * Hides custom project details labels and text fields.
    */
@@ -362,6 +356,7 @@ public class EditRemoveProjectController
       return;
     }
 
+    ProjectModelManager manager = new ProjectModelManager("projects.bin");
     ProjectList list = projectManager.getAllProjects();
     int index = 0;
 
@@ -580,9 +575,6 @@ public class EditRemoveProjectController
 
     Customer newCustomer = new Customer(newCustomerFirstName,newCustomerSurname,newCustomerId);
     Resources newResources = new Resources(newExpectedManHours, newExpenses, newManHoursUsed);
-
-    try
-    {
       if (newType.equals("Industrial"))
       {
         int size = 0;
@@ -629,7 +621,7 @@ public class EditRemoveProjectController
         projects.setSize(size);
         projects.setFacilityType(facilityType);
 
-        MyFileHandler.writeToTextFile("projects.txt",list.toString());
+        manager.saveProjects(list);
       }
       else if (newType.equals("Commercial"))
       {
@@ -693,7 +685,7 @@ public class EditRemoveProjectController
         projects.setFloors(floors);
         projects.setUsage(usage);
 
-        MyFileHandler.writeToTextFile("projects.txt",list.toString());
+        manager.saveProjects(list);
       }
       else if (newType.equals("Residential"))
       {
@@ -789,7 +781,7 @@ public class EditRemoveProjectController
         projects.setRoomsWithPlumbing(plumbing);
         projects.setState(state);
 
-        MyFileHandler.writeToTextFile("projects.txt",list.toString());
+       manager.saveProjects(list);
       }
       else if (newType.equals("RoadConstruction"))
       {
@@ -903,7 +895,7 @@ public class EditRemoveProjectController
         projects.setEnvironmentalChallenges(environmental);
         projects.setGeographicalChallenges(geographical);
 
-        MyFileHandler.writeToTextFile("projects.txt", list.toString());
+        manager.saveProjects(list);
       }
 
 
@@ -916,15 +908,7 @@ public class EditRemoveProjectController
       alert.setHeaderText("");
       alert.setContentText("Changes successfully saved!");
       alert.showAndWait();
-    }
-    catch (NumberFormatException e)
-    {
-      e.printStackTrace();
-    }
-    catch (FileNotFoundException e)
-    {
-      throw new RuntimeException(e);
-    }
+
   }
 
   /**

@@ -1,1 +1,0 @@
-House,100000,20,12,2023,Under Construction,7,9,Samuel,Kacenga,15,15,15.0,15,Residential,15,1,1,2,New Build

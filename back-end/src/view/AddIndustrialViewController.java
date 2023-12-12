@@ -133,7 +133,6 @@ public class AddIndustrialViewController
     }
     else if(e.getSource() == addProjectButton)
     {
-      ProjectList projects = new ProjectList();
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
       int budget = 0;
@@ -364,12 +363,8 @@ public class AddIndustrialViewController
 
       Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
-      projects.addProject(
-          new IndustrialProjects(projectName,budget, date, status, projectID, timeline,
-              customer, resources, size, typeOfFacility));
-
-      MyFileHandler.appendToTextFile("projects.txt", projects.toString());
-      manager.appendProjects(projects);
+      manager.appendProject(new IndustrialProjects(projectName,budget, date, status, projectID, timeline,
+          customer, resources, size, typeOfFacility));
       viewHandler.openView("ProjectView");
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Success");

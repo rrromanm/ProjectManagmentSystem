@@ -141,7 +141,6 @@ public class AddResidentialViewController
     }
     else if (e.getSource() == addProjectButton)
     {
-      ProjectList projects = new ProjectList();
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
       int budget = 0;
@@ -403,20 +402,10 @@ public class AddResidentialViewController
       Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses,
           manHoursUsed);
-      projects.addProject(
-          new ResidentialProjects(projectName, budget, date, status, projectID,
-              timeline, customer, resources, size, kitchens, bathrooms,
-              plumbing, state));
 
-      try
-      {
-        MyFileHandler.appendToTextFile("projects.txt", projects.toString());
-      }
-      catch (FileNotFoundException ex)
-      {
-        throw new RuntimeException(ex);
-      }
-      manager.appendProjects(projects);
+      manager.appendProject(new ResidentialProjects(projectName, budget, date, status, projectID,
+          timeline, customer, resources, size, kitchens, bathrooms,
+          plumbing, state));
       viewHandler.openView("ProjectView");
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Success");

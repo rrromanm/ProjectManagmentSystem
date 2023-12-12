@@ -140,7 +140,6 @@ public class AddRoadConstructionViewController {
         }
         else if(e.getSource() == addProjectButton)
         {
-            ProjectList projects = new ProjectList();
             ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
             int budget = 0;
@@ -428,19 +427,9 @@ public class AddRoadConstructionViewController {
 
             Customer customer = new Customer(firstName, surname, customerID);
             Resources resources = new Resources(expectedManHours, materialExpenses,manHoursUsed);
-            projects.addProject(
-                new RoadConstruction(projectName, budget, date, status, projectID, timeline,
-                    customer, resources, width, length, bridge,tunnel, environmental, geographical));
 
-            try
-            {
-                MyFileHandler.appendToTextFile("projects.txt", projects.toString());
-            }
-            catch (FileNotFoundException ex)
-            {
-                throw new RuntimeException(ex);
-            }
-            manager.appendProjects(projects);
+            manager.appendProject(new RoadConstruction(projectName, budget, date, status, projectID, timeline,
+                customer, resources, width, length, bridge,tunnel, environmental, geographical));
             viewHandler.openView("ProjectView");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

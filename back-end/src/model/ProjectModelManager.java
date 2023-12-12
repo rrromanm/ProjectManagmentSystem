@@ -95,14 +95,14 @@ public class ProjectModelManager
     }
   }
   /**
-   * Appends the provided projects to the existing projects in the binary file.
+   * Appends the provided project to the existing projects in the binary file.
    *
-   * @param projects The {@code ProjectList} to be appended.
+   * @param project The {@code ProjectList} to be appended.
    */
-  public void appendProjects(ProjectList projects) {
+  public void appendProject(Project project) {
     ProjectList existingProjects = getAllProjects();
 
-    existingProjects.getProjects().addAll(projects.getProjects());
+    existingProjects.addProject(project);
 
     try {
       MyFileHandler.writeToBinaryFile(fileName, existingProjects);
@@ -114,6 +114,7 @@ public class ProjectModelManager
       System.out.println("IO Error writing to file");
     }
   }
+
   /**
    * Removes projects specified in the list from the file.
    *
@@ -159,7 +160,7 @@ public class ProjectModelManager
           ((CommercialProject) project).setSize(updatedProject.getSize());
           ((CommercialProject) project).setFloors(updatedProject.getFloors());
           ((CommercialProject) project).setUsage(updatedProject.getUsage());
-        } else if (project.getType().equals("RoadConstruction")) {
+        } else if (project instanceof RoadConstruction) {
           RoadConstruction updatedProject = (RoadConstruction) projectToUpdate;
           ((RoadConstruction) project).setWidth(updatedProject.getWidth());
           ((RoadConstruction) project).setLength(updatedProject.getLength());
@@ -167,7 +168,7 @@ public class ProjectModelManager
           ((RoadConstruction) project).setTunnels(updatedProject.getTunnels());
           ((RoadConstruction) project).setEnvironmentalChallenges(updatedProject.getEnvironmentalChallenges());
           ((RoadConstruction) project).setGeographicalChallenges(updatedProject.getGeographicalChallenges());
-        } else if (project.getType().equals("Residential")) {
+        } else if (project instanceof ResidentialProjects) {
           ResidentialProjects updatedProject = (ResidentialProjects) projectToUpdate;
           ((ResidentialProjects) project).setSize(updatedProject.getSize());
           ((ResidentialProjects) project).setNumberOfKitchens(updatedProject.getNumberOfKitchens());

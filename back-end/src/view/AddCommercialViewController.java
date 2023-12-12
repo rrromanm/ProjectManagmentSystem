@@ -115,7 +115,6 @@ public class AddCommercialViewController {
     }
     else if (e.getSource() == addProject)
     {
-      ProjectList projects = new ProjectList();
       ProjectModelManager manager = new ProjectModelManager("projects.bin");
 
       int budget = 0;
@@ -362,12 +361,9 @@ public class AddCommercialViewController {
       Customer customer = new Customer(firstName, surname, customerID);
       Resources resources = new Resources(expectedManHours, materialExpenses,
           manHoursUsed);
-      projects.addProject(
-          new CommercialProject(projectName, budget, date, status, projectID,
-              timeline, customer, resources, size, floors, usage));
 
-      MyFileHandler.appendToTextFile("projects.txt", projects.toString());
-      manager.appendProjects(projects);
+      manager.appendProject(new CommercialProject(projectName, budget, date, status, projectID,
+          timeline, customer, resources, size, floors, usage));
       viewHandler.openView("ProjectView");
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Success");
