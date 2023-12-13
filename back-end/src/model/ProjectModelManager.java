@@ -10,7 +10,7 @@ import java.io.IOException;
  * It provides methods to read, write, update and retrieve project information
  * It utilizes serialization for storing and retrieving project data in binary format.
  *
- * @author Samuel Kacenga
+ * @author Group 1
  */
 public class ProjectModelManager
 {
@@ -52,6 +52,7 @@ public class ProjectModelManager
     }
     return allProjects;
   }
+
   /**
    * Returns projects based on the type.
    *

@@ -23,6 +23,7 @@ public abstract class Project implements Serializable
   /**
    * This is the constructor method for the Project class with variables that will be inherited by project type classes.
    *
+   * @param name The name of the project.
    * @param budget The budget for the project.
    * @param startTime The start time of the project.
    * @param status The status of the project.
@@ -31,7 +32,8 @@ public abstract class Project implements Serializable
    * @param customer The customer of the project.
    * @param resources The resources of the project.
    */
-  public Project(String name ,int budget, MyDate startTime,String status, int projectID, int timeline, Customer customer, Resources resources){
+  public Project(String name ,int budget, MyDate startTime,String status, int projectID,
+      int timeline, Customer customer, Resources resources){
     this.name = name;
     this.budget = budget;
     this.status = status;

@@ -7,24 +7,14 @@ import java.io.Serializable;
  * associated with a project.
  * It provides methods to manipulate and retrieve information about these resources.
  *
- * @author Romans Mihalonoks / Samuel Kacenga / Maciej Matuszewski
+ * @author Group 1
  */
 public class Resources implements Serializable
 {
 
-  /**
-   * The total man-hours used for the project.
-   */
+
   private int manHoursUsed;
-
-  /**
-   * The total expenses related to materials for the project.
-   */
   private double materialExpenses;
-
-  /**
-   * The expected man-hours for the project.
-   */
   private int expectedManHours;
 
   /**
@@ -32,20 +22,12 @@ public class Resources implements Serializable
    *
    * @param expectedManHours The expected man-hours for the project.
    * @param materialExpenses The initial material expenses for the project.
+   * @param manHoursUsed The number of man-hours used.
    */
   public Resources(int expectedManHours, double materialExpenses, int manHoursUsed){
     this.manHoursUsed = manHoursUsed;
     this.expectedManHours = expectedManHours;
     this.materialExpenses = materialExpenses;
-  }
-
-  /**
-   * Sets the expected man-hours for the project.
-   *
-   * @param expectedManHours The new expected man-hours.
-   */
-  public void setExpectedManHours(int expectedManHours){
-    this.expectedManHours = expectedManHours;
   }
 
   /**
@@ -57,6 +39,14 @@ public class Resources implements Serializable
     return expectedManHours;
   }
 
+  /**
+   * Sets the expected man-hours for the project.
+   *
+   * @param expectedManHours The new expected man-hours.
+   */
+  public void setExpectedManHours(int expectedManHours){
+    this.expectedManHours = expectedManHours;
+  }
 
   /**
    * Retrieves the total expenses related to materials for the project.

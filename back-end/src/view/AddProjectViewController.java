@@ -12,7 +12,7 @@ import model.ProjectModelManager;
  * allowing users to navigate to specific project type views (Industrial, Commercial, Road Construction, Residential)
  * or return to the main management view.
  *
- * @author Romans Mihalonoks / Jakub Mateusz Abramek
+ * @author Group 1
  */
 public class AddProjectViewController
 {

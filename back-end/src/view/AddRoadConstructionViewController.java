@@ -13,8 +13,6 @@ import java.util.Optional;
  * This class represents the controller managing the addition of Road Construction Projects in the application.
  * This controller interacts with the user interface components, facilitating the creation and addition of Road Construction Projects.
  *
- * <p>Group 1 - Authors</p>
- *
  * @author Group 1
  */
 public class AddRoadConstructionViewController {

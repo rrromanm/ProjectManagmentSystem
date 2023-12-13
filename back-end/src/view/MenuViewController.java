@@ -17,7 +17,7 @@ import java.io.File;
  * This class serves as part of the MVC (Model-View-Controller) architecture and handles user interactions
  * related to the main menu, such as viewing projects, managing projects, and updating the website.
  *
- * @author Samuel Kacenga / Jakub Mateusz Abramek / Romans Mihalonoks
+ * @author Group 1
  */
 public class MenuViewController
 {

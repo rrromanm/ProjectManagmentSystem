@@ -24,7 +24,8 @@ public class IndustrialProjects extends Project {
      * @param size         the size of the industrial project in square meters
      * @param facilityType the facility type of the industrial project, such as plant, warehouse, etc.
      */
-    public IndustrialProjects(String name, int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, String facilityType) {
+    public IndustrialProjects(String name, int budget, MyDate startTime, String status,
+        int projectID, int timeline, Customer customer, Resources resources, int size, String facilityType) {
         super(name, budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.facilityType = facilityType;
@@ -41,6 +42,14 @@ public class IndustrialProjects extends Project {
     }
 
     /**
+     * Gets the size of the industrial project in square meters.
+     * @return the size of the industrial project
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
      * Sets the facility type of the industrial project.
      * @param facilityType the facility type to set for the industrial project, such as plant, warehouse, etc.
      */
@@ -54,14 +63,6 @@ public class IndustrialProjects extends Project {
      */
     public String getFacilityType() {
         return facilityType;
-    }
-
-    /**
-     * Gets the size of the industrial project in square meters.
-     * @return the size of the industrial project
-     */
-    public int getSize() {
-        return size;
     }
 
     /**

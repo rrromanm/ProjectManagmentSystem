@@ -16,18 +16,19 @@ public class CommercialProject extends Project
      * A constructor that creates a commercial project with the given parameters.
      *
      * @param name      the name of the project
-     * @param size      the size of the project in square meters
-     * @param floors    the number of floors in the project
-     * @param usage     the usage type of the project, such as office, retail, hotel, etc.
-     * @param budget    the budget of the project in Danish kroner
+     * @param budget    the budget of the project in Danish kroners
      * @param startTime the start date of the project
      * @param status    the status of the project, such as planned, ongoing, completed, etc.
      * @param projectID the unique identifier of the project
      * @param timeline  the estimated duration of the project in months
      * @param customer  the customer who ordered the project
      * @param resources the resources allocated to the project
+     * @param size      the size of the project in square meters
+     * @param floors    the number of floors in the project
+     * @param usage     the usage type of the project, such as office, retail, hotel, etc.
      */
-    public CommercialProject(String name, int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer,
+    public CommercialProject(String name, int budget, MyDate startTime,
+        String status, int projectID, int timeline, Customer customer,
         Resources resources, int size, short floors, String usage)
     {
         super(name, budget, startTime, status, projectID, timeline, customer,

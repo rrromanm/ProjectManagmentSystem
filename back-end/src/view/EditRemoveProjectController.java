@@ -162,6 +162,14 @@ public class EditRemoveProjectController
     }
   }
 
+  // We have no recursion, so we do not need base case
+  // getAllProjects() has time complexity of O(n)
+  // We loop through the list O(n) times
+  // Assuming add has constant time complexity, it does not affect
+  // the overall complexity
+  // T(n) = 1 + 1 + n + n + 1 + 1 = 4 + 2n, ignoring constants and coefficients
+  // T(n) = O(n)
+
   /**
    * Fills input fields with details of the selected project for editing.
    */

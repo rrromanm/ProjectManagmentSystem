@@ -4,7 +4,7 @@ package model;
  * A class that represents a residential project, which is a subclass of Project.
  * A residential project has size, the number of kitchens, the number of bathrooms, rooms with plumbing, and state.
  * It inherits attributes from the Project class.
- * @author all Group 1 members
+ * @author Group 1
  */
 public class ResidentialProjects extends Project {
 
@@ -32,7 +32,9 @@ public class ResidentialProjects extends Project {
      * @param roomsWithPlumbing the number of rooms with plumbing in the residential project
      * @param state             the state of the residential project, such as "under construction" or "completed"
      */
-    public ResidentialProjects(String name, int budget, MyDate startTime, String status, int projectID, int timeline, Customer customer, Resources resources, int size, int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state) {
+    public ResidentialProjects(String name, int budget, MyDate startTime, String status,
+        int projectID, int timeline, Customer customer, Resources resources, int size,
+        int numberOfKitchens, int numberOfBathrooms, int roomsWithPlumbing, String state) {
         super(name, budget, startTime, status, projectID, timeline, customer, resources);
         this.size = size;
         this.numberOfKitchens = numberOfKitchens;

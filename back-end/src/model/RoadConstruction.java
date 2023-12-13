@@ -4,7 +4,8 @@ package model;
  * A class that represents a road construction project, which is a subclass of Project.
  * A road construction project has attributes such as width, length, number of bridges, number of tunnels,
  * environmental challenges, and geographical challenges. It inherits attributes from the Project class.
- * @author all Group 1 members
+ *
+ * @author Group 1
  */
 public class RoadConstruction extends Project {
 
@@ -19,6 +20,7 @@ public class RoadConstruction extends Project {
     /**
      * A constructor that creates a road construction project with the given parameters.
      *
+     * @param name                    the name of the road construction project
      * @param budget                  the budget of the road construction project in Danish kroner
      * @param startTime               the start date of the road construction project
      * @param status                  the status of the road construction project, such as planned, ongoing, completed, etc.

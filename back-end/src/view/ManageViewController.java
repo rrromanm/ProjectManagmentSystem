@@ -10,7 +10,7 @@ import model.ProjectModelManager;
  * The {@code ManageViewController} class controls the behavior of the "Manage Projects" view,
  * allowing users to navigate to different project-related actions, such as adding, editing, or removing projects.
  *
- * @author Jakub Mateusz Abramek / Samuel Kacenga
+ * @author Group 1
  */
 
 public class ManageViewController
