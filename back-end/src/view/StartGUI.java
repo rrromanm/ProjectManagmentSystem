@@ -2,12 +2,11 @@ package view;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import main.LoadInitialData;
 import model.ProjectModelManager;
 import parser.ParserException;
 
 /**
- * This class initializes the GUI by loading initial data, setting up the project model manager,
+ * This class initializes the GUI by setting up the project model manager,
  * creating a view handler, and starting the application.
  *
  * @author Group 1
