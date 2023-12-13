@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import main.LoadInitialData;
 import model.ProjectModelManager;
 import parser.ParserException;
 import parser.XmlJsonParser;
